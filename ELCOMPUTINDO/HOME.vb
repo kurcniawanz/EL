@@ -29,6 +29,39 @@ Public Class HOME
             Else
                 ToolStripMenuItem1.Visible = False
             End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_PARTNER").ToString) Then
+                PartnerToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_PARTNER") = "Y" Then
+                PartnerToolStripMenuItem.Visible = True
+            Else
+                PartnerToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_CATEGORY").ToString) Then
+                KelompokBarangToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_CATEGORY") = "Y" Then
+                KelompokBarangToolStripMenuItem.Visible = True
+            Else
+                KelompokBarangToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_BARANG").ToString) Then
+                InputBarangToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_BARANG") = "Y" Then
+                InputBarangToolStripMenuItem.Visible = True
+            Else
+                InputBarangToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_STOCK").ToString) Then
+                StockBarangToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_STOCK") = "Y" Then
+                StockBarangToolStripMenuItem.Visible = True
+            Else
+                StockBarangToolStripMenuItem.Visible = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -89,6 +122,61 @@ Public Class HOME
         End If
         Dim frm As ACCOUNT
         frm = New ACCOUNT
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub PartnerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PartnerToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As PARTNER
+        frm = New PARTNER
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub KelompokBarangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KelompokBarangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As CATEEGORY
+        frm = New CATEEGORY
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub InputBarangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InputBarangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As BARANG
+        frm = New BARANG
+        frm.Text = "HOME"
+        frm.Button3.Visible = True
+        frm.Button2.Visible = False
+        frm.Button1.Visible = False
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub StockBarangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StockBarangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As STOCK
+        frm = New STOCK
         frm.Text = "HOME"
         frm.MdiParent = Me
         frm.Show()

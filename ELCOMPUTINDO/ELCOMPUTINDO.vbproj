@@ -82,6 +82,18 @@
     <Compile Include="ACCOUNT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BARANG.Designer.vb">
+      <DependentUpon>BARANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BARANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CATEEGORY.Designer.vb">
+      <DependentUpon>CATEEGORY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CATEEGORY.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONNECTION.vb" />
     <Compile Include="DASHBOARD.Designer.vb">
       <DependentUpon>DASHBOARD.vb</DependentUpon>
@@ -122,10 +134,22 @@
     <Compile Include="OTORITAS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PARTNER.Designer.vb">
+      <DependentUpon>PARTNER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PARTNER.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PASSWORD.Designer.vb">
       <DependentUpon>PASSWORD.vb</DependentUpon>
     </Compile>
     <Compile Include="PASSWORD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK.Designer.vb">
+      <DependentUpon>STOCK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="USER.Designer.vb">
@@ -138,6 +162,12 @@
   <ItemGroup>
     <EmbeddedResource Include="ACCOUNT.resx">
       <DependentUpon>ACCOUNT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BARANG.resx">
+      <DependentUpon>BARANG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CATEEGORY.resx">
+      <DependentUpon>CATEEGORY.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DASHBOARD.resx">
       <DependentUpon>DASHBOARD.vb</DependentUpon>
@@ -157,8 +187,14 @@
     <EmbeddedResource Include="OTORITAS.resx">
       <DependentUpon>OTORITAS.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PARTNER.resx">
+      <DependentUpon>PARTNER.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PASSWORD.resx">
       <DependentUpon>PASSWORD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK.resx">
+      <DependentUpon>STOCK.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USER.resx">
       <DependentUpon>USER.vb</DependentUpon>
@@ -174,6 +210,61 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxOWC11">
+      <Guid>{0002E558-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="OWC11">
+      <Guid>{0002E558-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

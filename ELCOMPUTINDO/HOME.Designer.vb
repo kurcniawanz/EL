@@ -25,20 +25,22 @@ Partial Class HOME
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PartnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GantiPasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InputBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KelompokBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,14 +64,20 @@ Partial Class HOME
         'PartnerToolStripMenuItem
         '
         Me.PartnerToolStripMenuItem.Name = "PartnerToolStripMenuItem"
-        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.PartnerToolStripMenuItem.Text = "&Partner"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripMenuItem1.Text = "&Account"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GantiPasswordToolStripMenuItem, Me.DataUserToolStripMenuItem})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'GantiPasswordToolStripMenuItem
@@ -84,17 +92,47 @@ Partial Class HOME
         Me.DataUserToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.DataUserToolStripMenuItem.Text = "&Data user"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(116, 6)
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'HomeToolStripMenuItem
         '
         Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.HomeToolStripMenuItem.Text = "&Home"
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
+        Me.HomeToolStripMenuItem.Text = "&Dashboard"
+        '
+        'BarangToolStripMenuItem
+        '
+        Me.BarangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockBarangToolStripMenuItem, Me.ToolStripMenuItem2, Me.InputBarangToolStripMenuItem, Me.ToolStripSeparator2, Me.KelompokBarangToolStripMenuItem})
+        Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
+        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.BarangToolStripMenuItem.Text = "&Barang"
+        '
+        'StockBarangToolStripMenuItem
+        '
+        Me.StockBarangToolStripMenuItem.Name = "StockBarangToolStripMenuItem"
+        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.StockBarangToolStripMenuItem.Text = "&Stock Barang"
+        '
+        'InputBarangToolStripMenuItem
+        '
+        Me.InputBarangToolStripMenuItem.Name = "InputBarangToolStripMenuItem"
+        Me.InputBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.InputBarangToolStripMenuItem.Text = "&Input Barang"
+        '
+        'KelompokBarangToolStripMenuItem
+        '
+        Me.KelompokBarangToolStripMenuItem.Name = "KelompokBarangToolStripMenuItem"
+        Me.KelompokBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.KelompokBarangToolStripMenuItem.Text = "&Kelompok barang"
         '
         'StatusStrip1
         '
@@ -117,41 +155,16 @@ Partial Class HOME
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
         '
-        'ToolStripMenuItem1
+        'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem1.Text = "&Account"
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(168, 22)
+        Me.ToolStripMenuItem2.Text = "&Mutasi Barang"
         '
-        'ToolStripSeparator1
+        'ToolStripSeparator2
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
-        '
-        'BarangToolStripMenuItem
-        '
-        Me.BarangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockBarangToolStripMenuItem, Me.InputBarangToolStripMenuItem, Me.KelompokBarangToolStripMenuItem})
-        Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
-        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
-        Me.BarangToolStripMenuItem.Text = "&Barang"
-        '
-        'StockBarangToolStripMenuItem
-        '
-        Me.StockBarangToolStripMenuItem.Name = "StockBarangToolStripMenuItem"
-        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.StockBarangToolStripMenuItem.Text = "&Stock Barang"
-        '
-        'InputBarangToolStripMenuItem
-        '
-        Me.InputBarangToolStripMenuItem.Name = "InputBarangToolStripMenuItem"
-        Me.InputBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.InputBarangToolStripMenuItem.Text = "&Input Barang"
-        '
-        'KelompokBarangToolStripMenuItem
-        '
-        Me.KelompokBarangToolStripMenuItem.Name = "KelompokBarangToolStripMenuItem"
-        Me.KelompokBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.KelompokBarangToolStripMenuItem.Text = "&Kelompok barang"
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
         '
         'HOME
         '
@@ -190,4 +203,6 @@ Partial Class HOME
     Friend WithEvents StockBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InputBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KelompokBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
 End Class

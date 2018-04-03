@@ -27,10 +27,14 @@ Partial Class OTORITAS
         Me.txtnamauser = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.c_category = New System.Windows.Forms.CheckBox()
+        Me.c_partner = New System.Windows.Forms.CheckBox()
+        Me.c_account = New System.Windows.Forms.CheckBox()
         Me.c_user = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.c_account = New System.Windows.Forms.CheckBox()
+        Me.c_stock = New System.Windows.Forms.CheckBox()
+        Me.c_barang = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -76,6 +80,10 @@ Partial Class OTORITAS
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.c_stock)
+        Me.GroupBox2.Controls.Add(Me.c_barang)
+        Me.GroupBox2.Controls.Add(Me.c_category)
+        Me.GroupBox2.Controls.Add(Me.c_partner)
         Me.GroupBox2.Controls.Add(Me.c_account)
         Me.GroupBox2.Controls.Add(Me.c_user)
         Me.GroupBox2.Location = New System.Drawing.Point(17, 94)
@@ -83,6 +91,36 @@ Partial Class OTORITAS
         Me.GroupBox2.Size = New System.Drawing.Size(200, 310)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
+        '
+        'c_category
+        '
+        Me.c_category.AutoSize = True
+        Me.c_category.Location = New System.Drawing.Point(9, 88)
+        Me.c_category.Name = "c_category"
+        Me.c_category.Size = New System.Drawing.Size(110, 17)
+        Me.c_category.TabIndex = 8
+        Me.c_category.Text = "Kelompok Barang"
+        Me.c_category.UseVisualStyleBackColor = True
+        '
+        'c_partner
+        '
+        Me.c_partner.AutoSize = True
+        Me.c_partner.Location = New System.Drawing.Point(9, 65)
+        Me.c_partner.Name = "c_partner"
+        Me.c_partner.Size = New System.Drawing.Size(59, 17)
+        Me.c_partner.TabIndex = 7
+        Me.c_partner.Text = "partner"
+        Me.c_partner.UseVisualStyleBackColor = True
+        '
+        'c_account
+        '
+        Me.c_account.AutoSize = True
+        Me.c_account.Location = New System.Drawing.Point(9, 42)
+        Me.c_account.Name = "c_account"
+        Me.c_account.Size = New System.Drawing.Size(65, 17)
+        Me.c_account.TabIndex = 6
+        Me.c_account.Text = "account"
+        Me.c_account.UseVisualStyleBackColor = True
         '
         'c_user
         '
@@ -113,15 +151,25 @@ Partial Class OTORITAS
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'c_account
+        'c_stock
         '
-        Me.c_account.AutoSize = True
-        Me.c_account.Location = New System.Drawing.Point(9, 42)
-        Me.c_account.Name = "c_account"
-        Me.c_account.Size = New System.Drawing.Size(65, 17)
-        Me.c_account.TabIndex = 6
-        Me.c_account.Text = "account"
-        Me.c_account.UseVisualStyleBackColor = True
+        Me.c_stock.AutoSize = True
+        Me.c_stock.Location = New System.Drawing.Point(9, 134)
+        Me.c_stock.Name = "c_stock"
+        Me.c_stock.Size = New System.Drawing.Size(91, 17)
+        Me.c_stock.TabIndex = 10
+        Me.c_stock.Text = "Stock Barang"
+        Me.c_stock.UseVisualStyleBackColor = True
+        '
+        'c_barang
+        '
+        Me.c_barang.AutoSize = True
+        Me.c_barang.Location = New System.Drawing.Point(9, 111)
+        Me.c_barang.Name = "c_barang"
+        Me.c_barang.Size = New System.Drawing.Size(87, 17)
+        Me.c_barang.TabIndex = 9
+        Me.c_barang.Text = "Input Barang"
+        Me.c_barang.UseVisualStyleBackColor = True
         '
         'OTORITAS
         '
@@ -156,4 +204,8 @@ Partial Class OTORITAS
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents c_account As System.Windows.Forms.CheckBox
+    Friend WithEvents c_partner As System.Windows.Forms.CheckBox
+    Friend WithEvents c_category As System.Windows.Forms.CheckBox
+    Friend WithEvents c_stock As System.Windows.Forms.CheckBox
+    Friend WithEvents c_barang As System.Windows.Forms.CheckBox
 End Class

@@ -74,6 +74,7 @@ Public Class USER
         txtuser.Clear()
         txtnama.Clear()
         txtpass.Clear()
+        txtnama.Focus()
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -94,6 +95,7 @@ Public Class USER
         txtuser.Clear()
         txtnama.Clear()
         txtpass.Clear()
+        txtnama.Focus()
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -110,6 +112,7 @@ Public Class USER
         txtuser.Clear()
         txtnama.Clear()
         txtpass.Clear()
+        txtnama.Focus()
     End Sub
 
     Private Sub txtnama_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtnama.KeyDown
