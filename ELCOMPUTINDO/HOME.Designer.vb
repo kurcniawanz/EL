@@ -34,20 +34,26 @@ Partial Class HOME
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.InputBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.KelompokBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InputPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReturPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanReturPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HistoryPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HomeToolStripMenuItem, Me.BarangToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HomeToolStripMenuItem, Me.BarangToolStripMenuItem, Me.PembelianToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1321, 24)
@@ -122,17 +128,65 @@ Partial Class HOME
         Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.StockBarangToolStripMenuItem.Text = "&Stock Barang"
         '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(168, 22)
+        Me.ToolStripMenuItem2.Text = "&Mutasi Barang"
+        '
         'InputBarangToolStripMenuItem
         '
         Me.InputBarangToolStripMenuItem.Name = "InputBarangToolStripMenuItem"
         Me.InputBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.InputBarangToolStripMenuItem.Text = "&Input Barang"
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        '
         'KelompokBarangToolStripMenuItem
         '
         Me.KelompokBarangToolStripMenuItem.Name = "KelompokBarangToolStripMenuItem"
         Me.KelompokBarangToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.KelompokBarangToolStripMenuItem.Text = "&Kelompok barang"
+        '
+        'PembelianToolStripMenuItem
+        '
+        Me.PembelianToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputPembelianToolStripMenuItem, Me.LaporanPembelianToolStripMenuItem, Me.ReturPembelianToolStripMenuItem, Me.LaporanReturPembelianToolStripMenuItem, Me.HistoryPembelianToolStripMenuItem})
+        Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
+        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
+        Me.PembelianToolStripMenuItem.Text = "&Pembelian"
+        '
+        'InputPembelianToolStripMenuItem
+        '
+        Me.InputPembelianToolStripMenuItem.Name = "InputPembelianToolStripMenuItem"
+        Me.InputPembelianToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.InputPembelianToolStripMenuItem.Text = "&Input Pembelian"
+        '
+        'LaporanPembelianToolStripMenuItem
+        '
+        Me.LaporanPembelianToolStripMenuItem.Name = "LaporanPembelianToolStripMenuItem"
+        Me.LaporanPembelianToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.LaporanPembelianToolStripMenuItem.Text = "&Laporan Pembelian"
+        '
+        'ReturPembelianToolStripMenuItem
+        '
+        Me.ReturPembelianToolStripMenuItem.Name = "ReturPembelianToolStripMenuItem"
+        Me.ReturPembelianToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.ReturPembelianToolStripMenuItem.Text = "&Retur Pembelian"
+        '
+        'LaporanReturPembelianToolStripMenuItem
+        '
+        Me.LaporanReturPembelianToolStripMenuItem.Name = "LaporanReturPembelianToolStripMenuItem"
+        Me.LaporanReturPembelianToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.LaporanReturPembelianToolStripMenuItem.Text = "&Laporan Retur Pembelian"
+        '
+        'HistoryPembelianToolStripMenuItem
+        '
+        Me.HistoryPembelianToolStripMenuItem.Name = "HistoryPembelianToolStripMenuItem"
+        Me.HistoryPembelianToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.HistoryPembelianToolStripMenuItem.Text = "&History Pembelian"
         '
         'StatusStrip1
         '
@@ -154,17 +208,6 @@ Partial Class HOME
         Me.usernya.Name = "usernya"
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(168, 22)
-        Me.ToolStripMenuItem2.Text = "&Mutasi Barang"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
         '
         'HOME
         '
@@ -205,4 +248,10 @@ Partial Class HOME
     Friend WithEvents KelompokBarangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents PembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InputPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReturPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanReturPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HistoryPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -89,6 +89,12 @@
     <Compile Include="BARANG.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CARI_BARANG.Designer.vb">
+      <DependentUpon>CARI_BARANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CARI_BARANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CATEEGORY.Designer.vb">
       <DependentUpon>CATEEGORY.vb</DependentUpon>
     </Compile>
@@ -102,10 +108,22 @@
     <Compile Include="DASHBOARD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DATA_BELI.Designer.vb">
+      <DependentUpon>DATA_BELI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_BELI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HOME.Designer.vb">
       <DependentUpon>HOME.vb</DependentUpon>
     </Compile>
     <Compile Include="HOME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INPUT_BELI.Designer.vb">
+      <DependentUpon>INPUT_BELI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INPUT_BELI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LOGIN.Designer.vb">
@@ -167,14 +185,23 @@
     <EmbeddedResource Include="BARANG.resx">
       <DependentUpon>BARANG.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CARI_BARANG.resx">
+      <DependentUpon>CARI_BARANG.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CATEEGORY.resx">
       <DependentUpon>CATEEGORY.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DASHBOARD.resx">
       <DependentUpon>DASHBOARD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DATA_BELI.resx">
+      <DependentUpon>DATA_BELI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME.resx">
       <DependentUpon>HOME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INPUT_BELI.resx">
+      <DependentUpon>INPUT_BELI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.vb</DependentUpon>

@@ -182,4 +182,30 @@ Public Class HOME
         frm.Show()
         frm.Dock = DockStyle.Fill
     End Sub
+
+    Private Sub InputPembelianToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InputPembelianToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As INPUT_BELI
+        frm = New INPUT_BELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub LaporanPembelianToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaporanPembelianToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_BELI
+        frm = New DATA_BELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
 End Class
