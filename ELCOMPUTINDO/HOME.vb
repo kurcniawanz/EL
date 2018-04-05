@@ -192,6 +192,9 @@ Public Class HOME
         frm = New INPUT_BELI
         frm.Text = "HOME"
         frm.MdiParent = Me
+        frm.Button3.Visible = True
+        frm.Button2.Visible = False
+        frm.Button1.Visible = False
         frm.Show()
         frm.Dock = DockStyle.Fill
     End Sub
@@ -203,6 +206,19 @@ Public Class HOME
         End If
         Dim frm As DATA_BELI
         frm = New DATA_BELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem2.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As MUTASI
+        frm = New MUTASI
         frm.Text = "HOME"
         frm.MdiParent = Me
         frm.Show()

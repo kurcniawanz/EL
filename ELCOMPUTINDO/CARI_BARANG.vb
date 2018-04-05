@@ -72,7 +72,14 @@ Public Class CARI_BARANG
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
-        INPUT_BELI.txtbarang.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString
+
+        Dim row As Integer
+        row = DataGridView1.CurrentRow.Index.ToString
+        Dim frm As INPUT_BELI
+        frm = CType(HOME.MdiChildren(0), Form)
+        frm.txtbarang.SelectedValue = DataGridView1.Item("DGV_ID", row).Value.ToString
+        frm.txtqty.Focus()
         Me.Close()
+
     End Sub
 End Class

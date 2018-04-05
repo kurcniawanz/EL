@@ -38,6 +38,7 @@ Partial Class CARI_BARANG
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_KELOMPOKNAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,7 +52,6 @@ Partial Class CARI_BARANG
         Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_KELOMPOK = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -164,6 +164,17 @@ Partial Class CARI_BARANG
         Me.Label1.Size = New System.Drawing.Size(170, 29)
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Cari Barang"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(17, 397)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(165, 13)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "*Click 2x untuk Pilih Barang"
         '
         'DGV_ID
         '
@@ -286,17 +297,6 @@ Partial Class CARI_BARANG
         Me.DGV_KELOMPOK.ReadOnly = True
         Me.DGV_KELOMPOK.Visible = False
         '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(17, 397)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(165, 13)
-        Me.Label5.TabIndex = 32
-        Me.Label5.Text = "*Click 2x untuk Pilih Barang"
-        '
         'CARI_BARANG
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,6 +327,8 @@ Partial Class CARI_BARANG
     Friend WithEvents carinama As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DGV_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_NAMA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_KELOMPOKNAMA As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -340,6 +342,4 @@ Partial Class CARI_BARANG
     Friend WithEvents DGV_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_KELOMPOK As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

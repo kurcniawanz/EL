@@ -26,18 +26,22 @@ Partial Class DATA_BELI
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgv_dat = New System.Windows.Forms.DataGridView()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
         Me.carisup = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtgrantotal = New System.Windows.Forms.Label()
@@ -45,11 +49,15 @@ Partial Class DATA_BELI
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
-        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dgv_det = New System.Windows.Forms.DataGridView()
+        Me.DGV_NAMABARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_HARGA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_JUMLAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_POT1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_POT2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,14 +69,8 @@ Partial Class DATA_BELI
         Me.DGV1_KET = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NAMABARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_HARGA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_JUMLAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_POT1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_POT2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV1_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV1_SUPLIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -93,7 +95,7 @@ Partial Class DATA_BELI
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_dat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_dat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_NOFAK, Me.DGV1_TGL, Me.DGV1_JT, Me.DGV1_SUPLIERNAMA, Me.DGV1_TOTAL, Me.DGV1_POT, Me.DGV1_GRANDTOTAL, Me.DGV1_KET, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP})
+        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_NOFAK, Me.DGV1_TGL, Me.DGV1_JT, Me.DGV1_SUPLIERNAMA, Me.DGV1_TOTAL, Me.DGV1_POT, Me.DGV1_GRANDTOTAL, Me.DGV1_KET, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP, Me.DGV1_BAYAR, Me.DGV1_SUPLIER})
         Me.dgv_dat.Location = New System.Drawing.Point(17, 97)
         Me.dgv_dat.Name = "dgv_dat"
         Me.dgv_dat.ReadOnly = True
@@ -104,7 +106,7 @@ Partial Class DATA_BELI
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(546, 16)
+        Me.Button4.Location = New System.Drawing.Point(546, 18)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 26
@@ -126,6 +128,40 @@ Partial Class DATA_BELI
         Me.GroupBox2.Size = New System.Drawing.Size(633, 53)
         Me.GroupBox2.TabIndex = 34
         Me.GroupBox2.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(166, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 13)
+        Me.Label3.TabIndex = 37
+        Me.Label3.Text = "s/d"
+        '
+        'tgl2
+        '
+        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl2.Location = New System.Drawing.Point(195, 19)
+        Me.tgl2.Name = "tgl2"
+        Me.tgl2.Size = New System.Drawing.Size(104, 20)
+        Me.tgl2.TabIndex = 28
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 29
+        Me.Label2.Text = "Tanggal"
+        '
+        'tgl1
+        '
+        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl1.Location = New System.Drawing.Point(56, 19)
+        Me.tgl1.Name = "tgl1"
+        Me.tgl1.Size = New System.Drawing.Size(104, 20)
+        Me.tgl1.TabIndex = 27
         '
         'carisup
         '
@@ -197,40 +233,6 @@ Partial Class DATA_BELI
         Me.Label5.TabIndex = 36
         Me.Label5.Text = "*Click 2x untuk Edit/hapus"
         '
-        'tgl1
-        '
-        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl1.Location = New System.Drawing.Point(56, 19)
-        Me.tgl1.Name = "tgl1"
-        Me.tgl1.Size = New System.Drawing.Size(104, 20)
-        Me.tgl1.TabIndex = 27
-        '
-        'tgl2
-        '
-        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl2.Location = New System.Drawing.Point(195, 19)
-        Me.tgl2.Name = "tgl2"
-        Me.tgl2.Size = New System.Drawing.Size(104, 20)
-        Me.tgl2.TabIndex = 28
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Tanggal"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(166, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 13)
-        Me.Label3.TabIndex = 37
-        Me.Label3.Text = "s/d"
-        '
         'dgv_det
         '
         Me.dgv_det.AllowUserToAddRows = False
@@ -255,6 +257,90 @@ Partial Class DATA_BELI
         Me.dgv_det.RowHeadersVisible = False
         Me.dgv_det.Size = New System.Drawing.Size(1254, 216)
         Me.dgv_det.TabIndex = 37
+        '
+        'DGV_NAMABARANG
+        '
+        Me.DGV_NAMABARANG.DataPropertyName = "NAMABARANG"
+        Me.DGV_NAMABARANG.HeaderText = "Nama Barang"
+        Me.DGV_NAMABARANG.Name = "DGV_NAMABARANG"
+        Me.DGV_NAMABARANG.ReadOnly = True
+        Me.DGV_NAMABARANG.Width = 150
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "QTY"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Format = "N0"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Qty"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 50
+        '
+        'DGV_HARGA
+        '
+        Me.DGV_HARGA.DataPropertyName = "HARGA"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle9.Format = "N2"
+        DataGridViewCellStyle9.NullValue = Nothing
+        Me.DGV_HARGA.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DGV_HARGA.HeaderText = "Harga"
+        Me.DGV_HARGA.Name = "DGV_HARGA"
+        Me.DGV_HARGA.ReadOnly = True
+        '
+        'DGV_JUMLAH
+        '
+        Me.DGV_JUMLAH.DataPropertyName = "JUMLAH"
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "N2"
+        DataGridViewCellStyle10.NullValue = Nothing
+        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DGV_JUMLAH.HeaderText = "Jumlah"
+        Me.DGV_JUMLAH.Name = "DGV_JUMLAH"
+        Me.DGV_JUMLAH.ReadOnly = True
+        '
+        'DGV_POT1
+        '
+        Me.DGV_POT1.DataPropertyName = "POT1"
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+        DataGridViewCellStyle11.Format = "N0"
+        DataGridViewCellStyle11.NullValue = Nothing
+        Me.DGV_POT1.DefaultCellStyle = DataGridViewCellStyle11
+        Me.DGV_POT1.HeaderText = "Disc(%)"
+        Me.DGV_POT1.Name = "DGV_POT1"
+        Me.DGV_POT1.ReadOnly = True
+        Me.DGV_POT1.Width = 50
+        '
+        'DGV_POT2
+        '
+        Me.DGV_POT2.DataPropertyName = "POT2"
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "N2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.DGV_POT2.DefaultCellStyle = DataGridViewCellStyle12
+        Me.DGV_POT2.HeaderText = "Disc(Rp.)"
+        Me.DGV_POT2.Name = "DGV_POT2"
+        Me.DGV_POT2.ReadOnly = True
+        '
+        'DGV_TOTAL
+        '
+        Me.DGV_TOTAL.DataPropertyName = "TOTAL"
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle13
+        Me.DGV_TOTAL.HeaderText = "Total"
+        Me.DGV_TOTAL.Name = "DGV_TOTAL"
+        Me.DGV_TOTAL.ReadOnly = True
+        '
+        'DGV_IDBARANG
+        '
+        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
+        Me.DGV_IDBARANG.HeaderText = "idbarang"
+        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
+        Me.DGV_IDBARANG.ReadOnly = True
+        Me.DGV_IDBARANG.Visible = False
         '
         'DGV1_ID
         '
@@ -352,89 +438,19 @@ Partial Class DATA_BELI
         Me.DGV1_STAMP.ReadOnly = True
         Me.DGV1_STAMP.Width = 150
         '
-        'DGV_NAMABARANG
+        'DGV1_BAYAR
         '
-        Me.DGV_NAMABARANG.DataPropertyName = "NAMABARANG"
-        Me.DGV_NAMABARANG.HeaderText = "Nama Barang"
-        Me.DGV_NAMABARANG.Name = "DGV_NAMABARANG"
-        Me.DGV_NAMABARANG.ReadOnly = True
-        Me.DGV_NAMABARANG.Width = 150
+        Me.DGV1_BAYAR.DataPropertyName = "BAYAR"
+        Me.DGV1_BAYAR.HeaderText = "Column1"
+        Me.DGV1_BAYAR.Name = "DGV1_BAYAR"
+        Me.DGV1_BAYAR.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn1
+        'DGV1_SUPLIER
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "QTY"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "N0"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle8
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Qty"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 50
-        '
-        'DGV_HARGA
-        '
-        Me.DGV_HARGA.DataPropertyName = "HARGA"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "N2"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.DGV_HARGA.DefaultCellStyle = DataGridViewCellStyle9
-        Me.DGV_HARGA.HeaderText = "Harga"
-        Me.DGV_HARGA.Name = "DGV_HARGA"
-        Me.DGV_HARGA.ReadOnly = True
-        '
-        'DGV_JUMLAH
-        '
-        Me.DGV_JUMLAH.DataPropertyName = "JUMLAH"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "N2"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle10
-        Me.DGV_JUMLAH.HeaderText = "Jumlah"
-        Me.DGV_JUMLAH.Name = "DGV_JUMLAH"
-        Me.DGV_JUMLAH.ReadOnly = True
-        '
-        'DGV_POT1
-        '
-        Me.DGV_POT1.DataPropertyName = "POT1"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-        DataGridViewCellStyle11.Format = "N0"
-        DataGridViewCellStyle11.NullValue = Nothing
-        Me.DGV_POT1.DefaultCellStyle = DataGridViewCellStyle11
-        Me.DGV_POT1.HeaderText = "Disc(%)"
-        Me.DGV_POT1.Name = "DGV_POT1"
-        Me.DGV_POT1.ReadOnly = True
-        Me.DGV_POT1.Width = 50
-        '
-        'DGV_POT2
-        '
-        Me.DGV_POT2.DataPropertyName = "POT2"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Format = "N2"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.DGV_POT2.DefaultCellStyle = DataGridViewCellStyle12
-        Me.DGV_POT2.HeaderText = "Disc(Rp.)"
-        Me.DGV_POT2.Name = "DGV_POT2"
-        Me.DGV_POT2.ReadOnly = True
-        '
-        'DGV_TOTAL
-        '
-        Me.DGV_TOTAL.DataPropertyName = "TOTAL"
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle13
-        Me.DGV_TOTAL.HeaderText = "Total"
-        Me.DGV_TOTAL.Name = "DGV_TOTAL"
-        Me.DGV_TOTAL.ReadOnly = True
-        '
-        'DGV_IDBARANG
-        '
-        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
-        Me.DGV_IDBARANG.HeaderText = "idbarang"
-        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
-        Me.DGV_IDBARANG.ReadOnly = True
-        Me.DGV_IDBARANG.Visible = False
+        Me.DGV1_SUPLIER.DataPropertyName = "SUPLIER"
+        Me.DGV1_SUPLIER.HeaderText = "Column1"
+        Me.DGV1_SUPLIER.Name = "DGV1_SUPLIER"
+        Me.DGV1_SUPLIER.ReadOnly = True
         '
         'DATA_BELI
         '
@@ -477,6 +493,14 @@ Partial Class DATA_BELI
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents dgv_det As System.Windows.Forms.DataGridView
+    Friend WithEvents DGV_NAMABARANG As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_HARGA As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_JUMLAH As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_POT1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_POT2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_TOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_IDBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_NOFAK As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_TGL As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -488,12 +512,6 @@ Partial Class DATA_BELI
     Friend WithEvents DGV1_KET As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_NAMABARANG As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_HARGA As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_JUMLAH As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_POT1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_POT2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_TOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_IDBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV1_BAYAR As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV1_SUPLIER As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

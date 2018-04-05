@@ -132,6 +132,12 @@
     <Compile Include="LOGIN.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MUTASI.Designer.vb">
+      <DependentUpon>MUTASI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MUTASI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MUTASI.resx">
+      <DependentUpon>MUTASI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
