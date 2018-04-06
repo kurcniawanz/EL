@@ -48,11 +48,20 @@ Public Class STOCK
             bb = carikel.SelectedValue
         End If
 
+        Dim cc As String = ""
+        If carimin.Checked = True Then
+            cc = "AND (m.QTY-a.MINIMAL) <= 0"
+        End If
+
         DataGridView1.AutoGenerateColumns = False
         koneksi_db()
-        Dim dA As New FbDataAdapter("SELECT a.ID,a.NAMA,a.KELOMPOK,a.SATUAN,a.HARGAJUAL,a.MINIMAL,a.KET,a.CREATE_USERID,a.STAMP," _
-                                    + "b.NAMA as KELOMPOKNAMA FROM TB_BARANG a " _
-                                    + " INNER JOIN TB_CATEGORY b ON b.ID = a.KELOMPOK WHERE a.NAMA LIKE '" & aa & "' AND a.KELOMPOK LIKE '" & bb & "'", konek)
+        Dim dA As New FbDataAdapter("SELECT a.ID,a.NAMA,a.KELOMPOK,m.QTY,(m.TOTHPP/m.QTY) as HPP,m.TOTHPP,a.SATUAN,a.HARGAJUAL,a.MINIMAL,a.KET,a.CREATE_USERID,a.STAMP, " _
+                                        + " b.NAMA as KELOMPOKNAMA FROM TB_BARANG a " _
+                                        + " INNER JOIN TB_CATEGORY b ON b.ID = a.KELOMPOK " _
+                                        + " INNER JOIN ( " _
+                                        + " SELECT IDBARANG as  BARANGID,SUM(QTY) as QTY,SUM(TOTHPP) as TOTHPP FROM TB_MUTASI GROUP BY IDBARANG " _
+                                        + " )m ON m.BARANGID = a.ID " _
+                                        + " WHERE a.NAMA LIKE '" & aa & "' AND a.KELOMPOK LIKE '" & bb & "' " & cc & " ", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()
         dA.Fill(dS)
@@ -69,6 +78,7 @@ Public Class STOCK
     Private Sub STOCK_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         nama()
         loaddata()
+        carinama.Focus()
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
@@ -98,5 +108,23 @@ Public Class STOCK
         frm.txtket.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_KET").Value.ToString
         frm.Show()
         frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub carinama_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles carinama.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            carikel.Focus()
+        End If
+    End Sub
+
+    Private Sub carikel_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles carikel.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            carimin.Focus()
+        End If
+    End Sub
+
+    Private Sub carimin_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles carimin.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button4.Focus()
+        End If
     End Sub
 End Class

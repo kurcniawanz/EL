@@ -47,13 +47,37 @@ Partial Class HOME
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.KoreksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InputPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReturPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanReturPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HistoryPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AkuntingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PiutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataKasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BiayaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PendapatanLainlainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataHutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListHutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BayarHutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataPiutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListPiutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TerimaPiutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HomeToolStripMenuItem, Me.BarangToolStripMenuItem, Me.PembelianToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HomeToolStripMenuItem, Me.BarangToolStripMenuItem, Me.PembelianToolStripMenuItem, Me.PenjualanToolStripMenuItem, Me.AkuntingToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1321, 24)
@@ -70,20 +94,20 @@ Partial Class HOME
         'PartnerToolStripMenuItem
         '
         Me.PartnerToolStripMenuItem.Name = "PartnerToolStripMenuItem"
-        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PartnerToolStripMenuItem.Text = "&Partner"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem1.Text = "&Account"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GantiPasswordToolStripMenuItem, Me.DataUserToolStripMenuItem})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'GantiPasswordToolStripMenuItem
@@ -101,12 +125,12 @@ Partial Class HOME
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(116, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'HomeToolStripMenuItem
@@ -117,7 +141,7 @@ Partial Class HOME
         '
         'BarangToolStripMenuItem
         '
-        Me.BarangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockBarangToolStripMenuItem, Me.ToolStripMenuItem2, Me.InputBarangToolStripMenuItem, Me.ToolStripSeparator2, Me.KelompokBarangToolStripMenuItem})
+        Me.BarangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockBarangToolStripMenuItem, Me.ToolStripMenuItem2, Me.InputBarangToolStripMenuItem, Me.ToolStripSeparator2, Me.KelompokBarangToolStripMenuItem, Me.KoreksiToolStripMenuItem})
         Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
         Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.BarangToolStripMenuItem.Text = "&Barang"
@@ -153,7 +177,7 @@ Partial Class HOME
         '
         'PembelianToolStripMenuItem
         '
-        Me.PembelianToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputPembelianToolStripMenuItem, Me.LaporanPembelianToolStripMenuItem, Me.ReturPembelianToolStripMenuItem, Me.LaporanReturPembelianToolStripMenuItem, Me.HistoryPembelianToolStripMenuItem})
+        Me.PembelianToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputPembelianToolStripMenuItem, Me.LaporanPembelianToolStripMenuItem, Me.ToolStripSeparator4, Me.ReturPembelianToolStripMenuItem, Me.LaporanReturPembelianToolStripMenuItem, Me.ToolStripSeparator3, Me.HistoryPembelianToolStripMenuItem})
         Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
         Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
         Me.PembelianToolStripMenuItem.Text = "&Pembelian"
@@ -209,6 +233,149 @@ Partial Class HOME
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
         '
+        'KoreksiToolStripMenuItem
+        '
+        Me.KoreksiToolStripMenuItem.Name = "KoreksiToolStripMenuItem"
+        Me.KoreksiToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.KoreksiToolStripMenuItem.Text = "&Koreksi"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(204, 6)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(204, 6)
+        '
+        'PenjualanToolStripMenuItem
+        '
+        Me.PenjualanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputPenjualanToolStripMenuItem, Me.LaporanPenjualanToolStripMenuItem, Me.ToolStripSeparator6, Me.ReturPenjualanToolStripMenuItem, Me.LaporanReturPenjualanToolStripMenuItem, Me.ToolStripSeparator5, Me.HistoryPenjualanToolStripMenuItem})
+        Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.PenjualanToolStripMenuItem.Text = "&Penjualan"
+        '
+        'InputPenjualanToolStripMenuItem
+        '
+        Me.InputPenjualanToolStripMenuItem.Name = "InputPenjualanToolStripMenuItem"
+        Me.InputPenjualanToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.InputPenjualanToolStripMenuItem.Text = "&Input Penjualan"
+        '
+        'LaporanPenjualanToolStripMenuItem
+        '
+        Me.LaporanPenjualanToolStripMenuItem.Name = "LaporanPenjualanToolStripMenuItem"
+        Me.LaporanPenjualanToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.LaporanPenjualanToolStripMenuItem.Text = "&Laporan Penjualan"
+        '
+        'ReturPenjualanToolStripMenuItem
+        '
+        Me.ReturPenjualanToolStripMenuItem.Name = "ReturPenjualanToolStripMenuItem"
+        Me.ReturPenjualanToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ReturPenjualanToolStripMenuItem.Text = "&Retur Penjualan"
+        '
+        'LaporanReturPenjualanToolStripMenuItem
+        '
+        Me.LaporanReturPenjualanToolStripMenuItem.Name = "LaporanReturPenjualanToolStripMenuItem"
+        Me.LaporanReturPenjualanToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.LaporanReturPenjualanToolStripMenuItem.Text = "&Laporan Retur Penjualan"
+        '
+        'HistoryPenjualanToolStripMenuItem
+        '
+        Me.HistoryPenjualanToolStripMenuItem.Name = "HistoryPenjualanToolStripMenuItem"
+        Me.HistoryPenjualanToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.HistoryPenjualanToolStripMenuItem.Text = "&History Penjualan"
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(200, 6)
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(200, 6)
+        '
+        'AkuntingToolStripMenuItem
+        '
+        Me.AkuntingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HutangToolStripMenuItem, Me.PiutangToolStripMenuItem, Me.ToolStripSeparator7, Me.DataKasToolStripMenuItem, Me.BiayaToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
+        Me.AkuntingToolStripMenuItem.Name = "AkuntingToolStripMenuItem"
+        Me.AkuntingToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
+        Me.AkuntingToolStripMenuItem.Text = "&Akunting"
+        '
+        'HutangToolStripMenuItem
+        '
+        Me.HutangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataHutangToolStripMenuItem, Me.ListHutangToolStripMenuItem, Me.BayarHutangToolStripMenuItem})
+        Me.HutangToolStripMenuItem.Name = "HutangToolStripMenuItem"
+        Me.HutangToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.HutangToolStripMenuItem.Text = "&Hutang"
+        '
+        'PiutangToolStripMenuItem
+        '
+        Me.PiutangToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataPiutangToolStripMenuItem, Me.ListPiutangToolStripMenuItem, Me.TerimaPiutangToolStripMenuItem})
+        Me.PiutangToolStripMenuItem.Name = "PiutangToolStripMenuItem"
+        Me.PiutangToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.PiutangToolStripMenuItem.Text = "&Piutang"
+        '
+        'DataKasToolStripMenuItem
+        '
+        Me.DataKasToolStripMenuItem.Name = "DataKasToolStripMenuItem"
+        Me.DataKasToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.DataKasToolStripMenuItem.Text = "&Data Kas"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(183, 6)
+        '
+        'BiayaToolStripMenuItem
+        '
+        Me.BiayaToolStripMenuItem.Name = "BiayaToolStripMenuItem"
+        Me.BiayaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.BiayaToolStripMenuItem.Text = "&Biaya"
+        '
+        'PendapatanLainlainToolStripMenuItem
+        '
+        Me.PendapatanLainlainToolStripMenuItem.Name = "PendapatanLainlainToolStripMenuItem"
+        Me.PendapatanLainlainToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.PendapatanLainlainToolStripMenuItem.Text = "&Pendapatan Lain-lain"
+        '
+        'DataHutangToolStripMenuItem
+        '
+        Me.DataHutangToolStripMenuItem.Name = "DataHutangToolStripMenuItem"
+        Me.DataHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DataHutangToolStripMenuItem.Text = "&Data Hutang"
+        '
+        'ListHutangToolStripMenuItem
+        '
+        Me.ListHutangToolStripMenuItem.Name = "ListHutangToolStripMenuItem"
+        Me.ListHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListHutangToolStripMenuItem.Text = "&List Hutang"
+        '
+        'BayarHutangToolStripMenuItem
+        '
+        Me.BayarHutangToolStripMenuItem.Name = "BayarHutangToolStripMenuItem"
+        Me.BayarHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BayarHutangToolStripMenuItem.Text = "&Bayar Hutang"
+        '
+        'DataPiutangToolStripMenuItem
+        '
+        Me.DataPiutangToolStripMenuItem.Name = "DataPiutangToolStripMenuItem"
+        Me.DataPiutangToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.DataPiutangToolStripMenuItem.Text = "&Data Piutang"
+        '
+        'ListPiutangToolStripMenuItem
+        '
+        Me.ListPiutangToolStripMenuItem.Name = "ListPiutangToolStripMenuItem"
+        Me.ListPiutangToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.ListPiutangToolStripMenuItem.Text = "&List Piutang"
+        '
+        'TerimaPiutangToolStripMenuItem
+        '
+        Me.TerimaPiutangToolStripMenuItem.Name = "TerimaPiutangToolStripMenuItem"
+        Me.TerimaPiutangToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.TerimaPiutangToolStripMenuItem.Text = "&Terima Piutang"
+        '
         'HOME
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -254,4 +421,28 @@ Partial Class HOME
     Friend WithEvents ReturPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaporanReturPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HistoryPembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KoreksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents PenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InputPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ReturPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanReturPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents HistoryPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AkuntingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataHutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListHutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BayarHutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PiutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataPiutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListPiutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TerimaPiutangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents DataKasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BiayaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PendapatanLainlainToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

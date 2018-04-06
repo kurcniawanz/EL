@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DATA_BELI
+Partial Class DATA_REBELI
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,6 +35,7 @@ Partial Class DATA_BELI
         Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.txtgrantotal = New System.Windows.Forms.Label()
         Me.dgv_dat = New System.Windows.Forms.DataGridView()
         Me.DGV1_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,19 +50,11 @@ Partial Class DATA_BELI
         Me.DGV1_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_SUPLIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
-        Me.carisup = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtgrantotal = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
         Me.dgv_det = New System.Windows.Forms.DataGridView()
         Me.DGV_NAMABARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,11 +64,28 @@ Partial Class DATA_BELI
         Me.DGV_POT2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.carisup = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_det, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'txtgrantotal
+        '
+        Me.txtgrantotal.AutoSize = True
+        Me.txtgrantotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtgrantotal.Location = New System.Drawing.Point(96, 21)
+        Me.txtgrantotal.Name = "txtgrantotal"
+        Me.txtgrantotal.Size = New System.Drawing.Size(14, 13)
+        Me.txtgrantotal.TabIndex = 6
+        Me.txtgrantotal.Text = "0"
         '
         'dgv_dat
         '
@@ -100,8 +110,8 @@ Partial Class DATA_BELI
         Me.dgv_dat.Name = "dgv_dat"
         Me.dgv_dat.ReadOnly = True
         Me.dgv_dat.RowHeadersVisible = False
-        Me.dgv_dat.Size = New System.Drawing.Size(1254, 351)
-        Me.dgv_dat.TabIndex = 32
+        Me.dgv_dat.Size = New System.Drawing.Size(1242, 326)
+        Me.dgv_dat.TabIndex = 38
         '
         'DGV1_ID
         '
@@ -215,94 +225,37 @@ Partial Class DATA_BELI
         Me.DGV1_SUPLIER.ReadOnly = True
         Me.DGV1_SUPLIER.Visible = False
         '
-        'Button4
+        'Label1
         '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(546, 18)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 26
-        Me.Button4.Text = "Cari"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(354, 29)
+        Me.Label1.TabIndex = 39
+        Me.Label1.Text = "Laporan Retur Pembelian"
         '
-        'GroupBox2
+        'Label5
         '
-        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.tgl2)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.tgl1)
-        Me.GroupBox2.Controls.Add(Me.Button4)
-        Me.GroupBox2.Controls.Add(Me.carisup)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(638, 41)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(633, 53)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(14, 429)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(159, 13)
+        Me.Label5.TabIndex = 42
+        Me.Label5.Text = "*Click 2x untuk Edit/hapus"
         '
-        'Label3
+        'GroupBox1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(166, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 13)
-        Me.Label3.TabIndex = 37
-        Me.Label3.Text = "s/d"
-        '
-        'tgl2
-        '
-        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl2.Location = New System.Drawing.Point(195, 19)
-        Me.tgl2.Name = "tgl2"
-        Me.tgl2.Size = New System.Drawing.Size(104, 20)
-        Me.tgl2.TabIndex = 28
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Tanggal"
-        '
-        'tgl1
-        '
-        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl1.Location = New System.Drawing.Point(56, 19)
-        Me.tgl1.Name = "tgl1"
-        Me.tgl1.Size = New System.Drawing.Size(104, 20)
-        Me.tgl1.TabIndex = 0
-        '
-        'carisup
-        '
-        Me.carisup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.carisup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.carisup.FormattingEnabled = True
-        Me.carisup.Location = New System.Drawing.Point(350, 18)
-        Me.carisup.Name = "carisup"
-        Me.carisup.Size = New System.Drawing.Size(190, 21)
-        Me.carisup.TabIndex = 7
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(305, 21)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "Suplier"
-        '
-        'txtgrantotal
-        '
-        Me.txtgrantotal.AutoSize = True
-        Me.txtgrantotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtgrantotal.Location = New System.Drawing.Point(96, 21)
-        Me.txtgrantotal.Name = "txtgrantotal"
-        Me.txtgrantotal.Size = New System.Drawing.Size(14, 13)
-        Me.txtgrantotal.TabIndex = 6
-        Me.txtgrantotal.Text = "0"
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtgrantotal)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Location = New System.Drawing.Point(971, 429)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(288, 53)
+        Me.GroupBox1.TabIndex = 41
+        Me.GroupBox1.TabStop = False
         '
         'Label6
         '
@@ -313,37 +266,13 @@ Partial Class DATA_BELI
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Grand Total Rp."
         '
-        'GroupBox1
+        'tgl2
         '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.txtgrantotal)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Location = New System.Drawing.Point(983, 454)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(288, 53)
-        Me.GroupBox1.TabIndex = 35
-        Me.GroupBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(271, 29)
-        Me.Label1.TabIndex = 33
-        Me.Label1.Text = "Laporan Pembelian"
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 454)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 13)
-        Me.Label5.TabIndex = 36
-        Me.Label5.Text = "*Click 2x untuk Edit/hapus"
+        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl2.Location = New System.Drawing.Point(195, 19)
+        Me.tgl2.Name = "tgl2"
+        Me.tgl2.Size = New System.Drawing.Size(104, 20)
+        Me.tgl2.TabIndex = 28
         '
         'dgv_det
         '
@@ -363,12 +292,12 @@ Partial Class DATA_BELI
         Me.dgv_det.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle46
         Me.dgv_det.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_det.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_NAMABARANG, Me.DataGridViewTextBoxColumn1, Me.DGV_HARGA, Me.DGV_JUMLAH, Me.DGV_POT1, Me.DGV_POT2, Me.DGV_TOTAL, Me.DGV_IDBARANG})
-        Me.dgv_det.Location = New System.Drawing.Point(17, 513)
+        Me.dgv_det.Location = New System.Drawing.Point(17, 488)
         Me.dgv_det.Name = "dgv_det"
         Me.dgv_det.ReadOnly = True
         Me.dgv_det.RowHeadersVisible = False
-        Me.dgv_det.Size = New System.Drawing.Size(1254, 216)
-        Me.dgv_det.TabIndex = 37
+        Me.dgv_det.Size = New System.Drawing.Size(1242, 249)
+        Me.dgv_det.TabIndex = 43
         '
         'DGV_NAMABARANG
         '
@@ -454,46 +383,110 @@ Partial Class DATA_BELI
         Me.DGV_IDBARANG.ReadOnly = True
         Me.DGV_IDBARANG.Visible = False
         '
-        'DATA_BELI
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(166, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 13)
+        Me.Label3.TabIndex = 37
+        Me.Label3.Text = "s/d"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.tgl2)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.tgl1)
+        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.carisup)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Location = New System.Drawing.Point(626, 38)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(633, 53)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 29
+        Me.Label2.Text = "Tanggal"
+        '
+        'tgl1
+        '
+        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl1.Location = New System.Drawing.Point(56, 19)
+        Me.tgl1.Name = "tgl1"
+        Me.tgl1.Size = New System.Drawing.Size(104, 20)
+        Me.tgl1.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(546, 18)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 26
+        Me.Button4.Text = "Cari"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'carisup
+        '
+        Me.carisup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.carisup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.carisup.FormattingEnabled = True
+        Me.carisup.Location = New System.Drawing.Point(350, 18)
+        Me.carisup.Name = "carisup"
+        Me.carisup.Size = New System.Drawing.Size(190, 21)
+        Me.carisup.TabIndex = 7
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(305, 21)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "Suplier"
+        '
+        'DATA_REBELI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1293, 741)
+        Me.ClientSize = New System.Drawing.Size(1271, 749)
         Me.ControlBox = False
-        Me.Controls.Add(Me.dgv_det)
         Me.Controls.Add(Me.dgv_dat)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.dgv_det)
+        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "DATA_BELI"
+        Me.Name = "DATA_REBELI"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "DATA_BELI"
+        Me.Text = "DATA_REBELI"
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgv_det, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents dgv_dat As System.Windows.Forms.DataGridView
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents carisup As System.Windows.Forms.ComboBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtgrantotal As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents dgv_dat As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents tgl2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents dgv_det As System.Windows.Forms.DataGridView
     Friend WithEvents DGV_NAMABARANG As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -503,6 +496,13 @@ Partial Class DATA_BELI
     Friend WithEvents DGV_POT2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_TOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_IDBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents carisup As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents DGV1_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_NOFAK As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_TGL As System.Windows.Forms.DataGridViewTextBoxColumn

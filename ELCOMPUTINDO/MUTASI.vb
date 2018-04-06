@@ -45,14 +45,34 @@ Public Class MUTASI
         Next
         totqty.Text = FormatNumber(total, 0)
         tothpp.Text = FormatNumber(jumlah, 0)
+        txthpp.Text = FormatNumber(jumlah / total, 2)
     End Sub
 
     Private Sub MUTASI_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         nama()
         loaddata()
+        tgl1.Focus()
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         loaddata()
+    End Sub
+
+    Private Sub tgl1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tgl1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            tgl2.Focus()
+        End If
+    End Sub
+
+    Private Sub tgl2_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tgl2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            carinama.Focus()
+        End If
+    End Sub
+
+    Private Sub carinama_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles carinama.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button4.Focus()
+        End If
     End Sub
 End Class

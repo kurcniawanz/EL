@@ -62,6 +62,63 @@ Public Class HOME
                 StockBarangToolStripMenuItem.Visible = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_MUTASI").ToString) Then
+                ToolStripMenuItem2.Visible = False
+            ElseIf rddd.Item("O_MUTASI") = "Y" Then
+                ToolStripMenuItem2.Visible = True
+            Else
+                ToolStripMenuItem2.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_BELI").ToString) Then
+                InputPembelianToolStripMenuItem.Visible = False
+                LaporanPembelianToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_BELI") = "Y" Then
+                InputPembelianToolStripMenuItem.Visible = True
+                LaporanPembelianToolStripMenuItem.Visible = True
+            Else
+                InputPembelianToolStripMenuItem.Visible = False
+                LaporanPembelianToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_KOREKSI").ToString) Then
+                KoreksiToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_KOREKSI") = "Y" Then
+                KoreksiToolStripMenuItem.Visible = True
+            Else
+                KoreksiToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_REBELI").ToString) Then
+                ReturPembelianToolStripMenuItem.Visible = False
+                LaporanReturPembelianToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_REBELI") = "Y" Then
+                ReturPembelianToolStripMenuItem.Visible = True
+                LaporanReturPembelianToolStripMenuItem.Visible = True
+            Else
+                ReturPembelianToolStripMenuItem.Visible = False
+                LaporanReturPembelianToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_HISTORI_BELI").ToString) Then
+                HistoryPembelianToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_HISTORI_BELI") = "Y" Then
+                HistoryPembelianToolStripMenuItem.Visible = True
+            Else
+                HistoryPembelianToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_JUAL").ToString) Then
+                InputPenjualanToolStripMenuItem.Visible = False
+                LaporanPenjualanToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_JUAL") = "Y" Then
+                InputPenjualanToolStripMenuItem.Visible = True
+                LaporanPenjualanToolStripMenuItem.Visible = True
+            Else
+                InputPenjualanToolStripMenuItem.Visible = False
+                LaporanPenjualanToolStripMenuItem.Visible = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -219,6 +276,90 @@ Public Class HOME
         End If
         Dim frm As MUTASI
         frm = New MUTASI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub KoreksiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KoreksiToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As KOREKSI
+        frm = New KOREKSI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ReturPembelianToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReturPembelianToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As INPUT_REBELI
+        frm = New INPUT_REBELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Button3.Visible = True
+        frm.Button2.Visible = False
+        frm.Button1.Visible = False
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub LaporanReturPembelianToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaporanReturPembelianToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_REBELI
+        frm = New DATA_REBELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub HistoryPembelianToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HistoryPembelianToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As HISTORI_BELI
+        frm = New HISTORI_BELI
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub InputPenjualanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InputPenjualanToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As INPUT_JUAL
+        frm = New INPUT_JUAL
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Button3.Visible = True
+        frm.Button2.Visible = False
+        frm.Button1.Visible = False
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub LaporanPenjualanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaporanPenjualanToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_JUAL
+        frm = New DATA_JUAL
         frm.Text = "HOME"
         frm.MdiParent = Me
         frm.Show()

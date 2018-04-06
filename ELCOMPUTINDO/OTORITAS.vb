@@ -66,6 +66,54 @@ Public Class OTORITAS
                 c_stock.Checked = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_MUTASI").ToString) Then
+                c_mutasi.Checked = False
+            ElseIf rddd.Item("O_MUTASI") = "Y" Then
+                c_mutasi.Checked = True
+            Else
+                c_mutasi.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_BELI").ToString) Then
+                c_beli.Checked = False
+            ElseIf rddd.Item("O_BELI") = "Y" Then
+                c_beli.Checked = True
+            Else
+                c_beli.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_KOREKSI").ToString) Then
+                c_koreksi.Checked = False
+            ElseIf rddd.Item("O_KOREKSI") = "Y" Then
+                c_koreksi.Checked = True
+            Else
+                c_koreksi.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_REBELI").ToString) Then
+                c_rebeli.Checked = False
+            ElseIf rddd.Item("O_REBELI") = "Y" Then
+                c_rebeli.Checked = True
+            Else
+                c_rebeli.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_HISTORI_BELI").ToString) Then
+                c_historibeli.Checked = False
+            ElseIf rddd.Item("O_HISTORI_BELI") = "Y" Then
+                c_historibeli.Checked = True
+            Else
+                c_historibeli.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_JUAL").ToString) Then
+                c_jual.Checked = False
+            ElseIf rddd.Item("O_JUAL") = "Y" Then
+                c_jual.Checked = True
+            Else
+                c_jual.Checked = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -103,6 +151,36 @@ Public Class OTORITAS
             tmp_stock = "Y"
         End If
 
+        Dim tmp_mutasi As String = "N"
+        If c_mutasi.Checked = True Then
+            tmp_mutasi = "Y"
+        End If
+
+        Dim tmp_beli As String = "N"
+        If c_beli.Checked = True Then
+            tmp_beli = "Y"
+        End If
+
+        Dim tmp_koreksi As String = "N"
+        If c_koreksi.Checked = True Then
+            tmp_koreksi = "Y"
+        End If
+
+        Dim tmp_rebeli As String = "N"
+        If c_rebeli.Checked = True Then
+            tmp_rebeli = "Y"
+        End If
+
+        Dim tmp_historibeli As String = "N"
+        If c_historibeli.Checked = True Then
+            tmp_historibeli = "Y"
+        End If
+
+        Dim tmp_jual As String = "N"
+        If c_jual.Checked = True Then
+            tmp_jual = "Y"
+        End If
+
         Dim edit As String
         edit = "UPDATE TB_OTORITAS SET " _
             + " O_ACCOUNT = '" & tmp_account & "', " _
@@ -110,7 +188,13 @@ Public Class OTORITAS
             + " O_PARTNER = '" & tmp_partner & "', " _
             + " O_BARANG = '" & tmp_barang & "', " _
             + " O_STOCK = '" & tmp_stock & "', " _
-            + " O_CATEGORY = '" & tmp_category & "' " _
+            + " O_CATEGORY = '" & tmp_category & "' ," _
+            + " O_MUTASI = '" & tmp_mutasi & "', " _
+            + " O_BELI = '" & tmp_beli & "', " _
+            + " O_KOREKSI = '" & tmp_koreksi & "', " _
+            + " O_REBELI = '" & tmp_rebeli & "'," _
+            + " O_HISTORI_BELI = '" & tmp_historibeli & "'," _
+            + " O_JUAL = '" & tmp_jual & "'" _
             + " WHERE NAMA = '" & txtnamauser.Text & "' "
         callprogress(edit)
         Me.Close()

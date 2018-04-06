@@ -22,26 +22,12 @@ Partial Class MUTASI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.carinama = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.tothpp = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.totqty = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
         Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +39,22 @@ Partial Class MUTASI
         Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.carinama = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tothpp = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txthpp = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.totqty = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -62,19 +64,19 @@ Partial Class MUTASI
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_TGL, Me.DGV_NOFAK, Me.DGV_NAMA, Me.DGV_QTY, Me.DGV_SATUAN, Me.DGV_HPP, Me.DGV_TOTHPP, Me.DGV_CREATE_USERID, Me.DGV_STAMP, Me.DGV_IDBARANG})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 100)
@@ -83,6 +85,102 @@ Partial Class MUTASI
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(1254, 513)
         Me.DataGridView1.TabIndex = 32
+        '
+        'DGV_ID
+        '
+        Me.DGV_ID.DataPropertyName = "ID"
+        Me.DGV_ID.HeaderText = "ID"
+        Me.DGV_ID.Name = "DGV_ID"
+        Me.DGV_ID.ReadOnly = True
+        Me.DGV_ID.Visible = False
+        Me.DGV_ID.Width = 40
+        '
+        'DGV_TGL
+        '
+        Me.DGV_TGL.DataPropertyName = "TGL"
+        Me.DGV_TGL.HeaderText = "Tanggal Faktur"
+        Me.DGV_TGL.Name = "DGV_TGL"
+        Me.DGV_TGL.ReadOnly = True
+        '
+        'DGV_NOFAK
+        '
+        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
+        Me.DGV_NOFAK.HeaderText = "Nomor Faktur"
+        Me.DGV_NOFAK.Name = "DGV_NOFAK"
+        Me.DGV_NOFAK.ReadOnly = True
+        '
+        'DGV_NAMA
+        '
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Nama Barang"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 200
+        '
+        'DGV_QTY
+        '
+        Me.DGV_QTY.DataPropertyName = "QTY"
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle18.Format = "N0"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle18
+        Me.DGV_QTY.HeaderText = "QTY"
+        Me.DGV_QTY.Name = "DGV_QTY"
+        Me.DGV_QTY.ReadOnly = True
+        '
+        'DGV_SATUAN
+        '
+        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
+        Me.DGV_SATUAN.HeaderText = "Satuan"
+        Me.DGV_SATUAN.Name = "DGV_SATUAN"
+        Me.DGV_SATUAN.ReadOnly = True
+        '
+        'DGV_HPP
+        '
+        Me.DGV_HPP.DataPropertyName = "HPP"
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle19.Format = "N2"
+        DataGridViewCellStyle19.NullValue = Nothing
+        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle19
+        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
+        Me.DGV_HPP.Name = "DGV_HPP"
+        Me.DGV_HPP.ReadOnly = True
+        '
+        'DGV_TOTHPP
+        '
+        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle20.Format = "N2"
+        DataGridViewCellStyle20.NullValue = Nothing
+        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle20
+        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
+        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
+        Me.DGV_TOTHPP.ReadOnly = True
+        '
+        'DGV_CREATE_USERID
+        '
+        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_UID"
+        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
+        Me.DGV_CREATE_USERID.ReadOnly = True
+        Me.DGV_CREATE_USERID.Width = 150
+        '
+        'DGV_STAMP
+        '
+        Me.DGV_STAMP.DataPropertyName = "STAMP"
+        Me.DGV_STAMP.HeaderText = "STAMP"
+        Me.DGV_STAMP.Name = "DGV_STAMP"
+        Me.DGV_STAMP.ReadOnly = True
+        Me.DGV_STAMP.Width = 150
+        '
+        'DGV_IDBARANG
+        '
+        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
+        Me.DGV_IDBARANG.HeaderText = "Nama Barang"
+        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
+        Me.DGV_IDBARANG.ReadOnly = True
+        Me.DGV_IDBARANG.Visible = False
+        Me.DGV_IDBARANG.Width = 200
         '
         'Button4
         '
@@ -107,8 +205,42 @@ Partial Class MUTASI
         Me.GroupBox2.Location = New System.Drawing.Point(611, 41)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(660, 53)
-        Me.GroupBox2.TabIndex = 34
+        Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
+        '
+        'tgl2
+        '
+        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl2.Location = New System.Drawing.Point(190, 19)
+        Me.tgl2.Name = "tgl2"
+        Me.tgl2.Size = New System.Drawing.Size(106, 20)
+        Me.tgl2.TabIndex = 32
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(164, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(23, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "s/d"
+        '
+        'tgl1
+        '
+        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl1.Location = New System.Drawing.Point(52, 19)
+        Me.tgl1.Name = "tgl1"
+        Me.tgl1.Size = New System.Drawing.Size(106, 20)
+        Me.tgl1.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Periode"
         '
         'carinama
         '
@@ -133,7 +265,7 @@ Partial Class MUTASI
         '
         Me.tothpp.AutoSize = True
         Me.tothpp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tothpp.Location = New System.Drawing.Point(375, 21)
+        Me.tothpp.Location = New System.Drawing.Point(494, 21)
         Me.tothpp.Name = "tothpp"
         Me.tothpp.Size = New System.Drawing.Size(14, 13)
         Me.tothpp.TabIndex = 6
@@ -142,7 +274,7 @@ Partial Class MUTASI
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(300, 21)
+        Me.Label6.Location = New System.Drawing.Point(419, 21)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
         Me.Label6.TabIndex = 5
@@ -151,15 +283,36 @@ Partial Class MUTASI
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txthpp)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.tothpp)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.totqty)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(680, 619)
+        Me.GroupBox1.Location = New System.Drawing.Point(627, 619)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(591, 53)
+        Me.GroupBox1.Size = New System.Drawing.Size(644, 53)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
+        '
+        'txthpp
+        '
+        Me.txthpp.AutoSize = True
+        Me.txthpp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txthpp.Location = New System.Drawing.Point(275, 21)
+        Me.txthpp.Name = "txthpp"
+        Me.txthpp.Size = New System.Drawing.Size(14, 13)
+        Me.txthpp.TabIndex = 8
+        Me.txthpp.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(228, 21)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 13)
+        Me.Label7.TabIndex = 7
+        Me.Label7.Text = "Hpp Rp."
         '
         'totqty
         '
@@ -189,135 +342,6 @@ Partial Class MUTASI
         Me.Label1.Size = New System.Drawing.Size(206, 29)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "Mutasi Barang"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Periode"
-        '
-        'tgl1
-        '
-        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl1.Location = New System.Drawing.Point(52, 19)
-        Me.tgl1.Name = "tgl1"
-        Me.tgl1.Size = New System.Drawing.Size(106, 20)
-        Me.tgl1.TabIndex = 30
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(164, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(23, 13)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "s/d"
-        '
-        'tgl2
-        '
-        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl2.Location = New System.Drawing.Point(190, 19)
-        Me.tgl2.Name = "tgl2"
-        Me.tgl2.Size = New System.Drawing.Size(106, 20)
-        Me.tgl2.TabIndex = 32
-        '
-        'DGV_ID
-        '
-        Me.DGV_ID.DataPropertyName = "ID"
-        Me.DGV_ID.HeaderText = "ID"
-        Me.DGV_ID.Name = "DGV_ID"
-        Me.DGV_ID.ReadOnly = True
-        Me.DGV_ID.Width = 40
-        '
-        'DGV_TGL
-        '
-        Me.DGV_TGL.DataPropertyName = "TGL"
-        Me.DGV_TGL.HeaderText = "Tanggal Faktur"
-        Me.DGV_TGL.Name = "DGV_TGL"
-        Me.DGV_TGL.ReadOnly = True
-        '
-        'DGV_NOFAK
-        '
-        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
-        Me.DGV_NOFAK.HeaderText = "Nomor Faktur"
-        Me.DGV_NOFAK.Name = "DGV_NOFAK"
-        Me.DGV_NOFAK.ReadOnly = True
-        '
-        'DGV_NAMA
-        '
-        Me.DGV_NAMA.DataPropertyName = "NAMA"
-        Me.DGV_NAMA.HeaderText = "Nama Barang"
-        Me.DGV_NAMA.Name = "DGV_NAMA"
-        Me.DGV_NAMA.ReadOnly = True
-        Me.DGV_NAMA.Width = 200
-        '
-        'DGV_QTY
-        '
-        Me.DGV_QTY.DataPropertyName = "QTY"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV_QTY.HeaderText = "QTY"
-        Me.DGV_QTY.Name = "DGV_QTY"
-        Me.DGV_QTY.ReadOnly = True
-        '
-        'DGV_SATUAN
-        '
-        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
-        Me.DGV_SATUAN.HeaderText = "Satuan"
-        Me.DGV_SATUAN.Name = "DGV_SATUAN"
-        Me.DGV_SATUAN.ReadOnly = True
-        '
-        'DGV_HPP
-        '
-        Me.DGV_HPP.DataPropertyName = "HPP"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
-        Me.DGV_HPP.Name = "DGV_HPP"
-        Me.DGV_HPP.ReadOnly = True
-        '
-        'DGV_TOTHPP
-        '
-        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
-        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
-        Me.DGV_TOTHPP.ReadOnly = True
-        '
-        'DGV_CREATE_USERID
-        '
-        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_UID"
-        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
-        Me.DGV_CREATE_USERID.ReadOnly = True
-        Me.DGV_CREATE_USERID.Width = 150
-        '
-        'DGV_STAMP
-        '
-        Me.DGV_STAMP.DataPropertyName = "STAMP"
-        Me.DGV_STAMP.HeaderText = "STAMP"
-        Me.DGV_STAMP.Name = "DGV_STAMP"
-        Me.DGV_STAMP.ReadOnly = True
-        Me.DGV_STAMP.Width = 150
-        '
-        'DGV_IDBARANG
-        '
-        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
-        Me.DGV_IDBARANG.HeaderText = "Nama Barang"
-        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
-        Me.DGV_IDBARANG.ReadOnly = True
-        Me.DGV_IDBARANG.Visible = False
-        Me.DGV_IDBARANG.Width = 200
         '
         'MUTASI
         '
@@ -357,6 +381,8 @@ Partial Class MUTASI
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txthpp As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents DGV_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_TGL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_NOFAK As System.Windows.Forms.DataGridViewTextBoxColumn

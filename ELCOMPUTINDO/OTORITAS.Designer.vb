@@ -27,14 +27,20 @@ Partial Class OTORITAS
         Me.txtnamauser = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.c_historibeli = New System.Windows.Forms.CheckBox()
+        Me.c_rebeli = New System.Windows.Forms.CheckBox()
+        Me.c_koreksi = New System.Windows.Forms.CheckBox()
+        Me.c_beli = New System.Windows.Forms.CheckBox()
+        Me.c_mutasi = New System.Windows.Forms.CheckBox()
+        Me.c_stock = New System.Windows.Forms.CheckBox()
+        Me.c_barang = New System.Windows.Forms.CheckBox()
         Me.c_category = New System.Windows.Forms.CheckBox()
         Me.c_partner = New System.Windows.Forms.CheckBox()
         Me.c_account = New System.Windows.Forms.CheckBox()
         Me.c_user = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.c_stock = New System.Windows.Forms.CheckBox()
-        Me.c_barang = New System.Windows.Forms.CheckBox()
+        Me.c_jual = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -80,6 +86,12 @@ Partial Class OTORITAS
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.c_jual)
+        Me.GroupBox2.Controls.Add(Me.c_historibeli)
+        Me.GroupBox2.Controls.Add(Me.c_rebeli)
+        Me.GroupBox2.Controls.Add(Me.c_koreksi)
+        Me.GroupBox2.Controls.Add(Me.c_beli)
+        Me.GroupBox2.Controls.Add(Me.c_mutasi)
         Me.GroupBox2.Controls.Add(Me.c_stock)
         Me.GroupBox2.Controls.Add(Me.c_barang)
         Me.GroupBox2.Controls.Add(Me.c_category)
@@ -91,6 +103,76 @@ Partial Class OTORITAS
         Me.GroupBox2.Size = New System.Drawing.Size(200, 310)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
+        '
+        'c_historibeli
+        '
+        Me.c_historibeli.AutoSize = True
+        Me.c_historibeli.Location = New System.Drawing.Point(9, 249)
+        Me.c_historibeli.Name = "c_historibeli"
+        Me.c_historibeli.Size = New System.Drawing.Size(110, 17)
+        Me.c_historibeli.TabIndex = 15
+        Me.c_historibeli.Text = "History Pembelian"
+        Me.c_historibeli.UseVisualStyleBackColor = True
+        '
+        'c_rebeli
+        '
+        Me.c_rebeli.AutoSize = True
+        Me.c_rebeli.Location = New System.Drawing.Point(9, 226)
+        Me.c_rebeli.Name = "c_rebeli"
+        Me.c_rebeli.Size = New System.Drawing.Size(104, 17)
+        Me.c_rebeli.TabIndex = 14
+        Me.c_rebeli.Text = "Retur Pembelian"
+        Me.c_rebeli.UseVisualStyleBackColor = True
+        '
+        'c_koreksi
+        '
+        Me.c_koreksi.AutoSize = True
+        Me.c_koreksi.Location = New System.Drawing.Point(9, 203)
+        Me.c_koreksi.Name = "c_koreksi"
+        Me.c_koreksi.Size = New System.Drawing.Size(92, 17)
+        Me.c_koreksi.TabIndex = 13
+        Me.c_koreksi.Text = "Koreksi Stock"
+        Me.c_koreksi.UseVisualStyleBackColor = True
+        '
+        'c_beli
+        '
+        Me.c_beli.AutoSize = True
+        Me.c_beli.Location = New System.Drawing.Point(9, 180)
+        Me.c_beli.Name = "c_beli"
+        Me.c_beli.Size = New System.Drawing.Size(75, 17)
+        Me.c_beli.TabIndex = 12
+        Me.c_beli.Text = "Pembelian"
+        Me.c_beli.UseVisualStyleBackColor = True
+        '
+        'c_mutasi
+        '
+        Me.c_mutasi.AutoSize = True
+        Me.c_mutasi.Location = New System.Drawing.Point(9, 157)
+        Me.c_mutasi.Name = "c_mutasi"
+        Me.c_mutasi.Size = New System.Drawing.Size(94, 17)
+        Me.c_mutasi.TabIndex = 11
+        Me.c_mutasi.Text = "Mutasi Barang"
+        Me.c_mutasi.UseVisualStyleBackColor = True
+        '
+        'c_stock
+        '
+        Me.c_stock.AutoSize = True
+        Me.c_stock.Location = New System.Drawing.Point(9, 134)
+        Me.c_stock.Name = "c_stock"
+        Me.c_stock.Size = New System.Drawing.Size(91, 17)
+        Me.c_stock.TabIndex = 10
+        Me.c_stock.Text = "Stock Barang"
+        Me.c_stock.UseVisualStyleBackColor = True
+        '
+        'c_barang
+        '
+        Me.c_barang.AutoSize = True
+        Me.c_barang.Location = New System.Drawing.Point(9, 111)
+        Me.c_barang.Name = "c_barang"
+        Me.c_barang.Size = New System.Drawing.Size(87, 17)
+        Me.c_barang.TabIndex = 9
+        Me.c_barang.Text = "Input Barang"
+        Me.c_barang.UseVisualStyleBackColor = True
         '
         'c_category
         '
@@ -151,25 +233,15 @@ Partial Class OTORITAS
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'c_stock
+        'c_jual
         '
-        Me.c_stock.AutoSize = True
-        Me.c_stock.Location = New System.Drawing.Point(9, 134)
-        Me.c_stock.Name = "c_stock"
-        Me.c_stock.Size = New System.Drawing.Size(91, 17)
-        Me.c_stock.TabIndex = 10
-        Me.c_stock.Text = "Stock Barang"
-        Me.c_stock.UseVisualStyleBackColor = True
-        '
-        'c_barang
-        '
-        Me.c_barang.AutoSize = True
-        Me.c_barang.Location = New System.Drawing.Point(9, 111)
-        Me.c_barang.Name = "c_barang"
-        Me.c_barang.Size = New System.Drawing.Size(87, 17)
-        Me.c_barang.TabIndex = 9
-        Me.c_barang.Text = "Input Barang"
-        Me.c_barang.UseVisualStyleBackColor = True
+        Me.c_jual.AutoSize = True
+        Me.c_jual.Location = New System.Drawing.Point(9, 272)
+        Me.c_jual.Name = "c_jual"
+        Me.c_jual.Size = New System.Drawing.Size(73, 17)
+        Me.c_jual.TabIndex = 16
+        Me.c_jual.Text = "Penjualan"
+        Me.c_jual.UseVisualStyleBackColor = True
         '
         'OTORITAS
         '
@@ -208,4 +280,10 @@ Partial Class OTORITAS
     Friend WithEvents c_category As System.Windows.Forms.CheckBox
     Friend WithEvents c_stock As System.Windows.Forms.CheckBox
     Friend WithEvents c_barang As System.Windows.Forms.CheckBox
+    Friend WithEvents c_beli As System.Windows.Forms.CheckBox
+    Friend WithEvents c_mutasi As System.Windows.Forms.CheckBox
+    Friend WithEvents c_koreksi As System.Windows.Forms.CheckBox
+    Friend WithEvents c_rebeli As System.Windows.Forms.CheckBox
+    Friend WithEvents c_historibeli As System.Windows.Forms.CheckBox
+    Friend WithEvents c_jual As System.Windows.Forms.CheckBox
 End Class
