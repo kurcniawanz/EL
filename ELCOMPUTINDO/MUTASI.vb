@@ -75,4 +75,12 @@ Public Class MUTASI
             Button4.Focus()
         End If
     End Sub
+
+    Private Sub DataGridView1_CellFormatting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        For i As Integer = 0 To DataGridView1.RowCount - 1
+            If CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) <= 0 Then
+                DataGridView1.Rows(i).DefaultCellStyle.ForeColor = Color.Red
+            End If
+        Next
+    End Sub
 End Class

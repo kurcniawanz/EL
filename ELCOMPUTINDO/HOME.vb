@@ -119,6 +119,41 @@ Public Class HOME
                 LaporanPenjualanToolStripMenuItem.Visible = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_REJUAL").ToString) Then
+                ReturPenjualanToolStripMenuItem.Visible = False
+                LaporanReturPenjualanToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_REJUAL") = "Y" Then
+                ReturPenjualanToolStripMenuItem.Visible = True
+                LaporanReturPenjualanToolStripMenuItem.Visible = True
+            Else
+                ReturPenjualanToolStripMenuItem.Visible = False
+                LaporanReturPenjualanToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_HISTORI_JUAL").ToString) Then
+                HistoryPenjualanToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_HISTORI_JUAL") = "Y" Then
+                HistoryPenjualanToolStripMenuItem.Visible = True
+            Else
+                HistoryPenjualanToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_HUTANG").ToString) Then
+                HutangToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_HUTANG") = "Y" Then
+                HutangToolStripMenuItem.Visible = True
+            Else
+                HutangToolStripMenuItem.Visible = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_PIUTANG").ToString) Then
+                PiutangToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_PIUTANG") = "Y" Then
+                PiutangToolStripMenuItem.Visible = True
+            Else
+                PiutangToolStripMenuItem.Visible = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -360,6 +395,113 @@ Public Class HOME
         End If
         Dim frm As DATA_JUAL
         frm = New DATA_JUAL
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ReturPenjualanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReturPenjualanToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As INPUT_REJUAL
+        frm = New INPUT_REJUAL
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Button3.Visible = True
+        frm.Button2.Visible = False
+        frm.Button1.Visible = False
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub LaporanReturPenjualanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaporanReturPenjualanToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_REJUAL
+        frm = New DATA_REJUAL
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub HistoryPenjualanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HistoryPenjualanToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As HISTORI_JUAL
+        frm = New HISTORI_JUAL
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub DataHutangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataHutangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_HUTANG
+        frm = New DATA_HUTANG
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ListHutangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListHutangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As LIST_HUTANG
+        frm = New LIST_HUTANG
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub DataPiutangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataPiutangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_PIUTANG
+        frm = New DATA_PIUTANG
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ListPiutangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListPiutangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As LIST_PIUTANG
+        frm = New LIST_PIUTANG
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub BayarHutangToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BayarHutangToolStripMenuItem.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As BAYAR_HUTANG
+        frm = New BAYAR_HUTANG
         frm.Text = "HOME"
         frm.MdiParent = Me
         frm.Show()

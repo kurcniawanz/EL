@@ -89,6 +89,12 @@
     <Compile Include="BARANG.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BAYAR_HUTANG.Designer.vb">
+      <DependentUpon>BAYAR_HUTANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BAYAR_HUTANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CARI_BARANG.Designer.vb">
       <DependentUpon>CARI_BARANG.vb</DependentUpon>
     </Compile>
@@ -114,10 +120,22 @@
     <Compile Include="DATA_BELI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DATA_HUTANG.Designer.vb">
+      <DependentUpon>DATA_HUTANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_HUTANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DATA_JUAL.Designer.vb">
       <DependentUpon>DATA_JUAL.vb</DependentUpon>
     </Compile>
     <Compile Include="DATA_JUAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA_PIUTANG.Designer.vb">
+      <DependentUpon>DATA_PIUTANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_PIUTANG.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DATA_REBELI.Designer.vb">
@@ -126,10 +144,22 @@
     <Compile Include="DATA_REBELI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DATA_REJUAL.Designer.vb">
+      <DependentUpon>DATA_REJUAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_REJUAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HISTORI_BELI.Designer.vb">
       <DependentUpon>HISTORI_BELI.vb</DependentUpon>
     </Compile>
     <Compile Include="HISTORI_BELI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HISTORI_JUAL.Designer.vb">
+      <DependentUpon>HISTORI_JUAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HISTORI_JUAL.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HOME.Designer.vb">
@@ -156,10 +186,28 @@
     <Compile Include="INPUT_REBELI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INPUT_REJUAL.Designer.vb">
+      <DependentUpon>INPUT_REJUAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INPUT_REJUAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KOREKSI.Designer.vb">
       <DependentUpon>KOREKSI.vb</DependentUpon>
     </Compile>
     <Compile Include="KOREKSI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIST_HUTANG.Designer.vb">
+      <DependentUpon>LIST_HUTANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LIST_HUTANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIST_PIUTANG.Designer.vb">
+      <DependentUpon>LIST_PIUTANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LIST_PIUTANG.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LOGIN.Designer.vb">
@@ -227,6 +275,9 @@
     <EmbeddedResource Include="BARANG.resx">
       <DependentUpon>BARANG.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BAYAR_HUTANG.resx">
+      <DependentUpon>BAYAR_HUTANG.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CARI_BARANG.resx">
       <DependentUpon>CARI_BARANG.vb</DependentUpon>
     </EmbeddedResource>
@@ -239,14 +290,26 @@
     <EmbeddedResource Include="DATA_BELI.resx">
       <DependentUpon>DATA_BELI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DATA_HUTANG.resx">
+      <DependentUpon>DATA_HUTANG.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DATA_JUAL.resx">
       <DependentUpon>DATA_JUAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA_PIUTANG.resx">
+      <DependentUpon>DATA_PIUTANG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DATA_REBELI.resx">
       <DependentUpon>DATA_REBELI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DATA_REJUAL.resx">
+      <DependentUpon>DATA_REJUAL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HISTORI_BELI.resx">
       <DependentUpon>HISTORI_BELI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HISTORI_JUAL.resx">
+      <DependentUpon>HISTORI_JUAL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME.resx">
       <DependentUpon>HOME.vb</DependentUpon>
@@ -260,8 +323,17 @@
     <EmbeddedResource Include="INPUT_REBELI.resx">
       <DependentUpon>INPUT_REBELI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INPUT_REJUAL.resx">
+      <DependentUpon>INPUT_REJUAL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KOREKSI.resx">
       <DependentUpon>KOREKSI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIST_HUTANG.resx">
+      <DependentUpon>LIST_HUTANG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIST_PIUTANG.resx">
+      <DependentUpon>LIST_PIUTANG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.vb</DependentUpon>

@@ -114,6 +114,38 @@ Public Class OTORITAS
                 c_jual.Checked = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_HISTORI_JUAL").ToString) Then
+                c_historijual.Checked = False
+            ElseIf rddd.Item("O_HISTORI_JUAL") = "Y" Then
+                c_historijual.Checked = True
+            Else
+                c_historijual.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_REJUAL").ToString) Then
+                c_rejual.Checked = False
+            ElseIf rddd.Item("O_REJUAL") = "Y" Then
+                c_rejual.Checked = True
+            Else
+                c_rejual.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_HUTANG").ToString) Then
+                c_hutang.Checked = False
+            ElseIf rddd.Item("O_HUTANG") = "Y" Then
+                c_hutang.Checked = True
+            Else
+                c_hutang.Checked = False
+            End If
+
+            If String.IsNullOrEmpty(rddd.Item("O_PIUTANG").ToString) Then
+                c_piutang.Checked = False
+            ElseIf rddd.Item("O_PIUTANG") = "Y" Then
+                c_piutang.Checked = True
+            Else
+                c_piutang.Checked = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -181,6 +213,26 @@ Public Class OTORITAS
             tmp_jual = "Y"
         End If
 
+        Dim tmp_rejual As String = "N"
+        If c_rejual.Checked = True Then
+            tmp_rejual = "Y"
+        End If
+
+        Dim tmp_historijual As String = "N"
+        If c_historijual.Checked = True Then
+            tmp_historijual = "Y"
+        End If
+
+        Dim tmp_hutang As String = "N"
+        If c_hutang.Checked = True Then
+            tmp_hutang = "Y"
+        End If
+
+        Dim tmp_piutang As String = "N"
+        If c_piutang.Checked = True Then
+            tmp_piutang = "Y"
+        End If
+
         Dim edit As String
         edit = "UPDATE TB_OTORITAS SET " _
             + " O_ACCOUNT = '" & tmp_account & "', " _
@@ -194,7 +246,11 @@ Public Class OTORITAS
             + " O_KOREKSI = '" & tmp_koreksi & "', " _
             + " O_REBELI = '" & tmp_rebeli & "'," _
             + " O_HISTORI_BELI = '" & tmp_historibeli & "'," _
-            + " O_JUAL = '" & tmp_jual & "'" _
+            + " O_JUAL = '" & tmp_jual & "'," _
+            + " O_HISTORI_JUAL = '" & tmp_historijual & "'," _
+            + " O_REJUAL = '" & tmp_rejual & ",'" _
+            + " O_HUTANG = '" & tmp_hutang & "'," _
+            + " O_PIUTANG = '" & tmp_piutang & "'" _
             + " WHERE NAMA = '" & txtnamauser.Text & "' "
         callprogress(edit)
         Me.Close()

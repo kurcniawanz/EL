@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports FirebirdSql.Data.FirebirdClient
-Public Class HISTORI_BELI
+Public Class HISTORI_JUAL
 
     Sub namabarang()
         caribarang.Items.Clear()
@@ -38,13 +38,13 @@ Public Class HISTORI_BELI
         koneksi_db()
         Dim dA As New FbDataAdapter("SELECT z.* FROM ( " _
                                     + " SELECT a.ID,b.TGL, a.NOFAK, c.NAMA, -a.QTY AS QTY, a.HARGA, a.HARGA*-a.QTY AS JUMLAH, a.POT1, a.POT2, -a.TOTAL AS TOTAL, a.CREATE_USERID, a.STAMP " _
-                                    + " FROM TB_REBELI_DET a " _
-                                    + " INNER JOIN TB_REBELI b ON b.NOFAK = a.NOFAK " _
+                                    + " FROM TB_REJUAL_DET a " _
+                                    + " INNER JOIN TB_REJUAL b ON b.NOFAK = a.NOFAK " _
                                     + " INNER JOIN TB_BARANG c ON c.ID = a.IDBARANG " _
                                     + " union " _
                                     + " SELECT a.ID,b.TGL, a.NOFAK, c.NAMA, a.QTY AS QTY, a.HARGA, a.HARGA*a.QTY AS JUMLAH, a.POT1, a.POT2,a.TOTAL AS TOTAL, a.CREATE_USERID, a.STAMP " _
-                                    + " FROM TB_BELI_DET a " _
-                                    + " INNER JOIN TB_BELI b ON b.NOFAK = a.NOFAK " _
+                                    + " FROM TB_JUAL_DET a " _
+                                    + " INNER JOIN TB_JUAL b ON b.NOFAK = a.NOFAK " _
                                     + " INNER JOIN TB_BARANG c ON c.ID = a.IDBARANG )z " _
                                     + " WHERE z.TGL BETWEEN '" & CDate(tgl1.Text) & "' and '" & CDate(tgl2.Text) & "' AND z.NAMA LIKE '" & aa & "' AND z.NOFAK LIKE '" & bb & "'", konek)
         Dim dS As DataTable = New DataTable
@@ -64,7 +64,7 @@ Public Class HISTORI_BELI
         totqty.Text = FormatNumber(ttotqty, 0)
     End Sub
 
-    Private Sub HISTORI_BELI_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub HISTORI_JUAL_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         namabarang()
         loaddata()
         tgl1.Focus()
