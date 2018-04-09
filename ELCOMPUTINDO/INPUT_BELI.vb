@@ -321,13 +321,13 @@ Public Class INPUT_BELI
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         If txtsup.SelectedValue = 0 Then
             MsgBox("Pilih Suplier !!!!  ", vbExclamation)
-            txtbarang.Focus()
+            txtsup.Focus()
             Exit Sub
         End If
 
         If txtsup.SelectedValue = Nothing Then
             MsgBox("Pilih Suplier !!!!  ", vbExclamation)
-            txtbarang.Focus()
+            txtsup.Focus()
             Exit Sub
         End If
 

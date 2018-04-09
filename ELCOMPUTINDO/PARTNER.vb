@@ -125,6 +125,24 @@ Public Class PARTNER
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        If DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString = "BIAYA" Then
+            MsgBox("Data Tidak Boleh di Edit/Hapus !!!!  ", vbExclamation)
+            txtnama.Focus()
+            Exit Sub
+        End If
+
+        If DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString = "PENDAPATAN" Then
+            MsgBox("Data Tidak Boleh di Edit/Hapus !!!!  ", vbExclamation)
+            txtnama.Focus()
+            Exit Sub
+        End If
+
+        If DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString = "CUSTOMER_DEFAULT" Then
+            MsgBox("Data Tidak Boleh di Edit/Hapus !!!!  ", vbExclamation)
+            txtnama.Focus()
+            Exit Sub
+        End If
+
         txtid.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_ID").Value.ToString
         txtnama.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString
         txttelp.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_TELP").Value.ToString

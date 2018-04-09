@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports FirebirdSql.Data.FirebirdClient
-Public Class BAYAR_HUTANG
+Public Class BAYAR_PIUTANG
 
     Sub namasup()
         txtsup.DisplayMember = "Text"
@@ -12,7 +12,7 @@ Public Class BAYAR_HUTANG
         data.Rows.Add(" ", 0)
         koneksi_db()
         Dim rddd As FbDataReader
-        Dim cmd = New FbCommand("SELECT * FROM TB_PARTNER WHERE STATUS LIKE '%S'", konek)
+        Dim cmd = New FbCommand("SELECT * FROM TB_PARTNER WHERE STATUS LIKE 'C%'", konek)
         rddd = cmd.ExecuteReader
         While rddd.Read()
             data.Rows.Add(rddd("NAMA"), rddd("ID"))
@@ -48,18 +48,18 @@ Public Class BAYAR_HUTANG
         data.Rows.Add(" ", 0)
         koneksi_db()
         Dim rddd As FbDataReader
-        Dim cmd = New FbCommand("       SELECT z.SUPLIER,z.NOFAK, z.GRANDTOTAL, " _
+        Dim cmd = New FbCommand("       SELECT z.CUSTOMER, z.NOFAK, z.GRANDTOTAL, " _
                                         + " case when z.BAYAR is null then 0 else z.BAYAR end  AS BAYAR , " _
                                         + " z.GRANDTOTAL-(case when z.BAYAR is null then 0 else z.BAYAR end) AS SISA FROM (  " _
-                                        + " SELECT a.SUPLIER,a.NOFAK,a.GRANDTOTAL, " _
+                                        + " SELECT a.CUSTOMER,a.NOFAK,a.GRANDTOTAL AS GRANDTOTAL, " _
                                         + " (SELECT sum(b.BAYAR) FROM TB_KAS_DET b WHERE b.NOFAK = a.NOFAK GROUP BY b.NOFAK ) AS BAYAR  " _
-                                        + " FROM TB_BELI a " _
+                                        + " FROM TB_JUAL a " _
                                         + " UNION " _
-                                        + " SELECT a.SUPLIER,a.NOFAK,-a.GRANDTOTAL,  " _
+                                        + " SELECT a.CUSTOMER,a.NOFAK,-a.GRANDTOTAL AS GRANDTOTAL,  " _
                                         + " (SELECT sum(b.BAYAR) FROM TB_KAS_DET b WHERE b.NOFAK = a.NOFAK GROUP BY b.NOFAK ) AS BAYAR  " _
-                                        + " FROM TB_REBELI a " _
+                                        + " FROM TB_REJUAL a " _
                                         + " )z " _
-                                        + " WHERE (z.GRANDTOTAL-(case when z.BAYAR is null then 0 else z.BAYAR end)) <> 0 AND z.SUPLIER = " & txtsup.SelectedValue & " ", konek)
+                                        + " WHERE (z.GRANDTOTAL-(case when z.BAYAR is null then 0 else z.BAYAR end)) <> 0 AND z.CUSTOMER = " & txtsup.SelectedValue & " ", konek)
         rddd = cmd.ExecuteReader
         While rddd.Read()
             data.Rows.Add(rddd("NOFAK"), rddd("NOFAK"))
@@ -83,15 +83,15 @@ Public Class BAYAR_HUTANG
             temp = rddd.Item("ID")
             vall = Val(temp) + 1
             txtid.Text = vall
-            txtnokas.Text = "HT" + y + m + "000" + vall.ToString
+            txtnokas.Text = "PT" + y + m + "000" + vall.ToString
         Else
             txtid.Text = 1
-            txtnokas.Text = "HT" + y + m + "0001"
+            txtnokas.Text = "PT" + y + m + "0001"
         End If
         konek.Close()
     End Sub
 
-    Private Sub BAYAR_HUTANG_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub BAYAR_PIUTANG_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         namabank()
         namasup()
         txttgl.Focus()
@@ -103,13 +103,13 @@ Public Class BAYAR_HUTANG
         Dim cmd = New FbCommand("       SELECT z.NOFAK, z.GRANDTOTAL, " _
                                         + " case when z.BAYAR is null then 0 else z.BAYAR end  AS BAYAR , " _
                                         + " z.GRANDTOTAL-(case when z.BAYAR is null then 0 else z.BAYAR end) AS SISA FROM (  " _
-                                        + " SELECT a.NOFAK,a.GRANDTOTAL, " _
+                                        + " SELECT a.NOFAK,a.GRANDTOTAL AS GRANDTOTAL, " _
                                         + " (SELECT sum(b.BAYAR) FROM TB_KAS_DET b WHERE b.NOFAK = a.NOFAK GROUP BY b.NOFAK ) AS BAYAR  " _
-                                        + " FROM TB_BELI a " _
+                                        + " FROM TB_JUAL a " _
                                         + " UNION " _
-                                        + " SELECT a.NOFAK,-a.GRANDTOTAL,  " _
+                                        + " SELECT a.NOFAK,-a.GRANDTOTAL AS GRANDTOTAL,  " _
                                         + " (SELECT sum(b.BAYAR) FROM TB_KAS_DET b WHERE b.NOFAK = a.NOFAK GROUP BY b.NOFAK ) AS BAYAR  " _
-                                        + " FROM TB_REBELI a " _
+                                        + " FROM TB_REJUAL a " _
                                         + " )z " _
                                         + " WHERE z.NOFAK = '" & txtnofak.Text & "'", konek)
         rddd = cmd.ExecuteReader
@@ -165,7 +165,7 @@ Public Class BAYAR_HUTANG
         Dim row As Integer
         row = DataGridView1.CurrentRow.Index
         Dim pesan As Integer
-        pesan = MsgBox("Hapus No Faktur ??", vbExclamation + vbYesNo, "perhatian")
+        pesan = MsgBox("Hapus Barang ??", vbExclamation + vbYesNo, "perhatian")
         If pesan = vbNo Then Exit Sub
         DataGridView1.Rows.RemoveAt(row)
         If DataGridView1.Rows.Count < 1 Then
@@ -175,13 +175,13 @@ Public Class BAYAR_HUTANG
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         If txtsup.SelectedValue = 0 Then
-            MsgBox("Pilih Suplier !!!!  ", vbExclamation)
+            MsgBox("Pilih CUSTOMER !!!!  ", vbExclamation)
             txtsup.Focus()
             Exit Sub
         End If
 
         If txtsup.SelectedValue = Nothing Then
-            MsgBox("Pilih Suplier !!!!  ", vbExclamation)
+            MsgBox("Pilih CUSTOMER !!!!  ", vbExclamation)
             txtsup.Focus()
             Exit Sub
         End If
@@ -211,8 +211,8 @@ Public Class BAYAR_HUTANG
         simpan = "INSERT INTO TB_KAS(ID, NOKAS, KREDIT, DEBIT, ACCOUNT, PARTNER,KET,CREATE_USERID,STAMP, TGL)" _
            + "VALUES ('" & txtid.Text & "'," _
            + "'" & txtnokas.Text & "'," _
-           + "'" & CDbl(txtgrandtotal.Text) & "'," _
            + "'" & 0 & "'," _
+           + "'" & CDbl(txtgrandtotal.Text) & "'," _
            + "'" & txtbank.SelectedValue & "'," _
            + "'" & txtsup.SelectedValue & "'," _
            + "'" & txtket.Text & "'," _

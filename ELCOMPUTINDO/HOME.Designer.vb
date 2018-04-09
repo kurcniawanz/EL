@@ -66,11 +66,13 @@ Partial Class HOME
         Me.TerimaPiutangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.DataKasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BiayaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PendapatanLainlainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -277,7 +279,7 @@ Partial Class HOME
         '
         'AkuntingToolStripMenuItem
         '
-        Me.AkuntingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HutangToolStripMenuItem, Me.PiutangToolStripMenuItem, Me.ToolStripSeparator7, Me.DataKasToolStripMenuItem, Me.BiayaToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
+        Me.AkuntingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HutangToolStripMenuItem, Me.PiutangToolStripMenuItem, Me.ToolStripSeparator7, Me.DataKasToolStripMenuItem, Me.ToolStripMenuItem3, Me.ToolStripSeparator8, Me.BiayaToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
         Me.AkuntingToolStripMenuItem.Name = "AkuntingToolStripMenuItem"
         Me.AkuntingToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.AkuntingToolStripMenuItem.Text = "&Akunting"
@@ -292,19 +294,19 @@ Partial Class HOME
         'DataHutangToolStripMenuItem
         '
         Me.DataHutangToolStripMenuItem.Name = "DataHutangToolStripMenuItem"
-        Me.DataHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DataHutangToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.DataHutangToolStripMenuItem.Text = "&Data Hutang"
         '
         'ListHutangToolStripMenuItem
         '
         Me.ListHutangToolStripMenuItem.Name = "ListHutangToolStripMenuItem"
-        Me.ListHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListHutangToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ListHutangToolStripMenuItem.Text = "&List Hutang"
         '
         'BayarHutangToolStripMenuItem
         '
         Me.BayarHutangToolStripMenuItem.Name = "BayarHutangToolStripMenuItem"
-        Me.BayarHutangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BayarHutangToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.BayarHutangToolStripMenuItem.Text = "&Bayar Hutang"
         '
         'PiutangToolStripMenuItem
@@ -343,6 +345,12 @@ Partial Class HOME
         Me.DataKasToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.DataKasToolStripMenuItem.Text = "&Data Kas"
         '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(186, 22)
+        Me.ToolStripMenuItem3.Text = "Mutasi Kas"
+        '
         'BiayaToolStripMenuItem
         '
         Me.BiayaToolStripMenuItem.Name = "BiayaToolStripMenuItem"
@@ -375,6 +383,11 @@ Partial Class HOME
         Me.usernya.Name = "usernya"
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(183, 6)
         '
         'HOME
         '
@@ -445,4 +458,6 @@ Partial Class HOME
     Friend WithEvents DataKasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BiayaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PendapatanLainlainToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
 End Class

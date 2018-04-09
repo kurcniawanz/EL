@@ -100,6 +100,7 @@ Public Class INPUT_JUAL
             namasup()
             namabarang()
             txttgl.Focus()
+            txtsup.SelectedValue = 7
         Else
             namasup()
             namabarang()
