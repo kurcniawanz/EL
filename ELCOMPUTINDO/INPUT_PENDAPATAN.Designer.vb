@@ -44,14 +44,14 @@ Partial Class INPUT_PENDAPATAN
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV_KETBIAYA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_JUMLAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtket = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.DGV_KETBIAYA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_JUMLAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -127,7 +127,6 @@ Partial Class INPUT_PENDAPATAN
         '
         Me.txtsup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txtsup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.txtsup.Enabled = False
         Me.txtsup.FormattingEnabled = True
         Me.txtsup.Location = New System.Drawing.Point(136, 68)
         Me.txtsup.Name = "txtsup"
@@ -262,6 +261,25 @@ Partial Class INPUT_PENDAPATAN
         Me.DataGridView1.Size = New System.Drawing.Size(902, 381)
         Me.DataGridView1.TabIndex = 65
         '
+        'DGV_KETBIAYA
+        '
+        Me.DGV_KETBIAYA.DataPropertyName = "KETBIAYA"
+        Me.DGV_KETBIAYA.HeaderText = "Ket Pendapatan"
+        Me.DGV_KETBIAYA.Name = "DGV_KETBIAYA"
+        Me.DGV_KETBIAYA.ReadOnly = True
+        Me.DGV_KETBIAYA.Width = 250
+        '
+        'DGV_JUMLAH
+        '
+        Me.DGV_JUMLAH.DataPropertyName = "JUMLAH"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV_JUMLAH.HeaderText = "Jumlah"
+        Me.DGV_JUMLAH.Name = "DGV_JUMLAH"
+        Me.DGV_JUMLAH.ReadOnly = True
+        '
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -319,25 +337,6 @@ Partial Class INPUT_PENDAPATAN
         Me.Label19.Size = New System.Drawing.Size(62, 13)
         Me.Label19.TabIndex = 67
         Me.Label19.Text = "Keterangan"
-        '
-        'DGV_KETBIAYA
-        '
-        Me.DGV_KETBIAYA.DataPropertyName = "KETBIAYA"
-        Me.DGV_KETBIAYA.HeaderText = "Ket Pendapatan"
-        Me.DGV_KETBIAYA.Name = "DGV_KETBIAYA"
-        Me.DGV_KETBIAYA.ReadOnly = True
-        Me.DGV_KETBIAYA.Width = 250
-        '
-        'DGV_JUMLAH
-        '
-        Me.DGV_JUMLAH.DataPropertyName = "JUMLAH"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV_JUMLAH.HeaderText = "Jumlah"
-        Me.DGV_JUMLAH.Name = "DGV_JUMLAH"
-        Me.DGV_JUMLAH.ReadOnly = True
         '
         'INPUT_PENDAPATAN
         '

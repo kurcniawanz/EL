@@ -146,6 +146,14 @@ Public Class OTORITAS
                 c_piutang.Checked = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_KAS").ToString) Then
+                c_kas.Checked = False
+            ElseIf rddd.Item("O_KAS") = "Y" Then
+                c_kas.Checked = True
+            Else
+                c_kas.Checked = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -233,6 +241,11 @@ Public Class OTORITAS
             tmp_piutang = "Y"
         End If
 
+        Dim tmp_kas As String = "N"
+        If c_kas.Checked = True Then
+            tmp_kas = "Y"
+        End If
+
         Dim edit As String
         edit = "UPDATE TB_OTORITAS SET " _
             + " O_ACCOUNT = '" & tmp_account & "', " _
@@ -248,9 +261,10 @@ Public Class OTORITAS
             + " O_HISTORI_BELI = '" & tmp_historibeli & "'," _
             + " O_JUAL = '" & tmp_jual & "'," _
             + " O_HISTORI_JUAL = '" & tmp_historijual & "'," _
-            + " O_REJUAL = '" & tmp_rejual & ",'" _
+            + " O_REJUAL = '" & tmp_rejual & "'," _
             + " O_HUTANG = '" & tmp_hutang & "'," _
-            + " O_PIUTANG = '" & tmp_piutang & "'" _
+            + " O_PIUTANG = '" & tmp_piutang & "'," _
+            + " O_KAS = '" & tmp_kas & "'" _
             + " WHERE NAMA = '" & txtnamauser.Text & "' "
         callprogress(edit)
         Me.Close()

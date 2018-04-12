@@ -22,11 +22,11 @@ Partial Class DATA_HUTANG
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgv_dat = New System.Windows.Forms.DataGridView()
         Me.DGV1_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,10 +36,15 @@ Partial Class DATA_HUTANG
         Me.DGV1_GRANDTOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_SISA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_LUNAS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_SUPLIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
+        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.carifaktur = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -53,10 +58,8 @@ Partial Class DATA_HUTANG
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tott = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
-        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.carilunas = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -66,21 +69,21 @@ Partial Class DATA_HUTANG
         '
         Me.dgv_dat.AllowUserToAddRows = False
         Me.dgv_dat.AllowUserToDeleteRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgv_dat.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgv_dat.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_dat.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_dat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_dat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_dat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_TGL, Me.DGV1_NOFAK, Me.DGV1_JT, Me.DGV1_NAMA, Me.DGV1_GRANDTOTAL, Me.DGV1_BAYAR, Me.DGV1_SISA, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP, Me.DGV1_SUPLIER})
+        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_TGL, Me.DGV1_NOFAK, Me.DGV1_JT, Me.DGV1_NAMA, Me.DGV1_GRANDTOTAL, Me.DGV1_BAYAR, Me.DGV1_SISA, Me.DGV_LUNAS, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP, Me.DGV1_SUPLIER})
         Me.dgv_dat.Location = New System.Drawing.Point(17, 97)
         Me.dgv_dat.Name = "dgv_dat"
         Me.dgv_dat.ReadOnly = True
@@ -130,10 +133,10 @@ Partial Class DATA_HUTANG
         'DGV1_GRANDTOTAL
         '
         Me.DGV1_GRANDTOTAL.DataPropertyName = "GRANDTOTAL"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle18.Format = "N2"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.DGV1_GRANDTOTAL.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DGV1_GRANDTOTAL.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGV1_GRANDTOTAL.HeaderText = "Grand Total(Rp.)"
         Me.DGV1_GRANDTOTAL.Name = "DGV1_GRANDTOTAL"
         Me.DGV1_GRANDTOTAL.ReadOnly = True
@@ -141,10 +144,10 @@ Partial Class DATA_HUTANG
         'DGV1_BAYAR
         '
         Me.DGV1_BAYAR.DataPropertyName = "BAYAR"
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle19.Format = "N2"
-        DataGridViewCellStyle19.NullValue = Nothing
-        Me.DGV1_BAYAR.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DGV1_BAYAR.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGV1_BAYAR.HeaderText = "Bayar(Rp.)"
         Me.DGV1_BAYAR.Name = "DGV1_BAYAR"
         Me.DGV1_BAYAR.ReadOnly = True
@@ -152,13 +155,21 @@ Partial Class DATA_HUTANG
         'DGV1_SISA
         '
         Me.DGV1_SISA.DataPropertyName = "SISA"
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle20.Format = "N2"
-        DataGridViewCellStyle20.NullValue = Nothing
-        Me.DGV1_SISA.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DGV1_SISA.DefaultCellStyle = DataGridViewCellStyle5
         Me.DGV1_SISA.HeaderText = "Sia(Rp.)"
         Me.DGV1_SISA.Name = "DGV1_SISA"
         Me.DGV1_SISA.ReadOnly = True
+        '
+        'DGV_LUNAS
+        '
+        Me.DGV_LUNAS.DataPropertyName = "LUNAS"
+        Me.DGV_LUNAS.HeaderText = "Lunas"
+        Me.DGV_LUNAS.Name = "DGV_LUNAS"
+        Me.DGV_LUNAS.ReadOnly = True
+        Me.DGV_LUNAS.Width = 70
         '
         'DGV1_CREATE_USERID
         '
@@ -187,6 +198,8 @@ Partial Class DATA_HUTANG
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.carilunas)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.tgl2)
         Me.GroupBox2.Controls.Add(Me.tgl1)
@@ -196,11 +209,45 @@ Partial Class DATA_HUTANG
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.carisup)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(172, 38)
+        Me.GroupBox2.Location = New System.Drawing.Point(62, 38)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(905, 53)
+        Me.GroupBox2.Size = New System.Drawing.Size(1015, 53)
         Me.GroupBox2.TabIndex = 34
         Me.GroupBox2.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(167, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(23, 13)
+        Me.Label5.TabIndex = 45
+        Me.Label5.Text = "s/d"
+        '
+        'tgl2
+        '
+        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl2.Location = New System.Drawing.Point(205, 19)
+        Me.tgl2.Name = "tgl2"
+        Me.tgl2.Size = New System.Drawing.Size(103, 20)
+        Me.tgl2.TabIndex = 1
+        '
+        'tgl1
+        '
+        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tgl1.Location = New System.Drawing.Point(58, 19)
+        Me.tgl1.Name = "tgl1"
+        Me.tgl1.Size = New System.Drawing.Size(103, 20)
+        Me.tgl1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "Tanggal"
         '
         'carifaktur
         '
@@ -222,7 +269,7 @@ Partial Class DATA_HUTANG
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(791, 16)
+        Me.Button4.Location = New System.Drawing.Point(926, 17)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 26
@@ -330,39 +377,25 @@ Partial Class DATA_HUTANG
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "GrandTotal  Rp."
         '
-        'Label2
+        'carilunas
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 42
-        Me.Label2.Text = "Tanggal"
+        Me.carilunas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.carilunas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.carilunas.FormattingEnabled = True
+        Me.carilunas.Items.AddRange(New Object() {"ALL", "YES", "NO"})
+        Me.carilunas.Location = New System.Drawing.Point(836, 18)
+        Me.carilunas.Name = "carilunas"
+        Me.carilunas.Size = New System.Drawing.Size(82, 21)
+        Me.carilunas.TabIndex = 47
         '
-        'tgl1
+        'Label9
         '
-        Me.tgl1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl1.Location = New System.Drawing.Point(58, 19)
-        Me.tgl1.Name = "tgl1"
-        Me.tgl1.Size = New System.Drawing.Size(103, 20)
-        Me.tgl1.TabIndex = 0
-        '
-        'tgl2
-        '
-        Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.tgl2.Location = New System.Drawing.Point(205, 19)
-        Me.tgl2.Name = "tgl2"
-        Me.tgl2.Size = New System.Drawing.Size(103, 20)
-        Me.tgl2.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(167, 21)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(23, 13)
-        Me.Label5.TabIndex = 45
-        Me.Label5.Text = "s/d"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(791, 21)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(36, 13)
+        Me.Label9.TabIndex = 46
+        Me.Label9.Text = "Lunas"
         '
         'DATA_HUTANG
         '
@@ -402,6 +435,10 @@ Partial Class DATA_HUTANG
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents totbay As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents tgl2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents DGV1_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_TGL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_NOFAK As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -410,11 +447,10 @@ Partial Class DATA_HUTANG
     Friend WithEvents DGV1_GRANDTOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_BAYAR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_SISA As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_LUNAS As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_SUPLIER As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents tgl2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents tgl1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents carilunas As System.Windows.Forms.ComboBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

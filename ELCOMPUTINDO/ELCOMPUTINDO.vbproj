@@ -48,15 +48,21 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=3.0.2.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\FirebirdSql.Data.FirebirdClient.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -119,6 +125,11 @@
     </Compile>
     <Compile Include="DASHBOARD.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DATA_BELI.Designer.vb">
       <DependentUpon>DATA_BELI.vb</DependentUpon>
@@ -246,6 +257,12 @@
     <Compile Include="MUTASI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MUTASI_KAS.Designer.vb">
+      <DependentUpon>MUTASI_KAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MUTASI_KAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -277,6 +294,12 @@
       <DependentUpon>PASSWORD.vb</DependentUpon>
     </Compile>
     <Compile Include="PASSWORD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRINT.Designer.vb">
+      <DependentUpon>PRINT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRINT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="STOCK.Designer.vb">
@@ -335,6 +358,9 @@
     <EmbeddedResource Include="DATA_REJUAL.resx">
       <DependentUpon>DATA_REJUAL.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FAKTUR_BELI.rdlc" />
+    <EmbeddedResource Include="FAKTUR_JUAL.rdlc" />
+    <EmbeddedResource Include="FAKTUR_REJUAL.rdlc" />
     <EmbeddedResource Include="HISTORI_BELI.resx">
       <DependentUpon>HISTORI_BELI.vb</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +403,9 @@
     <EmbeddedResource Include="MUTASI.resx">
       <DependentUpon>MUTASI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MUTASI_KAS.resx">
+      <DependentUpon>MUTASI_KAS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -392,6 +421,10 @@
     <EmbeddedResource Include="PASSWORD.resx">
       <DependentUpon>PASSWORD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRINT.resx">
+      <DependentUpon>PRINT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRINT_REBELI.rdlc" />
     <EmbeddedResource Include="STOCK.resx">
       <DependentUpon>STOCK.vb</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +433,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -464,6 +508,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

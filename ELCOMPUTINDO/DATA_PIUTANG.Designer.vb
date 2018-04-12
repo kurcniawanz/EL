@@ -45,6 +45,7 @@ Partial Class DATA_PIUTANG
         Me.DGV1_GRANDTOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_SISA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_LUNAS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_SUPLIER = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,6 +58,8 @@ Partial Class DATA_PIUTANG
         Me.carisup = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.carilunas = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -171,7 +174,7 @@ Partial Class DATA_PIUTANG
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_dat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_dat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_TGL, Me.DGV1_NOFAK, Me.DGV1_JT, Me.DGV1_NAMA, Me.DGV1_GRANDTOTAL, Me.DGV1_BAYAR, Me.DGV1_SISA, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP, Me.DGV1_SUPLIER})
+        Me.dgv_dat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV1_ID, Me.DGV1_TGL, Me.DGV1_NOFAK, Me.DGV1_JT, Me.DGV1_NAMA, Me.DGV1_GRANDTOTAL, Me.DGV1_BAYAR, Me.DGV1_SISA, Me.DGV_LUNAS, Me.DGV1_CREATE_USERID, Me.DGV1_STAMP, Me.DGV1_SUPLIER})
         Me.dgv_dat.Location = New System.Drawing.Point(17, 97)
         Me.dgv_dat.Name = "dgv_dat"
         Me.dgv_dat.ReadOnly = True
@@ -251,6 +254,14 @@ Partial Class DATA_PIUTANG
         Me.DGV1_SISA.Name = "DGV1_SISA"
         Me.DGV1_SISA.ReadOnly = True
         '
+        'DGV_LUNAS
+        '
+        Me.DGV_LUNAS.DataPropertyName = "LUNAS"
+        Me.DGV_LUNAS.HeaderText = "Lunas"
+        Me.DGV_LUNAS.Name = "DGV_LUNAS"
+        Me.DGV_LUNAS.ReadOnly = True
+        Me.DGV_LUNAS.Width = 70
+        '
         'DGV1_CREATE_USERID
         '
         Me.DGV1_CREATE_USERID.DataPropertyName = "CREATE_USERID"
@@ -320,7 +331,7 @@ Partial Class DATA_PIUTANG
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(791, 17)
+        Me.Button4.Location = New System.Drawing.Point(921, 17)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 26
@@ -349,6 +360,8 @@ Partial Class DATA_PIUTANG
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.carilunas)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.tgl2)
         Me.GroupBox2.Controls.Add(Me.tgl1)
@@ -358,11 +371,31 @@ Partial Class DATA_PIUTANG
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.carisup)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(351, 38)
+        Me.GroupBox2.Location = New System.Drawing.Point(242, 38)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(905, 53)
+        Me.GroupBox2.Size = New System.Drawing.Size(1014, 53)
         Me.GroupBox2.TabIndex = 46
         Me.GroupBox2.TabStop = False
+        '
+        'carilunas
+        '
+        Me.carilunas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.carilunas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.carilunas.FormattingEnabled = True
+        Me.carilunas.Items.AddRange(New Object() {"ALL", "YES", "NO"})
+        Me.carilunas.Location = New System.Drawing.Point(833, 18)
+        Me.carilunas.Name = "carilunas"
+        Me.carilunas.Size = New System.Drawing.Size(82, 21)
+        Me.carilunas.TabIndex = 51
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(791, 21)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(36, 13)
+        Me.Label9.TabIndex = 50
+        Me.Label9.Text = "Lunas"
         '
         'DATA_PIUTANG
         '
@@ -414,7 +447,10 @@ Partial Class DATA_PIUTANG
     Friend WithEvents DGV1_GRANDTOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_BAYAR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_SISA As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_LUNAS As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_SUPLIER As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents carilunas As System.Windows.Forms.ComboBox
 End Class

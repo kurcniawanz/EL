@@ -78,7 +78,7 @@ Public Class DATA_KAS
 
         txtdebit.Text = FormatNumber(deb, 0)
         txtkredit.Text = FormatNumber(kre, 0)
-        txtsaldo.Text = FormatNumber(deb - kre, 0)
+        txtsaldo.Text = FormatNumber(deb + kre, 0)
     End Sub
 
     Private Sub DATA_KAS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

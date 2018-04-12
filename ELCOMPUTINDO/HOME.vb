@@ -154,6 +154,23 @@ Public Class HOME
                 PiutangToolStripMenuItem.Visible = False
             End If
 
+            If String.IsNullOrEmpty(rddd.Item("O_KAS").ToString) Then
+                DataKasToolStripMenuItem.Visible = False
+                ToolStripMenuItem3.Visible = False
+                BiayaToolStripMenuItem.Visible = False
+                PendapatanLainlainToolStripMenuItem.Visible = False
+            ElseIf rddd.Item("O_KAS") = "Y" Then
+                DataKasToolStripMenuItem.Visible = True
+                ToolStripMenuItem3.Visible = True
+                BiayaToolStripMenuItem.Visible = True
+                PendapatanLainlainToolStripMenuItem.Visible = True
+            Else
+                DataKasToolStripMenuItem.Visible = False
+                ToolStripMenuItem3.Visible = False
+                BiayaToolStripMenuItem.Visible = False
+                PendapatanLainlainToolStripMenuItem.Visible = False
+            End If
+
         Else
             MsgBox("User Tidak di Temukan !!!!  ", vbExclamation)
         End If
@@ -561,4 +578,16 @@ Public Class HOME
     End Sub
 
   
+    Private Sub ToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem3.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As MUTASI_KAS
+        frm = New MUTASI_KAS
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
 End Class

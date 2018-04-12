@@ -240,6 +240,7 @@ Partial Class DATA_KAS
         '
         Me.carinokas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.carinokas.Location = New System.Drawing.Point(740, 19)
+        Me.carinokas.MaxLength = 19
         Me.carinokas.Name = "carinokas"
         Me.carinokas.Size = New System.Drawing.Size(162, 20)
         Me.carinokas.TabIndex = 41

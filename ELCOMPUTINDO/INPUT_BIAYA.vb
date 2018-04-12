@@ -81,7 +81,7 @@ Public Class INPUT_BIAYA
         End If
         GroupBox1.Enabled = False
 
-        DataGridView1.Rows.Add(txtketbiaya.Text, txtjum.Text)
+        DataGridView1.Rows.Add(txtketbiaya.Text, CDbl(txtjum.Text) * -1)
 
         txtjum.Text = "0"
         txtketbiaya.Clear()

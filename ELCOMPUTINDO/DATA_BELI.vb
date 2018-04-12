@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
-Imports System.IO
+Imports System.Data
 Imports FirebirdSql.Data.FirebirdClient
+Imports Microsoft.Reporting.WinForms
 Public Class DATA_BELI
 
 
@@ -33,7 +34,7 @@ Public Class DATA_BELI
         dgv_dat.AutoGenerateColumns = False
         koneksi_db()
         Dim dA As New FbDataAdapter("SELECT a.ID, a.SUPLIER, a.BAYAR,a.NOFAK, a.TGL, a.JT, b.NAMA as SUPLIERNAMA, " _
-                                        + "a.GRANDTOTAL-a.POT as TOTAL, " _
+                                        + "a.GRANDTOTAL+a.POT as TOTAL, " _
                                         + " a.POT, a.GRANDTOTAL, a.KET, a.CREATE_USERID, a.STAMP " _
                                         + "FROM TB_BELI a " _
                                         + "inner join TB_PARTNER b on b.ID = a.SUPLIER " _
@@ -135,6 +136,64 @@ Public Class DATA_BELI
     Private Sub carisup_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles carisup.KeyDown
         If e.KeyCode = Keys.Enter Then
             Button4.Focus()
+        End If
+    End Sub
+
+    Private Sub DATA_BELI_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Dim row As Integer
+        row = dgv_dat.CurrentRow.Index.ToString
+
+        If e.KeyCode = Keys.F1 Then
+            Dim Tanya = MessageBox.Show(" Print Ulang faktur ???", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If Tanya = Windows.Forms.DialogResult.Yes Then
+                Dim nofak, partner, alamat, tanggal, jt, total, potongan As String
+                nofak = dgv_dat.Item("DGV1_NOFAK", row).Value.ToString
+                partner = dgv_dat.Item("DGV1_SUPLIERNAMA", row).Value.ToString
+                tanggal = dgv_dat.Item("DGV1_TGL", row).Value.ToString
+                jt = dgv_dat.Item("DGV1_JT", row).Value.ToString
+                total = dgv_dat.Item("DGV1_TOTAL", row).Value.ToString
+                potongan = dgv_dat.Item("DGV1_POT", row).Value.ToString
+
+                koneksi_db()
+                Dim aa As String = ""
+                Dim rm As FbDataReader
+                Dim rmd = New FbCommand("SELECT * FROM TB_PARTNER WHERE ID = '" & dgv_dat.Item("DGV1_SUPLIER", row).Value.ToString & "'", konek)
+                rm = rmd.ExecuteReader
+                alamat = " "
+                If rm.Read() Then
+                    alamat = rm("ALAMAT").ToString
+                End If
+                konek.Close()
+
+                Dim pA(6) As ReportParameter
+                pA(0) = New ReportParameter("nofak", nofak)
+                pA(1) = New ReportParameter("partner", partner)
+                pA(2) = New ReportParameter("alamat", alamat)
+                pA(3) = New ReportParameter("tanggal", tanggal)
+                pA(4) = New ReportParameter("jt", jt)
+                pA(5) = New ReportParameter("total", total)
+                pA(6) = New ReportParameter("potongan", potongan)
+
+                koneksi_db()
+                Dim dA As New FbDataAdapter("SELECT b.SATUAN,b.NAMA as BARAN, a.QTY, a.HARGA,a.QTY*a.HARGA as JUMLAH, (a.QTY*a.HARGA) - a.TOTAL AS POT, a.TOTAL " _
+                                            + "FROM TB_BELI_DET a " _
+                                            + "inner join TB_BARANG b on b.id = a.IDBARANG " _
+                                            + "where a.NOFAK = '" & dgv_dat.Item("DGV1_NOFAK", row).Value.ToString & "'", konek)
+                Dim dS As DataTable = New DataTable
+                dS.Clear()
+                dA.Fill(dS)
+                dA.Dispose()
+                konek.Close()
+              
+                Dim R As New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dS)
+                PRINT.ReportViewer1.LocalReport.ReportEmbeddedResource = "ELCOMPUTINDO.FAKTUR_BELI.rdlc"
+                PRINT.ReportViewer1.LocalReport.DataSources.Add(R)
+                PRINT.ReportViewer1.LocalReport.SetParameters(pA)
+                PRINT.ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
+                PRINT.ReportViewer1.ZoomMode = ZoomMode.FullPage
+                PRINT.ReportViewer1.RefreshReport()
+                PRINT.Show()
+            End If
         End If
     End Sub
 End Class

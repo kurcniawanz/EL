@@ -33,17 +33,30 @@ Public Class DATA_PIUTANG
         Else
             bb = carifaktur.Text + "%"
         End If
+        Dim cc As String
+        If carilunas.Text = "ALL" Then
+            cc = "%"
+        ElseIf carilunas.Text = "YES" Then
+            cc = "Y"
+        ElseIf carilunas.Text = "NO" Then
+            cc = "N"
+        End If
         dgv_dat.AutoGenerateColumns = False
         koneksi_db()
         Dim dA As New FbDataAdapter("SELECT z.* FROM ( " _
-                                        + " SELECT a.ID, a.NOFAK, a.TGL, b.NAMA, a.JT ,a.GRANDTOTAL, a.BAYAR,a.GRANDTOTAL-a.BAYAR as SISA, a.CREATE_USERID, a.STAMP " _
+                                        + " SELECT a.ID, a.LUNAS,a.NOFAK, a.TGL, b.NAMA, a.JT ,a.GRANDTOTAL, " _
+                                        + " CASE WHEN c.BAYAR IS NULL THEN 0 ELSE (-c.BAYAR) END AS BAYAR, " _
+                                        + " a.GRANDTOTAL-(CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END) as SISA, " _
+                                        + " a.CREATE_USERID, a.STAMP " _
                                         + " FROM TB_JUAL a " _
-                                        + " INNER JOIN TB_PARTNER b ON b.ID = a.CUSTOMER " _
+                                        + " INNER JOIN TB_PARTNER b ON b.ID = a.CUSTOMER LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK" _
                                         + " UNION " _
-                                        + " SELECT a.ID, a.NOFAK, a.TGL, b.NAMA, a.JT, -a.GRANDTOTAL,a.BAYAR,-a.GRANDTOTAL+a.BAYAR as SISA, a.CREATE_USERID, a.STAMP " _
+                                        + " SELECT a.ID, a.LUNAS,a.NOFAK, a.TGL, b.NAMA, a.JT, -a.GRANDTOTAL,  " _
+                                        + " CASE WHEN c.BAYAR IS NULL THEN 0 ELSE (c.BAYAR*-1) END AS BAYAR, " _
+                                        + " -a.GRANDTOTAL-(CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END) as SISA , a.CREATE_USERID, a.STAMP " _
                                         + " FROM TB_REJUAL a " _
-                                        + " INNER JOIN TB_PARTNER b ON b.ID = a.CUSTOMER )z " _
-                                        + " WHERE z.TGL BETWEEN '" & CDate(tgl1.Text) & "' AND '" & CDate(tgl2.Text) & "' AND z.NAMA LIKE '" & aa & "' AND z.NOFAK LIKE '" & bb & "' ", konek)
+                                        + " INNER JOIN TB_PARTNER b ON b.ID = a.CUSTOMER LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK)z " _
+                                        + " WHERE z.TGL BETWEEN '" & CDate(tgl1.Text) & "' AND '" & CDate(tgl2.Text) & "' AND z.NAMA LIKE '" & aa & "' AND z.NOFAK LIKE '" & bb & "' AND z.LUNAS LIKE '" & cc & "' ", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()
         dA.Fill(dS)
@@ -66,6 +79,7 @@ Public Class DATA_PIUTANG
     Private Sub DATA_PIUTANG_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         namabarang()
         loaddata()
+        carilunas.Text = "ALL"
         tgl1.Focus()
     End Sub
 
@@ -88,7 +102,7 @@ Public Class DATA_PIUTANG
 
     Private Sub dgv_dat_CellFormatting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgv_dat.CellFormatting
         For i As Integer = 0 To dgv_dat.RowCount - 1
-            If CDbl(dgv_dat.Rows(i).Cells("DGV1_GRANDTOTAL").Value) <= 0 Then
+            If CDate(dgv_dat.Rows(i).Cells("DGV1_JT").Value.ToString) <= Now.Date Then
                 dgv_dat.Rows(i).DefaultCellStyle.ForeColor = Color.Red
             End If
         Next

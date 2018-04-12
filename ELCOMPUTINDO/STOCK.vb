@@ -55,13 +55,16 @@ Public Class STOCK
 
         DataGridView1.AutoGenerateColumns = False
         koneksi_db()
-        Dim dA As New FbDataAdapter("SELECT a.ID,a.NAMA,a.KELOMPOK,m.QTY,(m.TOTHPP/m.QTY) as HPP,m.TOTHPP,a.SATUAN,a.HARGAJUAL,a.MINIMAL,a.KET,a.CREATE_USERID,a.STAMP, " _
-                                        + " b.NAMA as KELOMPOKNAMA FROM TB_BARANG a " _
-                                        + " INNER JOIN TB_CATEGORY b ON b.ID = a.KELOMPOK " _
-                                        + " INNER JOIN ( " _
-                                        + " SELECT IDBARANG as  BARANGID,SUM(QTY) as QTY,SUM(TOTHPP) as TOTHPP FROM TB_MUTASI GROUP BY IDBARANG " _
-                                        + " )m ON m.BARANGID = a.ID " _
-                                        + " WHERE a.NAMA LIKE '" & aa & "' AND a.KELOMPOK LIKE '" & bb & "' " & cc & " ", konek)
+        Dim dA As New FbDataAdapter("   SELECT a.ID,a.NAMA,a.KELOMPOK,m.QTY, " _
+                        + " CASE WHEN m.QTY = 0 THEN 0 ELSE (m.TOTHPP/m.QTY) END as HPP, " _
+                        + " CASE WHEN m.QTY = 0 THEN 0 ELSE  m.TOTHPP END AS TOTHPP, " _
+                        + " a.SATUAN, a.HARGAJUAL, a.MINIMAL, a.KET, a.CREATE_USERID, a.STAMP, " _
+                        + " b.NAMA as KELOMPOKNAMA FROM TB_BARANG a  " _
+                        + " INNER JOIN TB_CATEGORY b ON b.ID = a.KELOMPOK  " _
+                        + " LEFT JOIN (  " _
+                        + " SELECT IDBARANG as  BARANGID,SUM(QTY) as QTY,SUM(TOTHPP) as TOTHPP FROM TB_MUTASI GROUP BY IDBARANG  " _
+                        + " )m ON m.BARANGID = a.ID " _
+                        + " WHERE a.NAMA LIKE '%' AND a.KELOMPOK LIKE '%'  " & cc & " ", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()
         dA.Fill(dS)
@@ -130,8 +133,10 @@ Public Class STOCK
 
     Private Sub DataGridView1_CellFormatting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
         For i As Integer = 0 To DataGridView1.RowCount - 1
-            If CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) <= CDbl(DataGridView1.Rows(i).Cells("DGV_MINIMAL").Value) Then
-                DataGridView1.Rows(i).DefaultCellStyle.ForeColor = Color.Red
+            If Not DataGridView1.Rows(i).Cells("DGV_QTY").Value.ToString = "" Then
+                If CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) <= CDbl(DataGridView1.Rows(i).Cells("DGV_MINIMAL").Value) Then
+                    DataGridView1.Rows(i).DefaultCellStyle.ForeColor = Color.Red
+                End If
             End If
         Next
     End Sub

@@ -1,4 +1,7 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
+Imports System.Data.SqlClient
+Imports System.IO
+Imports FirebirdSql.Data.FirebirdClient
 Public Class DASHBOARD
 
     Private Sub DASHBOARD_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -21,37 +24,14 @@ Public Class DASHBOARD
                 seri.YValueType = ChartValueType.Double
             Next
             'Isi Nilai Series/Chart (X,Y)
-            .Series(0).Points.AddXY("1", 100)
-            .Series(0).Points.AddXY("2", 70)
-            .Series(0).Points.AddXY("3", 45)
-            .Series(0).Points.AddXY("4", 60)
-            .Series(0).Points.AddXY("5", 100)
-            .Series(0).Points.AddXY("6", 70)
-            .Series(0).Points.AddXY("7", 45)
-            .Series(0).Points.AddXY("8", 60)
-            .Series(0).Points.AddXY("9", 100)
-            .Series(0).Points.AddXY("10", 70)
-            .Series(0).Points.AddXY("11", 45)
-            .Series(0).Points.AddXY("12", 60)
-            .Series(0).Points.AddXY("13", 100)
-            .Series(0).Points.AddXY("14", 70)
-            .Series(0).Points.AddXY("15", 45)
-            .Series(0).Points.AddXY("16", 60)
-            .Series(0).Points.AddXY("17", 100)
-            .Series(0).Points.AddXY("18", 70)
-            .Series(0).Points.AddXY("19", 45)
-            .Series(0).Points.AddXY("20", 60)
-            .Series(0).Points.AddXY("21", 100)
-            .Series(0).Points.AddXY("22", 70)
-            .Series(0).Points.AddXY("23", 45)
-            .Series(0).Points.AddXY("24", 60)
-            .Series(0).Points.AddXY("25", 100)
-            .Series(0).Points.AddXY("26", 70)
-            .Series(0).Points.AddXY("27", 45)
-            .Series(0).Points.AddXY("28", 60)
-            .Series(0).Points.AddXY("29", 70)
-            .Series(0).Points.AddXY("30", 45)
-            .Series(0).Points.AddXY("31", 60)
+            koneksi_db()
+            Dim rddd As FbDataReader
+            Dim cmd = New FbCommand("SELECT a.TGL,  sum(a.GRANDTOTAL) as TOTAL FROM TB_JUAL a GROUP BY a.TGL", konek)
+            rddd = cmd.ExecuteReader
+            While rddd.Read()
+                .Series(0).Points.AddXY(CDate(rddd("TGL")).ToString("dd-MMM-yyyy"), FormatNumber(CDbl(rddd("TOTAL")), 0))
+            End While
+            konek.Close()
         End With
     End Sub
 End Class

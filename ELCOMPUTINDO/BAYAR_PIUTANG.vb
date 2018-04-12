@@ -206,7 +206,7 @@ Public Class BAYAR_PIUTANG
         End If
 
         nomor()
-        Dim simpan, simpan2 As String
+        Dim simpan, simpan2, setlunas As String
 
         simpan = "INSERT INTO TB_KAS(ID, NOKAS, KREDIT, DEBIT, ACCOUNT, PARTNER,KET,CREATE_USERID,STAMP, TGL)" _
            + "VALUES ('" & txtid.Text & "'," _
@@ -245,6 +245,34 @@ Public Class BAYAR_PIUTANG
              + "cast('NOW' as timestamp)," _
              + "'" & CDbl(DataGridView1.Rows(i).Cells("DGV_BAYAR").Value) & "') ; "
             callprogress2(simpan2)
+
+            Dim sisa As Double
+            koneksi_db()
+            Dim readceklunas As FbDataReader
+            Dim cmdlunas = New FbCommand("SELECT a.NOFAK,a.GRANDTOTAL-b.BAYAR AS SISA FROM( " _
+                        + " SELECT a.GRANDTOTAL, a.NOFAK " _
+                        + " FROM TB_JUAL a WHERE a.NOFAK = '" & DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString & "' " _
+                        + " UNION " _
+                        + " SELECT -a.GRANDTOTAL, a.NOFAK " _
+                        + " FROM TB_REJUAL a WHERE a.NOFAK = '" & DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString & "' " _
+                        + " )a LEFT JOIN  " _
+                        + " (SELECT b.NOFAK, SUM(b.BAYAR) AS BAYAR FROM TB_KAS_DET b WHERE b.NOFAK = '" & DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString & "' GROUP BY b.NOFAK)b " _
+                        + " ON b.NOFAK = a.NOFAK", konek)
+            readceklunas = cmdlunas.ExecuteReader
+            If readceklunas.Read Then
+                sisa = CDbl(readceklunas.Item("SISA"))
+            End If
+            konek.Close()
+
+            If sisa = 0 Then
+                If DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString.Substring(0, 1) = "J" Then
+                    setlunas = "UPDATE TB_JUAL SET LUNAS = 'Y' WHERE NOFAK = '" & DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString & "'"
+                    callprogress2(setlunas)
+                Else
+                    setlunas = "UPDATE TB_REJUAL SET LUNAS = 'Y' WHERE NOFAK = '" & DataGridView1.Rows(i).Cells("DGV_NOFAK").Value.ToString & "'"
+                    callprogress2(setlunas)
+                End If
+            End If
         Next
 
         txttgl.Value = Now

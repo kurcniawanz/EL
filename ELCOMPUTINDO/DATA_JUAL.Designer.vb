@@ -30,11 +30,11 @@ Partial Class DATA_JUAL
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGV_JUMLAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtgrantotal = New System.Windows.Forms.Label()
         Me.DGV_HARGA = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,17 +47,6 @@ Partial Class DATA_JUAL
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_dat = New System.Windows.Forms.DataGridView()
-        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.carisup = New System.Windows.Forms.ComboBox()
-        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.dgv_det = New System.Windows.Forms.DataGridView()
         Me.DGV1_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,6 +60,18 @@ Partial Class DATA_JUAL
         Me.DGV1_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1_CUSTOMER = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tgl2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tgl1 = New System.Windows.Forms.DateTimePicker()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.carisup = New System.Windows.Forms.ComboBox()
+        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.dgv_det = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.dgv_dat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -219,6 +220,118 @@ Partial Class DATA_JUAL
         Me.dgv_dat.Size = New System.Drawing.Size(1426, 326)
         Me.dgv_dat.TabIndex = 45
         '
+        'DGV1_ID
+        '
+        Me.DGV1_ID.DataPropertyName = "ID"
+        Me.DGV1_ID.HeaderText = "ID"
+        Me.DGV1_ID.Name = "DGV1_ID"
+        Me.DGV1_ID.ReadOnly = True
+        Me.DGV1_ID.Visible = False
+        Me.DGV1_ID.Width = 40
+        '
+        'DGV1_NOFAK
+        '
+        Me.DGV1_NOFAK.DataPropertyName = "NOFAK"
+        Me.DGV1_NOFAK.HeaderText = "Nomor Faktur"
+        Me.DGV1_NOFAK.Name = "DGV1_NOFAK"
+        Me.DGV1_NOFAK.ReadOnly = True
+        Me.DGV1_NOFAK.Width = 150
+        '
+        'DGV1_TGL
+        '
+        Me.DGV1_TGL.DataPropertyName = "TGL"
+        Me.DGV1_TGL.HeaderText = "Tanggal"
+        Me.DGV1_TGL.Name = "DGV1_TGL"
+        Me.DGV1_TGL.ReadOnly = True
+        '
+        'DGV1_JT
+        '
+        Me.DGV1_JT.DataPropertyName = "JT"
+        Me.DGV1_JT.HeaderText = "Jatuh Tempo"
+        Me.DGV1_JT.Name = "DGV1_JT"
+        Me.DGV1_JT.ReadOnly = True
+        '
+        'DGV1_CUSTOMERNAMA
+        '
+        Me.DGV1_CUSTOMERNAMA.DataPropertyName = "CUSTOMERNAMA"
+        Me.DGV1_CUSTOMERNAMA.HeaderText = "Nama Customer"
+        Me.DGV1_CUSTOMERNAMA.Name = "DGV1_CUSTOMERNAMA"
+        Me.DGV1_CUSTOMERNAMA.ReadOnly = True
+        Me.DGV1_CUSTOMERNAMA.Width = 150
+        '
+        'DGV1_TOTAL
+        '
+        Me.DGV1_TOTAL.DataPropertyName = "TOTAL"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle9.Format = "N2"
+        DataGridViewCellStyle9.NullValue = Nothing
+        Me.DGV1_TOTAL.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DGV1_TOTAL.HeaderText = "Total(Rp.)"
+        Me.DGV1_TOTAL.Name = "DGV1_TOTAL"
+        Me.DGV1_TOTAL.ReadOnly = True
+        '
+        'DGV1_POT
+        '
+        Me.DGV1_POT.DataPropertyName = "POT"
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "N0"
+        DataGridViewCellStyle10.NullValue = Nothing
+        Me.DGV1_POT.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DGV1_POT.HeaderText = "Potongan(Rp.)"
+        Me.DGV1_POT.Name = "DGV1_POT"
+        Me.DGV1_POT.ReadOnly = True
+        '
+        'DGV1_GRANDTOTAL
+        '
+        Me.DGV1_GRANDTOTAL.DataPropertyName = "GRANDTOTAL"
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Format = "N2"
+        DataGridViewCellStyle11.NullValue = Nothing
+        Me.DGV1_GRANDTOTAL.DefaultCellStyle = DataGridViewCellStyle11
+        Me.DGV1_GRANDTOTAL.HeaderText = "Grand Total(Rp.)"
+        Me.DGV1_GRANDTOTAL.Name = "DGV1_GRANDTOTAL"
+        Me.DGV1_GRANDTOTAL.ReadOnly = True
+        '
+        'DGV1_KET
+        '
+        Me.DGV1_KET.DataPropertyName = "KET"
+        Me.DGV1_KET.HeaderText = "Keterangan"
+        Me.DGV1_KET.Name = "DGV1_KET"
+        Me.DGV1_KET.ReadOnly = True
+        Me.DGV1_KET.Width = 250
+        '
+        'DGV1_CREATE_USERID
+        '
+        Me.DGV1_CREATE_USERID.DataPropertyName = "CREATE_USERID"
+        Me.DGV1_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV1_CREATE_USERID.Name = "DGV1_CREATE_USERID"
+        Me.DGV1_CREATE_USERID.ReadOnly = True
+        Me.DGV1_CREATE_USERID.Width = 150
+        '
+        'DGV1_STAMP
+        '
+        Me.DGV1_STAMP.DataPropertyName = "STAMP"
+        Me.DGV1_STAMP.HeaderText = "STAMP"
+        Me.DGV1_STAMP.Name = "DGV1_STAMP"
+        Me.DGV1_STAMP.ReadOnly = True
+        Me.DGV1_STAMP.Width = 150
+        '
+        'DGV1_BAYAR
+        '
+        Me.DGV1_BAYAR.DataPropertyName = "BAYAR"
+        Me.DGV1_BAYAR.HeaderText = "Column1"
+        Me.DGV1_BAYAR.Name = "DGV1_BAYAR"
+        Me.DGV1_BAYAR.ReadOnly = True
+        Me.DGV1_BAYAR.Visible = False
+        '
+        'DGV1_CUSTOMER
+        '
+        Me.DGV1_CUSTOMER.DataPropertyName = "CUSTOMER"
+        Me.DGV1_CUSTOMER.HeaderText = "Column1"
+        Me.DGV1_CUSTOMER.Name = "DGV1_CUSTOMER"
+        Me.DGV1_CUSTOMER.ReadOnly = True
+        Me.DGV1_CUSTOMER.Visible = False
+        '
         'tgl2
         '
         Me.tgl2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
@@ -342,117 +455,16 @@ Partial Class DATA_JUAL
         Me.dgv_det.Size = New System.Drawing.Size(1426, 249)
         Me.dgv_det.TabIndex = 49
         '
-        'DGV1_ID
+        'Label4
         '
-        Me.DGV1_ID.DataPropertyName = "ID"
-        Me.DGV1_ID.HeaderText = "ID"
-        Me.DGV1_ID.Name = "DGV1_ID"
-        Me.DGV1_ID.ReadOnly = True
-        Me.DGV1_ID.Visible = False
-        Me.DGV1_ID.Width = 40
-        '
-        'DGV1_NOFAK
-        '
-        Me.DGV1_NOFAK.DataPropertyName = "NOFAK"
-        Me.DGV1_NOFAK.HeaderText = "Nomor Faktur"
-        Me.DGV1_NOFAK.Name = "DGV1_NOFAK"
-        Me.DGV1_NOFAK.ReadOnly = True
-        Me.DGV1_NOFAK.Width = 150
-        '
-        'DGV1_TGL
-        '
-        Me.DGV1_TGL.DataPropertyName = "TGL"
-        Me.DGV1_TGL.HeaderText = "Tanggal"
-        Me.DGV1_TGL.Name = "DGV1_TGL"
-        Me.DGV1_TGL.ReadOnly = True
-        '
-        'DGV1_JT
-        '
-        Me.DGV1_JT.DataPropertyName = "JT"
-        Me.DGV1_JT.HeaderText = "Jatuh Tempo"
-        Me.DGV1_JT.Name = "DGV1_JT"
-        Me.DGV1_JT.ReadOnly = True
-        '
-        'DGV1_CUSTOMERNAMA
-        '
-        Me.DGV1_CUSTOMERNAMA.DataPropertyName = "CUSTOMERNAMA"
-        Me.DGV1_CUSTOMERNAMA.HeaderText = "Nama Customer"
-        Me.DGV1_CUSTOMERNAMA.Name = "DGV1_CUSTOMERNAMA"
-        Me.DGV1_CUSTOMERNAMA.ReadOnly = True
-        Me.DGV1_CUSTOMERNAMA.Width = 150
-        '
-        'DGV1_TOTAL
-        '
-        Me.DGV1_TOTAL.DataPropertyName = "TOTAL"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "N2"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.DGV1_TOTAL.DefaultCellStyle = DataGridViewCellStyle9
-        Me.DGV1_TOTAL.HeaderText = "Total(Rp.)"
-        Me.DGV1_TOTAL.Name = "DGV1_TOTAL"
-        Me.DGV1_TOTAL.ReadOnly = True
-        '
-        'DGV1_POT
-        '
-        Me.DGV1_POT.DataPropertyName = "POT"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "N0"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.DGV1_POT.DefaultCellStyle = DataGridViewCellStyle10
-        Me.DGV1_POT.HeaderText = "Potongan(Rp.)"
-        Me.DGV1_POT.Name = "DGV1_POT"
-        Me.DGV1_POT.ReadOnly = True
-        '
-        'DGV1_GRANDTOTAL
-        '
-        Me.DGV1_GRANDTOTAL.DataPropertyName = "GRANDTOTAL"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Format = "N2"
-        DataGridViewCellStyle11.NullValue = Nothing
-        Me.DGV1_GRANDTOTAL.DefaultCellStyle = DataGridViewCellStyle11
-        Me.DGV1_GRANDTOTAL.HeaderText = "Grand Total(Rp.)"
-        Me.DGV1_GRANDTOTAL.Name = "DGV1_GRANDTOTAL"
-        Me.DGV1_GRANDTOTAL.ReadOnly = True
-        '
-        'DGV1_KET
-        '
-        Me.DGV1_KET.DataPropertyName = "KET"
-        Me.DGV1_KET.HeaderText = "Keterangan"
-        Me.DGV1_KET.Name = "DGV1_KET"
-        Me.DGV1_KET.ReadOnly = True
-        Me.DGV1_KET.Width = 250
-        '
-        'DGV1_CREATE_USERID
-        '
-        Me.DGV1_CREATE_USERID.DataPropertyName = "CREATE_USERID"
-        Me.DGV1_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV1_CREATE_USERID.Name = "DGV1_CREATE_USERID"
-        Me.DGV1_CREATE_USERID.ReadOnly = True
-        Me.DGV1_CREATE_USERID.Width = 150
-        '
-        'DGV1_STAMP
-        '
-        Me.DGV1_STAMP.DataPropertyName = "STAMP"
-        Me.DGV1_STAMP.HeaderText = "STAMP"
-        Me.DGV1_STAMP.Name = "DGV1_STAMP"
-        Me.DGV1_STAMP.ReadOnly = True
-        Me.DGV1_STAMP.Width = 150
-        '
-        'DGV1_BAYAR
-        '
-        Me.DGV1_BAYAR.DataPropertyName = "BAYAR"
-        Me.DGV1_BAYAR.HeaderText = "Column1"
-        Me.DGV1_BAYAR.Name = "DGV1_BAYAR"
-        Me.DGV1_BAYAR.ReadOnly = True
-        Me.DGV1_BAYAR.Visible = False
-        '
-        'DGV1_CUSTOMER
-        '
-        Me.DGV1_CUSTOMER.DataPropertyName = "CUSTOMER"
-        Me.DGV1_CUSTOMER.HeaderText = "Column1"
-        Me.DGV1_CUSTOMER.Name = "DGV1_CUSTOMER"
-        Me.DGV1_CUSTOMER.ReadOnly = True
-        Me.DGV1_CUSTOMER.Visible = False
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(230, 429)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(158, 13)
+        Me.Label4.TabIndex = 50
+        Me.Label4.Text = "*Click F1 untuk print ulang"
         '
         'DATA_JUAL
         '
@@ -460,6 +472,7 @@ Partial Class DATA_JUAL
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1455, 759)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.dgv_dat)
@@ -467,6 +480,7 @@ Partial Class DATA_JUAL
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgv_det)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "DATA_JUAL"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "DATA_JUAL"
@@ -516,4 +530,5 @@ Partial Class DATA_JUAL
     Friend WithEvents DGV1_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_BAYAR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV1_CUSTOMER As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

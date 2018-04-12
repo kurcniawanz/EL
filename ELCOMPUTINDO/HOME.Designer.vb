@@ -22,6 +22,7 @@ Partial Class HOME
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HOME))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PartnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,7 +73,6 @@ Partial Class HOME
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -279,7 +279,7 @@ Partial Class HOME
         '
         'AkuntingToolStripMenuItem
         '
-        Me.AkuntingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HutangToolStripMenuItem, Me.PiutangToolStripMenuItem, Me.ToolStripSeparator7, Me.DataKasToolStripMenuItem, Me.ToolStripMenuItem3, Me.ToolStripSeparator8, Me.BiayaToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
+        Me.AkuntingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HutangToolStripMenuItem, Me.PiutangToolStripMenuItem, Me.ToolStripSeparator7, Me.DataKasToolStripMenuItem, Me.ToolStripMenuItem3, Me.BiayaToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
         Me.AkuntingToolStripMenuItem.Name = "AkuntingToolStripMenuItem"
         Me.AkuntingToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.AkuntingToolStripMenuItem.Text = "&Akunting"
@@ -384,11 +384,6 @@ Partial Class HOME
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
         '
-        'ToolStripSeparator8
-        '
-        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(183, 6)
-        '
         'HOME
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -396,6 +391,7 @@ Partial Class HOME
         Me.ClientSize = New System.Drawing.Size(1321, 601)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "HOME"
@@ -459,5 +455,4 @@ Partial Class HOME
     Friend WithEvents BiayaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PendapatanLainlainToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
 End Class
