@@ -22,14 +22,14 @@ Partial Class INPUT_BELI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DGV_NAMABARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,6 +73,8 @@ Partial Class INPUT_BELI
         Me.txtqty = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtongkir = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.txtgrandtotal = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtpotbawah = New System.Windows.Forms.TextBox()
@@ -83,6 +85,8 @@ Partial Class INPUT_BELI
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.idsup = New System.Windows.Forms.Label()
+        Me.txttotqy = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -93,19 +97,19 @@ Partial Class INPUT_BELI
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_NAMABARANG, Me.DGV_QTY, Me.DGV_HARGA, Me.DGV_JUMLAH, Me.DGV_POT1, Me.DGV_POT2, Me.DGV_TOTAL, Me.DGV_IDBARANG})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 190)
@@ -126,10 +130,10 @@ Partial Class INPUT_BELI
         'DGV_QTY
         '
         Me.DGV_QTY.DataPropertyName = "QTY"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Format = "N0"
+        DataGridViewCellStyle11.NullValue = Nothing
+        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle11
         Me.DGV_QTY.HeaderText = "Qty"
         Me.DGV_QTY.Name = "DGV_QTY"
         Me.DGV_QTY.ReadOnly = True
@@ -138,10 +142,10 @@ Partial Class INPUT_BELI
         'DGV_HARGA
         '
         Me.DGV_HARGA.DataPropertyName = "HARGA"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DGV_HARGA.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "N2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.DGV_HARGA.DefaultCellStyle = DataGridViewCellStyle12
         Me.DGV_HARGA.HeaderText = "Harga"
         Me.DGV_HARGA.Name = "DGV_HARGA"
         Me.DGV_HARGA.ReadOnly = True
@@ -149,10 +153,10 @@ Partial Class INPUT_BELI
         'DGV_JUMLAH
         '
         Me.DGV_JUMLAH.DataPropertyName = "JUMLAH"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.DGV_JUMLAH.DefaultCellStyle = DataGridViewCellStyle13
         Me.DGV_JUMLAH.HeaderText = "Jumlah"
         Me.DGV_JUMLAH.Name = "DGV_JUMLAH"
         Me.DGV_JUMLAH.ReadOnly = True
@@ -160,10 +164,10 @@ Partial Class INPUT_BELI
         'DGV_POT1
         '
         Me.DGV_POT1.DataPropertyName = "POT1"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DGV_POT1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle14.Format = "N0"
+        DataGridViewCellStyle14.NullValue = Nothing
+        Me.DGV_POT1.DefaultCellStyle = DataGridViewCellStyle14
         Me.DGV_POT1.HeaderText = "Disc(%)"
         Me.DGV_POT1.Name = "DGV_POT1"
         Me.DGV_POT1.ReadOnly = True
@@ -172,10 +176,10 @@ Partial Class INPUT_BELI
         'DGV_POT2
         '
         Me.DGV_POT2.DataPropertyName = "POT2"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.DGV_POT2.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle15.Format = "N2"
+        DataGridViewCellStyle15.NullValue = Nothing
+        Me.DGV_POT2.DefaultCellStyle = DataGridViewCellStyle15
         Me.DGV_POT2.HeaderText = "Disc(Rp.)"
         Me.DGV_POT2.Name = "DGV_POT2"
         Me.DGV_POT2.ReadOnly = True
@@ -183,10 +187,10 @@ Partial Class INPUT_BELI
         'DGV_TOTAL
         '
         Me.DGV_TOTAL.DataPropertyName = "TOTAL"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "N2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle16.Format = "N2"
+        DataGridViewCellStyle16.NullValue = Nothing
+        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle16
         Me.DGV_TOTAL.HeaderText = "Total"
         Me.DGV_TOTAL.Name = "DGV_TOTAL"
         Me.DGV_TOTAL.ReadOnly = True
@@ -534,6 +538,8 @@ Partial Class INPUT_BELI
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.txtongkir)
+        Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.txtgrandtotal)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.txtpotbawah)
@@ -542,15 +548,33 @@ Partial Class INPUT_BELI
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Location = New System.Drawing.Point(593, 409)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(285, 91)
+        Me.GroupBox2.Size = New System.Drawing.Size(285, 124)
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
+        '
+        'txtongkir
+        '
+        Me.txtongkir.Location = New System.Drawing.Point(118, 65)
+        Me.txtongkir.Name = "txtongkir"
+        Me.txtongkir.Size = New System.Drawing.Size(161, 20)
+        Me.txtongkir.TabIndex = 17
+        Me.txtongkir.Text = "0"
+        Me.txtongkir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(53, 68)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(61, 13)
+        Me.Label17.TabIndex = 18
+        Me.Label17.Text = "Ongkir  Rp."
         '
         'txtgrandtotal
         '
         Me.txtgrandtotal.Enabled = False
         Me.txtgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtgrandtotal.Location = New System.Drawing.Point(118, 65)
+        Me.txtgrandtotal.Location = New System.Drawing.Point(118, 91)
         Me.txtgrandtotal.Name = "txtgrandtotal"
         Me.txtgrandtotal.Size = New System.Drawing.Size(161, 20)
         Me.txtgrandtotal.TabIndex = 15
@@ -561,7 +585,7 @@ Partial Class INPUT_BELI
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 68)
+        Me.Label8.Location = New System.Drawing.Point(16, 94)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 16
@@ -644,12 +668,35 @@ Partial Class INPUT_BELI
         Me.idsup.Text = "Nama Barang"
         Me.idsup.Visible = False
         '
+        'txttotqy
+        '
+        Me.txttotqy.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txttotqy.AutoSize = True
+        Me.txttotqy.Location = New System.Drawing.Point(816, 542)
+        Me.txttotqy.Name = "txttotqy"
+        Me.txttotqy.Size = New System.Drawing.Size(33, 13)
+        Me.txttotqy.TabIndex = 40
+        Me.txttotqy.Text = "totqty"
+        Me.txttotqy.Visible = False
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(512, 506)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 27)
+        Me.Button6.TabIndex = 69
+        Me.Button6.Text = "Cancel"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'INPUT_BELI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(896, 575)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.txttotqy)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.idsup)
         Me.Controls.Add(Me.Label20)
@@ -732,4 +779,8 @@ Partial Class INPUT_BELI
     Friend WithEvents DGV_TOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_IDBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idsup As System.Windows.Forms.Label
+    Friend WithEvents txtongkir As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents txttotqy As System.Windows.Forms.Label
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class

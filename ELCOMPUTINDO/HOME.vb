@@ -590,4 +590,17 @@ Public Class HOME
         frm.Show()
         frm.Dock = DockStyle.Fill
     End Sub
+
+    Private Sub ToolStripMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem4.Click
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DISCOUNT
+        frm = New DISCOUNT
+        frm.Text = "HOME"
+        frm.MdiParent = Me
+        frm.Show()
+        frm.Dock = DockStyle.Fill
+    End Sub
 End Class

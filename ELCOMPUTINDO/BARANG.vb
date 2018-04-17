@@ -92,12 +92,13 @@ Public Class BARANG
 
         nomor()
         Dim simpan As String
-        simpan = "INSERT INTO TB_BARANG(ID,NAMA,KELOMPOK,SATUAN,HARGAJUAL,MINIMAL,CREATE_USERID,STAMP,KET)" _
+        simpan = "INSERT INTO TB_BARANG(ID,NAMA,KELOMPOK,SATUAN,HARGAJUAL,HARGAJUAL2,MINIMAL,CREATE_USERID,STAMP,KET)" _
            + "VALUES ('" & txtid.Text & "'," _
            + "'" & txtnama.Text & "'," _
            + "'" & txtkelompok.SelectedValue & "'," _
            + "'" & txtsatuan.Text & "'," _
            + "'" & CDbl(txtharga.Text) & "'," _
+           + "'" & CDbl(txtharga2.Text) & "'," _
            + "'" & CDbl(txtminimal.Text) & "'," _
            + "'" & HOME.usernya.Text & "'," _
            + "cast('NOW' as timestamp)," _
@@ -108,6 +109,7 @@ Public Class BARANG
         txtkelompok.SelectedValue = 0
         txtsatuan.Clear()
         txtharga.Text = 0
+        txtharga2.Text = 0
         txtket.Clear()
         txtminimal.Text = "0"
         txtnama.Focus()
@@ -139,7 +141,7 @@ Public Class BARANG
 
     Private Sub txtharga_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtharga.KeyDown
         If e.KeyCode = Keys.Enter Then
-            txtminimal.Focus()
+            txtharga2.Focus()
         End If
     End Sub
 
@@ -205,7 +207,7 @@ Public Class BARANG
         Dim edit As String
         edit = "UPDATE TB_BARANG SET STAMP = cast('NOW' as timestamp), NAMA = '" & txtnama.Text & "'," _
             + "KELOMPOK = '" & txtkelompok.SelectedValue & "',KET = '" & txtket.Text & "'," _
-            + "SATUAN = '" & txtsatuan.Text & "',HARGAJUAL = '" & CDbl(txtharga.Text) & "', MINIMAL = '" & CDbl(txtminimal.Text) & "'," _
+            + "SATUAN = '" & txtsatuan.Text & "',HARGAJUAL = '" & CDbl(txtharga.Text) & "', HARGAJUAL2 = '" & CDbl(txtharga2.Text) & "', MINIMAL = '" & CDbl(txtminimal.Text) & "'," _
             + "CREATE_USERID = '" & HOME.usernya.Text & "' WHERE ID = '" & txtid.Text & "' "
         callprogress(edit)
         txtid.Clear()
@@ -213,6 +215,7 @@ Public Class BARANG
         txtkelompok.SelectedValue = 0
         txtsatuan.Clear()
         txtharga.Text = 0
+        txtharga2.Text = 0
         txtket.Clear()
         txtminimal.Text = "0"
         txtnama.Focus()
@@ -243,6 +246,7 @@ Public Class BARANG
         txtkelompok.SelectedValue = 0
         txtsatuan.Clear()
         txtharga.Text = 0
+        txtharga2.Text = 0
         txtket.Clear()
         txtminimal.Text = "0"
         txtnama.Focus()
@@ -260,5 +264,21 @@ Public Class BARANG
             frm.Dock = DockStyle.Fill
         End If
         
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub txtharga2_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtharga2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtminimal.Focus()
+        End If
+    End Sub
+
+    Private Sub txtharga2_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtharga2.Leave
+        If Not txtharga2.Text = "" Then
+            txtharga2.Text = FormatNumber(txtharga2.Text, 0)
+        End If
     End Sub
 End Class

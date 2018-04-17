@@ -33,12 +33,13 @@ Public Class LIST_HUTANG
         koneksi_db()
         Dim dA As New FbDataAdapter(" SELECT y.NAMA, sum(z.BELI)AS BELI,sum(z.REBELI)AS REBELI,sum(z.BAYAR)AS BAYAR, " _
                                     + " sum(z.BELI) - sum(z.REBELI)AS GRANDTOTAL, " _
-                                    + " sum(z.BELI) - sum(z.REBELI) - sum(z.BAYAR)AS SISA FROM TB_PARTNER y LEFT JOIN ( " _
-                                    + " SELECT a.SUPLIER,a.GRANDTOTAL AS BELI, 0 AS REBELI, a.BAYAR " _
-                                    + " FROM TB_BELI a " _
+                                    + " sum(z.BELI) - sum(z.REBELI) + sum(z.BAYAR)AS SISA FROM TB_PARTNER y LEFT JOIN ( " _
+                                    + " SELECT a.SUPLIER,a.GRANDTOTAL AS BELI, 0 AS REBELI, CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END AS BAYAR" _
+                                    + " FROM TB_BELI a LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK " _
                                     + " union " _
-                                    + " SELECT a.SUPLIER,0 AS BELI, a.GRANDTOTAL AS REBELI, -(a.BAYAR) " _
-                                    + " FROM TB_REBELI a)z on y.ID = z.SUPLIER  " _
+                                    + " SELECT a.SUPLIER,0 AS BELI, a.GRANDTOTAL AS REBELI, CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END AS BAYAR " _
+                                    + " FROM TB_REBELI a LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK " _
+                                    + " )z on y.ID = z.SUPLIER  " _
                                     + " WHERE y.NAMA LIKE '" & aa & "' AND y.STATUS LIKE '%S' GROUP BY y.NAMA ", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()

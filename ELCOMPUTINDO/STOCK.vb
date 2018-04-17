@@ -58,11 +58,13 @@ Public Class STOCK
         Dim dA As New FbDataAdapter("   SELECT a.ID,a.NAMA,a.KELOMPOK,m.QTY, " _
                         + " CASE WHEN m.QTY = 0 THEN 0 ELSE (m.TOTHPP/m.QTY) END as HPP, " _
                         + " CASE WHEN m.QTY = 0 THEN 0 ELSE  m.TOTHPP END AS TOTHPP, " _
-                        + " a.SATUAN, a.HARGAJUAL, a.MINIMAL, a.KET, a.CREATE_USERID, a.STAMP, " _
+                        + " CASE WHEN m.QTY = 0 THEN 0 ELSE (m.TOTHPP/m.QTY) END + a.HARGAJUAL as JUALUSER, " _
+                        + " CASE WHEN m.QTY = 0 THEN 0 ELSE (m.TOTHPP/m.QTY) END + a.HARGAJUAL2 as JUALSELLER, " _
+                        + " a.SATUAN, a.HARGAJUAL2,a.HARGAJUAL, a.MINIMAL, a.KET, a.CREATE_USERID, a.STAMP, " _
                         + " b.NAMA as KELOMPOKNAMA FROM TB_BARANG a  " _
                         + " INNER JOIN TB_CATEGORY b ON b.ID = a.KELOMPOK  " _
                         + " LEFT JOIN (  " _
-                        + " SELECT IDBARANG as  BARANGID,SUM(QTY) as QTY,SUM(TOTHPP) as TOTHPP FROM TB_MUTASI GROUP BY IDBARANG  " _
+                        + " SELECT IDBARANG as  BARANGID,SUM(QTY) as QTY,SUM(TOTHPP+(ONGKIR*QTY)) as TOTHPP FROM TB_MUTASI GROUP BY IDBARANG  " _
                         + " )m ON m.BARANGID = a.ID " _
                         + " WHERE a.NAMA LIKE '%' AND a.KELOMPOK LIKE '%'  " & cc & " ", konek)
         Dim dS As DataTable = New DataTable
@@ -107,6 +109,7 @@ Public Class STOCK
         frm.txtkelompok.SelectedValue = DataGridView1.Rows(e.RowIndex).Cells("DGV_KELOMPOK").Value
         frm.txtsatuan.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_SATUAN").Value.ToString
         frm.txtharga.Text = FormatNumber(DataGridView1.Rows(e.RowIndex).Cells("DGV_HARGAJUAL").Value, 0)
+        frm.txtharga2.Text = FormatNumber(DataGridView1.Rows(e.RowIndex).Cells("DGV_HARGAJUAL2").Value, 0)
         frm.txtminimal.Text = FormatNumber(DataGridView1.Rows(e.RowIndex).Cells("DGV_MINIMAL").Value, 0)
         frm.txtket.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_KET").Value.ToString
         frm.Show()

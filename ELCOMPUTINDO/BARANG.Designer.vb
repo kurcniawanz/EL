@@ -25,6 +25,8 @@ Partial Class BARANG
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtminimal = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtharga = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -39,8 +41,9 @@ Partial Class BARANG
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtminimal = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtharga2 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,6 +67,9 @@ Partial Class BARANG
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.txtharga2)
+        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtminimal)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -79,9 +85,28 @@ Partial Class BARANG
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(17, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(446, 215)
+        Me.GroupBox1.Size = New System.Drawing.Size(419, 237)
         Me.GroupBox1.TabIndex = 27
         Me.GroupBox1.TabStop = False
+        '
+        'txtminimal
+        '
+        Me.txtminimal.Location = New System.Drawing.Point(136, 147)
+        Me.txtminimal.MaxLength = 12
+        Me.txtminimal.Name = "txtminimal"
+        Me.txtminimal.Size = New System.Drawing.Size(82, 20)
+        Me.txtminimal.TabIndex = 11
+        Me.txtminimal.Text = "0"
+        Me.txtminimal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(21, 147)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(73, 13)
+        Me.Label9.TabIndex = 12
+        Me.Label9.Text = "Stock Minimal"
         '
         'Label7
         '
@@ -107,9 +132,9 @@ Partial Class BARANG
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(21, 95)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 13)
+        Me.Label6.Size = New System.Drawing.Size(67, 13)
         Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Harga Jual Minimal"
+        Me.Label6.Text = "Minimal User"
         '
         'txtsatuan
         '
@@ -141,7 +166,7 @@ Partial Class BARANG
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 147)
+        Me.Label4.Location = New System.Drawing.Point(21, 182)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(62, 13)
         Me.Label4.TabIndex = 4
@@ -158,7 +183,7 @@ Partial Class BARANG
         '
         'txtket
         '
-        Me.txtket.Location = New System.Drawing.Point(136, 147)
+        Me.txtket.Location = New System.Drawing.Point(136, 173)
         Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
@@ -185,7 +210,7 @@ Partial Class BARANG
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(388, 266)
+        Me.Button3.Location = New System.Drawing.Point(361, 288)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 30
@@ -194,7 +219,7 @@ Partial Class BARANG
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(388, 266)
+        Me.Button2.Location = New System.Drawing.Point(361, 288)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 29
@@ -205,31 +230,40 @@ Partial Class BARANG
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.DarkRed
-        Me.Button1.Location = New System.Drawing.Point(307, 266)
+        Me.Button1.Location = New System.Drawing.Point(280, 288)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "Hapus"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'txtminimal
+        'Label8
         '
-        Me.txtminimal.Location = New System.Drawing.Point(136, 121)
-        Me.txtminimal.MaxLength = 12
-        Me.txtminimal.Name = "txtminimal"
-        Me.txtminimal.Size = New System.Drawing.Size(82, 20)
-        Me.txtminimal.TabIndex = 11
-        Me.txtminimal.Text = "0"
-        Me.txtminimal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(133, 121)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(24, 13)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Rp."
         '
-        'Label9
+        'txtharga2
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(21, 121)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 13)
-        Me.Label9.TabIndex = 12
-        Me.Label9.Text = "Stock Minimal"
+        Me.txtharga2.Location = New System.Drawing.Point(163, 121)
+        Me.txtharga2.MaxLength = 12
+        Me.txtharga2.Name = "txtharga2"
+        Me.txtharga2.Size = New System.Drawing.Size(153, 20)
+        Me.txtharga2.TabIndex = 13
+        Me.txtharga2.Text = "0"
+        Me.txtharga2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(21, 121)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(85, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Minimal ReSeller"
         '
         'BARANG
         '
@@ -272,4 +306,7 @@ Partial Class BARANG
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents txtminimal As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txtharga2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

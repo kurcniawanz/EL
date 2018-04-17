@@ -57,7 +57,10 @@
       <HintPath>bin\Debug\FirebirdSql.Data.FirebirdClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -171,6 +174,12 @@
       <DependentUpon>DATA_REJUAL.vb</DependentUpon>
     </Compile>
     <Compile Include="DATA_REJUAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISCOUNT.Designer.vb">
+      <DependentUpon>DISCOUNT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DISCOUNT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HISTORI_BELI.Designer.vb">
@@ -357,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DATA_REJUAL.resx">
       <DependentUpon>DATA_REJUAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISCOUNT.resx">
+      <DependentUpon>DISCOUNT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FAKTUR_BELI.rdlc" />
     <EmbeddedResource Include="FAKTUR_JUAL.rdlc" />

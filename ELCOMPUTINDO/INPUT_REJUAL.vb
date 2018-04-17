@@ -58,7 +58,8 @@ Public Class INPUT_REJUAL
         Next
         txttotalbawah.Text = FormatNumber(jumlah, 0)
         txtpotbawah.Text = FormatNumber(jumlah - total, 0)
-        txtgrandtotal.Text = FormatNumber(total, 0)
+        txtgrandtotal.Text = FormatNumber(total + CDbl(txtongkir.Text), 0)
+        txtongkir.Text = FormatNumber(txtongkir.Text, 0)
 
     End Sub
 
@@ -162,44 +163,12 @@ Public Class INPUT_REJUAL
             edit_det()
             hitung()
 
-            Dim temp2 As String = ""
-            Dim vall2 As String = ""
-            koneksi_db()
-            Dim rddd2 As FbDataReader
-            Dim cmd2 = New FbCommand("SELECT * FROM TB_MUTASI  ORDER BY ID DESC", konek)
-            rddd2 = cmd2.ExecuteReader
-
-            If rddd2.Read Then
-                temp2 = rddd2.Item("ID")
-                vall2 = Val(temp2) + 1
-            Else
-                vall2 = "1"
-            End If
-            konek.Close()
-
             Dim hpp As Double
-            koneksi_db()
-            Dim readhpp As FbDataReader
-            Dim command = New FbCommand("SELECT sum(a.TOTHPP)/ sum(a.QTY) AS HPP FROM TB_MUTASI a WHERE IDBARANG = " & CDbl(txtbarang.SelectedValue) & " GROUP BY a.IDBARANG", konek)
-            readhpp = command.ExecuteReader
-            If readhpp.Read Then
-                hpp = readhpp.Item("HPP")
-            Else
-                hpp = 0
-            End If
-            konek.Close()
+            hpp = call_hpp(txtbarang.SelectedValue)
 
-            simpan2 = "INSERT INTO TB_MUTASI (ID, TGL, IDBARANG, QTY, HPP, TOTHPP, CREATE_UID, STAMP,NOFAK)" _
-           + "VALUES ('" & vall2 & "'," _
-           + "'" & CDate(txttgl.Text) & "'," _
-           + "'" & CDbl(txtbarang.SelectedValue) & "'," _
-           + "'" & CDbl(txtqty.Text) & "'," _
-           + "'" & CDbl(hpp) & "'," _
-           + "'" & CDbl(txtqty.Text) * CDbl(hpp) & "'," _
-           + "'" & HOME.usernya.Text & "'," _
-           + "cast('NOW' as timestamp)," _
-           + "'" & txtnofak.Text & "') ; "
-            callprogress2(simpan2)
+            Dim input As String
+            input = input_mutasi(0, txtnofak.Text, txtbarang.SelectedValue, txtqty.Text, hpp, txttgl.Text)
+
         Else
             DataGridView1.Rows.Add(txtbarang.Text, txtqty.Text, txtharga.Text, txtjumlah.Text, txtpot1.Text, txtpot2.Text, txttotal.Text, txtbarang.SelectedValue)
         End If
@@ -216,14 +185,37 @@ Public Class INPUT_REJUAL
 
     End Sub
 
+    Dim harga1, harga2 As Double
+    Dim seller As String = ""
+
     Private Sub txtbarang_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbarang.SelectedIndexChanged
         koneksi_db()
+
         Dim rddd As FbDataReader
-        Dim cmd = New FbCommand("SELECT HARGAJUAL,SATUAN FROM TB_BARANG WHERE ID = '" & txtbarang.SelectedValue & "'", konek)
+        Dim cmd = New FbCommand("SELECT b.SATUAN, (CASE WHEN sum(a.QTY) = 0 THEN 0 ELSE sum(a.TOTHPP+(a.ONGKIR*a.QTY))/sum(a.QTY) END) + b.HARGAJUAL AS hargauser,  " _
+                                + " (CASE WHEN sum(a.QTY) = 0 THEN 0 ELSE sum(a.TOTHPP+(a.ONGKIR*a.QTY))/sum(a.QTY) END) + b.HARGAJUAL2 AS hargaseller " _
+                                + " FROM TB_MUTASI a INNER JOIN TB_BARANG b ON b.ID = a.IDBARANG " _
+                                + " WHERE a.IDBARANG = '" & txtbarang.SelectedValue & "' GROUP BY a.IDBARANG,b.SATUAN,b.HARGAJUAL,b.HARGAJUAL2", konek)
         rddd = cmd.ExecuteReader
         If rddd.Read() Then
             txtsat.Text = rddd("SATUAN")
-            txtharga.Text = FormatNumber(rddd("HARGAJUAL"))
+            harga1 = rddd("HARGAUSER")
+            harga2 = rddd("HARGASELLER")
+        End If
+        konek.Close()
+
+        koneksi_db()
+        Dim rdsup As FbDataReader
+        Dim cmdsup = New FbCommand("SELECT SELLER FROM TB_PARTNER WHERE ID = '" & txtsup.SelectedValue & "'", konek)
+        rdsup = cmdsup.ExecuteReader
+        If rdsup.Read() Then
+            seller = rdsup("SELLER").ToString
+            If seller = "USER" Then
+                txtharga.Text = FormatNumber(harga1, 0)
+            Else
+                txtharga.Text = FormatNumber(harga2, 0)
+            End If
+
         End If
         konek.Close()
 
@@ -311,16 +303,9 @@ Public Class INPUT_REJUAL
             Dim stocknya As String = ""
             Dim barangnya As String = ""
             For i As Integer = 0 To DataGridView1.RowCount - 1
-                Dim tempqty As Integer = 0
-                koneksi_db()
-                Dim readqty As FbDataReader
-                Dim cmdqty = New FbCommand("SELECT SUM(QTY) as QTY FROM TB_MUTASI WHERE IDBARANG = '" & CDbl(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value) & "' GROUP BY IDBARANG", konek)
-                readqty = cmdqty.ExecuteReader
 
-                If readqty.Read Then
-                    tempqty = readqty.Item("QTY")
-                End If
-                konek.Close()
+                Dim tempqty As Integer = 0
+                tempqty = call_qty(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value)
 
                 If tempqty - CDbl(CDbl(DataGridView1.Rows(row).Cells("DGV_QTY").Value)) < 0 Then
                     cek = "T"
@@ -339,51 +324,19 @@ Public Class INPUT_REJUAL
                 txtbarang.Focus()
                 Exit Sub
             Else
-                Dim temp2 As String = ""
-                Dim vall2 As String = ""
-                koneksi_db()
-                Dim rddd2 As FbDataReader
-                Dim cmd2 = New FbCommand("SELECT * FROM TB_MUTASI  ORDER BY ID DESC", konek)
-                rddd2 = cmd2.ExecuteReader
-
-                If rddd2.Read Then
-                    temp2 = rddd2.Item("ID")
-                    vall2 = Val(temp2) + 1
-                Else
-                    vall2 = "1"
-                End If
-                konek.Close()
 
                 Dim hpp As Double
-                koneksi_db()
-                Dim readhpp As FbDataReader
-                Dim command = New FbCommand("SELECT sum(a.TOTHPP)/ sum(a.QTY) AS HPP FROM TB_MUTASI a WHERE IDBARANG = " & CDbl(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value) & " GROUP BY a.IDBARANG", konek)
-                readhpp = command.ExecuteReader
-                If readhpp.Read Then
-                    hpp = readhpp.Item("HPP")
-                Else
-                    hpp = 0
-                End If
-                konek.Close()
+                hpp = call_hpp(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value)
 
-                Dim simpan3 As String
-                simpan3 = "INSERT INTO TB_MUTASI (ID, NOFAK, IDBARANG, QTY, HPP, TOTHPP, CREATE_UID, STAMP,TGL)" _
-               + "VALUES ('" & vall2 & "'," _
-               + "'" & txtnofak.Text & "'," _
-               + "'" & CDbl(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value) & "'," _
-               + "'" & CDbl(DataGridView1.Rows(row).Cells("DGV_QTY").Value) * -1 & "'," _
-               + "'" & CDbl(hpp) & "'," _
-               + "'" & (CDbl(DataGridView1.Rows(row).Cells("DGV_TOTAL").Value) * -1) * CDbl(hpp) & "'," _
-               + "'" & HOME.usernya.Text & "'," _
-               + "cast('NOW' as timestamp)," _
-               + "'" & CDate(txttgl.Text) & "') ; "
-                callprogress2(simpan3)
+                Dim input As String
+                input = input_mutasi(0, txtnofak.Text, DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value, (CDbl(DataGridView1.Rows(row).Cells("DGV_QTY").Value) * -1), hpp, txttgl.Text)
 
                 Dim hapus2 As String
                 hapus2 = "DELETE FROM TB_REJUAL_DET WHERE NOFAK ='" & txtnofak.Text & "' AND IDBARANG = '" & CDbl(DataGridView1.Rows(row).Cells("DGV_IDBARANG").Value) & "'"
                 callprogress2(hapus2)
                 edit_det()
                 hitung()
+
             End If
            
         Else
@@ -412,10 +365,11 @@ Public Class INPUT_REJUAL
         End If
 
         nomor()
-        Dim simpan, simpan2, simpan3 As String
+        Dim simpan, simpan2 As String
 
-        simpan = "INSERT INTO TB_REJUAL(ID,LUNAS, NOFAK, TGL, CUSTOMER, JT, POT, GRANDTOTAL, BAYAR, CREATE_USERID, STAMP, KET)" _
+        simpan = "INSERT INTO TB_REJUAL(ID,ONGKIR, LUNAS, NOFAK, TGL, CUSTOMER, JT, POT, GRANDTOTAL, BAYAR, CREATE_USERID, STAMP, KET)" _
            + "VALUES ('" & txtid.Text & "'," _
+            + "'" & CDbl(txtongkir.Text) & "'," _
             + "'N'," _
            + "'" & txtnofak.Text & "'," _
            + "'" & CDate(txttgl.Text) & "'," _
@@ -458,44 +412,12 @@ Public Class INPUT_REJUAL
              + "'" & txtnofak.Text & "') ; "
             callprogress2(simpan2)
 
-            Dim temp2 As String = ""
-            Dim vall2 As String = ""
-            koneksi_db()
-            Dim rddd2 As FbDataReader
-            Dim cmd2 = New FbCommand("SELECT * FROM TB_MUTASI  ORDER BY ID DESC", konek)
-            rddd2 = cmd2.ExecuteReader
-
-            If rddd2.Read Then
-                temp2 = rddd2.Item("ID")
-                vall2 = Val(temp2) + 1
-            Else
-                vall2 = "1"
-            End If
-            konek.Close()
-
             Dim hpp As Double
-            koneksi_db()
-            Dim readhpp As FbDataReader
-            Dim command = New FbCommand("SELECT sum(a.TOTHPP)/ sum(a.QTY) AS HPP FROM TB_MUTASI a WHERE IDBARANG = " & CDbl(DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value) & " GROUP BY a.IDBARANG", konek)
-            readhpp = command.ExecuteReader
-            If readhpp.Read Then
-                hpp = readhpp.Item("HPP")
-            Else
-                hpp = 0
-            End If
-            konek.Close()
+            hpp = call_hpp(DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value)
 
-            simpan3 = "INSERT INTO TB_MUTASI (ID, NOFAK, IDBARANG, QTY, HPP, TOTHPP, CREATE_UID, STAMP,TGL)" _
-           + "VALUES ('" & vall2 & "'," _
-           + "'" & txtnofak.Text & "'," _
-           + "'" & CDbl(DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value) & "'," _
-           + "'" & CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) & "'," _
-           + "'" & CDbl(hpp) & "'," _
-           + "'" & CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) * CDbl(hpp) & "'," _
-           + "'" & HOME.usernya.Text & "'," _
-           + "cast('NOW' as timestamp)," _
-           + "'" & CDate(txttgl.Text) & "') ; "
-            callprogress2(simpan3)
+            Dim input As String
+            input = input_mutasi(0, txtnofak.Text, DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value, DataGridView1.Rows(i).Cells("DGV_QTY").Value, hpp, txttgl.Text)
+
         Next
 
         txttgl.Value = Now
@@ -505,7 +427,7 @@ Public Class INPUT_REJUAL
         txttotalbawah.Text = "0"
         txtpotbawah.Text = "0"
         txtgrandtotal.Text = "0"
-
+        txtongkir.Text = "0"
         DataGridView1.Rows.Clear()
         txtnofak.Clear()
         txttgl.Focus()
@@ -514,7 +436,7 @@ Public Class INPUT_REJUAL
 
     Private Sub txtket_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtket.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Button3.Focus()
+            txtongkir.Focus()
         End If
     End Sub
 
@@ -549,6 +471,7 @@ Public Class INPUT_REJUAL
            + "CUSTOMER = '" & txtsup.SelectedValue & "'," _
            + "JT = '" & CDate(txtjt.Text) & "'," _
            + "POT = '" & CDbl(txtpotbawah.Text) & "'," _
+              + "ONGKIR = '" & CDbl(txtongkir.Text) & "'," _
            + "GRANDTOTAL = '" & CDbl(txtgrandtotal.Text) & "'," _
            + "BAYAR = '" & CDbl(0) & "'," _
            + "CREATE_USERID = '" & HOME.usernya.Text & "'," _
@@ -579,16 +502,9 @@ Public Class INPUT_REJUAL
         Dim stocknya As String = ""
         Dim barangnya As String = ""
         For i As Integer = 0 To DataGridView1.RowCount - 1
-            Dim tempqty As Integer = 0
-            koneksi_db()
-            Dim readqty As FbDataReader
-            Dim cmdqty = New FbCommand("SELECT SUM(QTY) as QTY FROM TB_MUTASI WHERE IDBARANG = '" & CDbl(DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value) & "' GROUP BY IDBARANG", konek)
-            readqty = cmdqty.ExecuteReader
 
-            If readqty.Read Then
-                tempqty = readqty.Item("QTY")
-            End If
-            konek.Close()
+            Dim tempqty As Integer = 0
+            tempqty = call_qty(DataGridView1.Rows(i).Cells("DGV_IDBARANG").Value)
 
             If tempqty - CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value) < 0 Then
                 cek = "T"
@@ -622,45 +538,13 @@ Public Class INPUT_REJUAL
             konek.Close()
 
             For i As Integer = 0 To data.Rows.Count - 1
-                Dim temp2 As String = ""
-                Dim vall2 As String = ""
-                koneksi_db()
-                Dim rddd2 As FbDataReader
-                Dim cmd2 = New FbCommand("SELECT * FROM TB_MUTASI  ORDER BY ID DESC", konek)
-                rddd2 = cmd2.ExecuteReader
-
-                If rddd2.Read Then
-                    temp2 = rddd2.Item("ID")
-                    vall2 = Val(temp2) + 1
-                Else
-                    vall2 = "1"
-                End If
-                konek.Close()
 
                 Dim hpp As Double
-                koneksi_db()
-                Dim readhpp As FbDataReader
-                Dim command = New FbCommand("SELECT sum(a.TOTHPP)/ sum(a.QTY) AS HPP FROM TB_MUTASI a WHERE IDBARANG = " & CDbl(data.Rows(i).Item("IDBARANG").ToString) & " GROUP BY a.IDBARANG", konek)
-                readhpp = command.ExecuteReader
-                If readhpp.Read Then
-                    hpp = readhpp.Item("HPP")
-                Else
-                    hpp = 0
-                End If
-                konek.Close()
+                hpp = call_hpp(data.Rows(i).Item("IDBARANG").ToString)
 
-                Dim simpan3 As String
-                simpan3 = "INSERT INTO TB_MUTASI (ID, NOFAK, IDBARANG, QTY, HPP, TOTHPP, CREATE_UID, STAMP,TGL)" _
-               + "VALUES ('" & vall2 & "'," _
-               + "'" & txtnofak.Text & "'," _
-               + "'" & CDbl(data.Rows(i).Item("IDBARANG").ToString) & "'," _
-               + "'" & CDbl(data.Rows(i).Item("QTY").ToString) * -1 & "'," _
-               + "'" & CDbl(hpp) & "'," _
-               + "'" & (CDbl(data.Rows(i).Item("QTY").ToString) * -1) * CDbl(hpp) & "'," _
-               + "'" & HOME.usernya.Text & "'," _
-               + "cast('NOW' as timestamp)," _
-               + "'" & CDate(txttgl.Text) & "') ; "
-                callprogress2(simpan3)
+                Dim input As String
+                input = input_mutasi(0, txtnofak.Text, data.Rows(i).Item("IDBARANG").ToString, (CDbl(data.Rows(i).Item("QTY").ToString) * -1), hpp, txttgl.Text)
+
             Next
 
             Hapus2 = "DELETE FROM TB_REJUAL_DET WHERE NOFAK ='" & txtnofak.Text & "'"
@@ -681,5 +565,29 @@ Public Class INPUT_REJUAL
         End If
 
         
+    End Sub
+
+    Private Sub txtongkir_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtongkir.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button3.Focus()
+        End If
+    End Sub
+
+    Private Sub txtongkir_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtongkir.Leave
+        hitung()
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        HOME.MenuStrip1.Enabled = True
+        If Me.MdiChildren.Length > 0 Then
+            Dim childForm As Form = CType(ActiveMdiChild, Form)
+            childForm.Close()
+        End If
+        Dim frm As DATA_REJUAL
+        frm = New DATA_REJUAL
+        frm.Text = "HOME"
+        frm.MdiParent = HOME
+        frm.Show()
+        frm.Dock = DockStyle.Fill
     End Sub
 End Class

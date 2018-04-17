@@ -33,7 +33,7 @@ Public Class DATA_REJUAL
 
         dgv_dat.AutoGenerateColumns = False
         koneksi_db()
-        Dim dA As New FbDataAdapter("   SELECT a.ID, a.CUSTOMER, a.BAYAR,a.NOFAK, a.TGL, a.JT, b.NAMA as CUSTOMERNAMA, " _
+        Dim dA As New FbDataAdapter("   SELECT a.ID, a.ONGKIR, a.CUSTOMER, a.BAYAR,a.NOFAK, a.TGL, a.JT, b.NAMA as CUSTOMERNAMA, " _
                                         + "a.GRANDTOTAL-a.POT as TOTAL, " _
                                         + " a.POT, a.GRANDTOTAL, a.KET, a.CREATE_USERID, a.STAMP " _
                                         + "FROM TB_REJUAL a " _
@@ -112,6 +112,8 @@ Public Class DATA_REJUAL
         frm.txtket.Text = dgv_dat.Item("DGV1_KET", row).Value.ToString
         frm.Label1.Text = "Edit Retur Penjualan"
         frm.idsup.Text = dgv_dat.Item("DGV1_CUSTOMER", row).Value.ToString
+        frm.txtongkir.Text = FormatNumber(dgv_dat.Item("DGV_ONGKIR", row).Value.ToString, 0)
+        HOME.MenuStrip1.Enabled = False
         frm.Button3.Visible = False
         frm.Button2.Visible = True
         frm.Button1.Visible = True

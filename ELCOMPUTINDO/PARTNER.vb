@@ -71,6 +71,7 @@ Public Class PARTNER
         CheckBox4.Checked = True
         loaddata()
         txtnama.Focus()
+        txtstatus.Text = "USER"
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -105,13 +106,14 @@ Public Class PARTNER
 
         nomor()
         Dim simpan As String
-        simpan = "INSERT INTO TB_PARTNER(ID,NAMA,TELP,STATUS,CREATE_USERID,STAMP,ALAMAT)" _
+        simpan = "INSERT INTO TB_PARTNER(ID,NAMA,TELP,STATUS,CREATE_USERID,STAMP,SELLER,ALAMAT)" _
            + "VALUES ('" & txtid.Text & "'," _
            + "'" & txtnama.Text & "'," _
            + "'" & txttelp.Text & "'," _
            + "'" & bb & "'," _
            + "'" & HOME.usernya.Text & "'," _
            + "cast('NOW' as timestamp)," _
+           + "'" & txtstatus.Text & "'," _
            + "'" & txtalamat.Text & "') ; "
         callprogress(simpan)
         loaddata()
@@ -122,6 +124,7 @@ Public Class PARTNER
         CheckBox1.Checked = False
         CheckBox2.Checked = False
         txtnama.Focus()
+        txtstatus.Text = "USER"
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -147,7 +150,7 @@ Public Class PARTNER
         txtnama.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_NAMA").Value.ToString
         txttelp.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_TELP").Value.ToString
         txtalamat.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_ALAMAT").Value.ToString
-
+        txtstatus.Text = DataGridView1.Rows(e.RowIndex).Cells("DGV_SELLER").Value.ToString
         Dim bb As String = DataGridView1.Rows(e.RowIndex).Cells("DGV_STATUS").Value.ToString
         If bb = "C" Then
             CheckBox2.Checked = True
@@ -179,6 +182,7 @@ Public Class PARTNER
         CheckBox1.Checked = False
         CheckBox2.Checked = False
         txtnama.Focus()
+        txtstatus.Text = "USER"
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -193,7 +197,7 @@ Public Class PARTNER
             bb = "C-S"
         End If
         Dim edit As String
-        edit = "UPDATE TB_PARTNER SET STAMP = cast('NOW' as timestamp),status = '" & bb & "', NAMA = '" & txtnama.Text & "',TELP = '" & txttelp.Text & "',ALAMAT = '" & txtalamat.Text & "',CREATE_USERID = '" & HOME.usernya.Text & "' WHERE ID = '" & txtid.Text & "' "
+        edit = "UPDATE TB_PARTNER SET SELLER = '" & txtstatus.Text & "', STAMP = cast('NOW' as timestamp),status = '" & bb & "', NAMA = '" & txtnama.Text & "',TELP = '" & txttelp.Text & "',ALAMAT = '" & txtalamat.Text & "',CREATE_USERID = '" & HOME.usernya.Text & "' WHERE ID = '" & txtid.Text & "' "
         callprogress(edit)
         loaddata()
         txtid.Clear()
@@ -203,6 +207,7 @@ Public Class PARTNER
         CheckBox1.Checked = False
         CheckBox2.Checked = False
         txtnama.Focus()
+        txtstatus.Text = "USER"
     End Sub
 
     Private Sub txtnama_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtnama.KeyDown
@@ -219,7 +224,7 @@ Public Class PARTNER
 
     Private Sub txtalamat_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtalamat.KeyDown
         If e.KeyCode = Keys.Enter Then
-            CheckBox1.Focus()
+            txtstatus.Focus()
         End If
     End Sub
 
@@ -237,5 +242,11 @@ Public Class PARTNER
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         loaddata()
+    End Sub
+
+    Private Sub txtstatus_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtstatus.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            CheckBox1.Focus()
+        End If
     End Sub
 End Class

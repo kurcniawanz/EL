@@ -34,11 +34,11 @@ Public Class LIST_PIUTANG
         Dim dA As New FbDataAdapter(" SELECT y.NAMA, sum(z.JUAL)AS JUAL,sum(z.REJUAL)AS REJUAL,sum(z.BAYAR)AS BAYAR, " _
                                     + " sum(z.JUAL) - sum(z.REJUAL)AS GRANDTOTAL, " _
                                     + " sum(z.JUAL) - sum(z.REJUAL) - sum(z.BAYAR)AS SISA FROM TB_PARTNER y LEFT JOIN ( " _
-                                    + " SELECT a.CUSTOMER,a.GRANDTOTAL AS JUAL, 0 AS REJUAL, a.BAYAR " _
-                                    + " FROM TB_JUAL a " _
+                                    + " SELECT a.CUSTOMER,a.GRANDTOTAL AS JUAL, 0 AS REJUAL, CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END AS BAYAR " _
+                                    + " FROM TB_JUAL a LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK " _
                                     + " union " _
-                                    + " SELECT a.CUSTOMER,0 AS JUAL, a.GRANDTOTAL AS REJUAL, -(a.BAYAR) " _
-                                    + " FROM TB_REJUAL a)z on y.ID = z.CUSTOMER  " _
+                                    + " SELECT a.CUSTOMER,0 AS JUAL, a.GRANDTOTAL AS REJUAL, CASE WHEN c.BAYAR IS NULL THEN 0 ELSE c.BAYAR END AS BAYAR " _
+                                    + " FROM TB_REJUAL a LEFT JOIN (SELECT x.NOFAK,sum(x.BAYAR)AS BAYAR FROM TB_KAS_DET x GROUP BY x.NOFAK) c ON c.NOFAK = a.NOFAK )z on y.ID = z.CUSTOMER  " _
                                     + " WHERE y.NAMA LIKE '" & aa & "' AND y.STATUS LIKE 'C%' GROUP BY y.NAMA ", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()

@@ -25,7 +25,7 @@ Public Class MUTASI
 
         DataGridView1.AutoGenerateColumns = False
         koneksi_db()
-        Dim dA As New FbDataAdapter("SELECT a.ID, a.TGL, a.NOFAK, b.NAMA, a.QTY, b.SATUAN, a.HPP, a.TOTHPP, a.CREATE_UID, a.STAMP " _
+        Dim dA As New FbDataAdapter("SELECT a.ID,a.ONGKIR, a.TGL, a.NOFAK, b.NAMA, a.QTY, b.SATUAN, a.HPP, a.TOTHPP+(a.ONGKIR*a.QTY)AS TOTHPP, a.CREATE_UID, a.STAMP " _
                                     + " FROM TB_MUTASI a " _
                                     + "  inner join TB_BARANG b on b.ID = a.IDBARANG " _
                                     + "  WHERE a.TGL between '" & CDate(tgl1.Text) & "' and '" & CDate(tgl2.Text) & "' and b.nama like '" & aa & "' " _

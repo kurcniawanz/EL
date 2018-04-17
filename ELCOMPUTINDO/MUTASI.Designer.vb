@@ -27,18 +27,8 @@ Partial Class MUTASI
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_SATUAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_HPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TOTHPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tgl2 = New System.Windows.Forms.DateTimePicker()
@@ -55,6 +45,18 @@ Partial Class MUTASI
         Me.totqty = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_SATUAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_HPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_ONGKIR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TOTHPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_IDBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -78,109 +80,13 @@ Partial Class MUTASI
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_TGL, Me.DGV_NOFAK, Me.DGV_NAMA, Me.DGV_QTY, Me.DGV_SATUAN, Me.DGV_HPP, Me.DGV_TOTHPP, Me.DGV_CREATE_USERID, Me.DGV_STAMP, Me.DGV_IDBARANG})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_TGL, Me.DGV_NOFAK, Me.DGV_NAMA, Me.DGV_QTY, Me.DGV_SATUAN, Me.DGV_HPP, Me.DGV_ONGKIR, Me.DGV_TOTHPP, Me.DGV_CREATE_USERID, Me.DGV_STAMP, Me.DGV_IDBARANG})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 100)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(1254, 513)
         Me.DataGridView1.TabIndex = 32
-        '
-        'DGV_ID
-        '
-        Me.DGV_ID.DataPropertyName = "ID"
-        Me.DGV_ID.HeaderText = "ID"
-        Me.DGV_ID.Name = "DGV_ID"
-        Me.DGV_ID.ReadOnly = True
-        Me.DGV_ID.Visible = False
-        Me.DGV_ID.Width = 40
-        '
-        'DGV_TGL
-        '
-        Me.DGV_TGL.DataPropertyName = "TGL"
-        Me.DGV_TGL.HeaderText = "Tanggal Faktur"
-        Me.DGV_TGL.Name = "DGV_TGL"
-        Me.DGV_TGL.ReadOnly = True
-        '
-        'DGV_NOFAK
-        '
-        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
-        Me.DGV_NOFAK.HeaderText = "Nomor Faktur"
-        Me.DGV_NOFAK.Name = "DGV_NOFAK"
-        Me.DGV_NOFAK.ReadOnly = True
-        '
-        'DGV_NAMA
-        '
-        Me.DGV_NAMA.DataPropertyName = "NAMA"
-        Me.DGV_NAMA.HeaderText = "Nama Barang"
-        Me.DGV_NAMA.Name = "DGV_NAMA"
-        Me.DGV_NAMA.ReadOnly = True
-        Me.DGV_NAMA.Width = 200
-        '
-        'DGV_QTY
-        '
-        Me.DGV_QTY.DataPropertyName = "QTY"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV_QTY.HeaderText = "QTY"
-        Me.DGV_QTY.Name = "DGV_QTY"
-        Me.DGV_QTY.ReadOnly = True
-        '
-        'DGV_SATUAN
-        '
-        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
-        Me.DGV_SATUAN.HeaderText = "Satuan"
-        Me.DGV_SATUAN.Name = "DGV_SATUAN"
-        Me.DGV_SATUAN.ReadOnly = True
-        '
-        'DGV_HPP
-        '
-        Me.DGV_HPP.DataPropertyName = "HPP"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
-        Me.DGV_HPP.Name = "DGV_HPP"
-        Me.DGV_HPP.ReadOnly = True
-        '
-        'DGV_TOTHPP
-        '
-        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
-        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
-        Me.DGV_TOTHPP.ReadOnly = True
-        '
-        'DGV_CREATE_USERID
-        '
-        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_UID"
-        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
-        Me.DGV_CREATE_USERID.ReadOnly = True
-        Me.DGV_CREATE_USERID.Width = 150
-        '
-        'DGV_STAMP
-        '
-        Me.DGV_STAMP.DataPropertyName = "STAMP"
-        Me.DGV_STAMP.HeaderText = "STAMP"
-        Me.DGV_STAMP.Name = "DGV_STAMP"
-        Me.DGV_STAMP.ReadOnly = True
-        Me.DGV_STAMP.Width = 150
-        '
-        'DGV_IDBARANG
-        '
-        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
-        Me.DGV_IDBARANG.HeaderText = "Nama Barang"
-        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
-        Me.DGV_IDBARANG.ReadOnly = True
-        Me.DGV_IDBARANG.Visible = False
-        Me.DGV_IDBARANG.Width = 200
         '
         'Button4
         '
@@ -343,6 +249,113 @@ Partial Class MUTASI
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "Mutasi Barang"
         '
+        'DGV_ID
+        '
+        Me.DGV_ID.DataPropertyName = "ID"
+        Me.DGV_ID.HeaderText = "ID"
+        Me.DGV_ID.Name = "DGV_ID"
+        Me.DGV_ID.ReadOnly = True
+        Me.DGV_ID.Visible = False
+        Me.DGV_ID.Width = 40
+        '
+        'DGV_TGL
+        '
+        Me.DGV_TGL.DataPropertyName = "TGL"
+        Me.DGV_TGL.HeaderText = "Tanggal Faktur"
+        Me.DGV_TGL.Name = "DGV_TGL"
+        Me.DGV_TGL.ReadOnly = True
+        '
+        'DGV_NOFAK
+        '
+        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
+        Me.DGV_NOFAK.HeaderText = "Nomor Faktur"
+        Me.DGV_NOFAK.Name = "DGV_NOFAK"
+        Me.DGV_NOFAK.ReadOnly = True
+        '
+        'DGV_NAMA
+        '
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Nama Barang"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 200
+        '
+        'DGV_QTY
+        '
+        Me.DGV_QTY.DataPropertyName = "QTY"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N0"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV_QTY.HeaderText = "QTY"
+        Me.DGV_QTY.Name = "DGV_QTY"
+        Me.DGV_QTY.ReadOnly = True
+        '
+        'DGV_SATUAN
+        '
+        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
+        Me.DGV_SATUAN.HeaderText = "Satuan"
+        Me.DGV_SATUAN.Name = "DGV_SATUAN"
+        Me.DGV_SATUAN.ReadOnly = True
+        '
+        'DGV_HPP
+        '
+        Me.DGV_HPP.DataPropertyName = "HPP"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
+        Me.DGV_HPP.Name = "DGV_HPP"
+        Me.DGV_HPP.ReadOnly = True
+        '
+        'DGV_ONGKIR
+        '
+        Me.DGV_ONGKIR.DataPropertyName = "ONGKIR"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DGV_ONGKIR.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGV_ONGKIR.HeaderText = "Ongkir(Rp.)"
+        Me.DGV_ONGKIR.Name = "DGV_ONGKIR"
+        Me.DGV_ONGKIR.ReadOnly = True
+        '
+        'DGV_TOTHPP
+        '
+        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
+        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
+        Me.DGV_TOTHPP.ReadOnly = True
+        '
+        'DGV_CREATE_USERID
+        '
+        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_UID"
+        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
+        Me.DGV_CREATE_USERID.ReadOnly = True
+        Me.DGV_CREATE_USERID.Width = 150
+        '
+        'DGV_STAMP
+        '
+        Me.DGV_STAMP.DataPropertyName = "STAMP"
+        Me.DGV_STAMP.HeaderText = "STAMP"
+        Me.DGV_STAMP.Name = "DGV_STAMP"
+        Me.DGV_STAMP.ReadOnly = True
+        Me.DGV_STAMP.Width = 150
+        '
+        'DGV_IDBARANG
+        '
+        Me.DGV_IDBARANG.DataPropertyName = "IDBARANG"
+        Me.DGV_IDBARANG.HeaderText = "Nama Barang"
+        Me.DGV_IDBARANG.Name = "DGV_IDBARANG"
+        Me.DGV_IDBARANG.ReadOnly = True
+        Me.DGV_IDBARANG.Visible = False
+        Me.DGV_IDBARANG.Width = 200
+        '
         'MUTASI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,6 +403,7 @@ Partial Class MUTASI
     Friend WithEvents DGV_QTY As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_SATUAN As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_HPP As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_ONGKIR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_TOTHPP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn

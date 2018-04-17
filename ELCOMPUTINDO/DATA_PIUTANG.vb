@@ -102,7 +102,7 @@ Public Class DATA_PIUTANG
 
     Private Sub dgv_dat_CellFormatting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgv_dat.CellFormatting
         For i As Integer = 0 To dgv_dat.RowCount - 1
-            If CDate(dgv_dat.Rows(i).Cells("DGV1_JT").Value.ToString) <= Now.Date Then
+            If CDate(dgv_dat.Rows(i).Cells("DGV1_JT").Value.ToString) <= Now.Date And dgv_dat.Rows(i).Cells("DGV_LUNAS").Value.ToString = "N" Then
                 dgv_dat.Rows(i).DefaultCellStyle.ForeColor = Color.Red
             End If
         Next

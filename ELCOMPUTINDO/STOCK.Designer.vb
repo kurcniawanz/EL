@@ -29,20 +29,10 @@ Partial Class STOCK
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_KELOMPOKNAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_HPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TOTHPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_MINIMAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_SATUAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_HARGAJUAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_KET = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_KELOMPOK = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.carimin = New System.Windows.Forms.CheckBox()
@@ -52,6 +42,22 @@ Partial Class STOCK
         Me.carinama = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_KELOMPOKNAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_HPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TOTHPP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_MINIMAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_SATUAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_HARGAJUAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_JUALUSER = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_HARGAJUAL2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_JUALSELLER = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_KET = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_KELOMPOK = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -74,130 +80,13 @@ Partial Class STOCK
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_NAMA, Me.DGV_KELOMPOKNAMA, Me.DGV_QTY, Me.DGV_HPP, Me.DGV_TOTHPP, Me.DGV_MINIMAL, Me.DGV_SATUAN, Me.DGV_HARGAJUAL, Me.DGV_KET, Me.DGV_CREATE_USERID, Me.DGV_STAMP, Me.DGV_KELOMPOK})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_NAMA, Me.DGV_KELOMPOKNAMA, Me.DGV_QTY, Me.DGV_HPP, Me.DGV_TOTHPP, Me.DGV_MINIMAL, Me.DGV_SATUAN, Me.DGV_HARGAJUAL, Me.DGV_JUALUSER, Me.DGV_HARGAJUAL2, Me.DGV_JUALSELLER, Me.DGV_KET, Me.DGV_CREATE_USERID, Me.DGV_STAMP, Me.DGV_KELOMPOK})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 100)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(1121, 551)
         Me.DataGridView1.TabIndex = 24
-        '
-        'DGV_ID
-        '
-        Me.DGV_ID.DataPropertyName = "ID"
-        Me.DGV_ID.HeaderText = "ID"
-        Me.DGV_ID.Name = "DGV_ID"
-        Me.DGV_ID.ReadOnly = True
-        Me.DGV_ID.Width = 40
-        '
-        'DGV_NAMA
-        '
-        Me.DGV_NAMA.DataPropertyName = "NAMA"
-        Me.DGV_NAMA.HeaderText = "Nama Barang"
-        Me.DGV_NAMA.Name = "DGV_NAMA"
-        Me.DGV_NAMA.ReadOnly = True
-        Me.DGV_NAMA.Width = 200
-        '
-        'DGV_KELOMPOKNAMA
-        '
-        Me.DGV_KELOMPOKNAMA.DataPropertyName = "KELOMPOKNAMA"
-        Me.DGV_KELOMPOKNAMA.HeaderText = "Kelompok Barang"
-        Me.DGV_KELOMPOKNAMA.Name = "DGV_KELOMPOKNAMA"
-        Me.DGV_KELOMPOKNAMA.ReadOnly = True
-        '
-        'DGV_QTY
-        '
-        Me.DGV_QTY.DataPropertyName = "QTY"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV_QTY.HeaderText = "QTY"
-        Me.DGV_QTY.Name = "DGV_QTY"
-        Me.DGV_QTY.ReadOnly = True
-        '
-        'DGV_HPP
-        '
-        Me.DGV_HPP.DataPropertyName = "HPP"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
-        Me.DGV_HPP.Name = "DGV_HPP"
-        Me.DGV_HPP.ReadOnly = True
-        '
-        'DGV_TOTHPP
-        '
-        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
-        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
-        Me.DGV_TOTHPP.ReadOnly = True
-        '
-        'DGV_MINIMAL
-        '
-        Me.DGV_MINIMAL.DataPropertyName = "MINIMAL"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DGV_MINIMAL.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DGV_MINIMAL.HeaderText = "Stock Minimal"
-        Me.DGV_MINIMAL.Name = "DGV_MINIMAL"
-        Me.DGV_MINIMAL.ReadOnly = True
-        '
-        'DGV_SATUAN
-        '
-        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
-        Me.DGV_SATUAN.HeaderText = "Satuan"
-        Me.DGV_SATUAN.Name = "DGV_SATUAN"
-        Me.DGV_SATUAN.ReadOnly = True
-        '
-        'DGV_HARGAJUAL
-        '
-        Me.DGV_HARGAJUAL.DataPropertyName = "HARGAJUAL"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.DGV_HARGAJUAL.DefaultCellStyle = DataGridViewCellStyle7
-        Me.DGV_HARGAJUAL.HeaderText = "Harga Jual Minimal(Rp.)"
-        Me.DGV_HARGAJUAL.Name = "DGV_HARGAJUAL"
-        Me.DGV_HARGAJUAL.ReadOnly = True
-        '
-        'DGV_KET
-        '
-        Me.DGV_KET.DataPropertyName = "KET"
-        Me.DGV_KET.HeaderText = "Keterangan"
-        Me.DGV_KET.Name = "DGV_KET"
-        Me.DGV_KET.ReadOnly = True
-        Me.DGV_KET.Width = 250
-        '
-        'DGV_CREATE_USERID
-        '
-        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
-        Me.DGV_CREATE_USERID.ReadOnly = True
-        Me.DGV_CREATE_USERID.Width = 150
-        '
-        'DGV_STAMP
-        '
-        Me.DGV_STAMP.DataPropertyName = "STAMP"
-        Me.DGV_STAMP.HeaderText = "STAMP"
-        Me.DGV_STAMP.Name = "DGV_STAMP"
-        Me.DGV_STAMP.ReadOnly = True
-        Me.DGV_STAMP.Width = 150
-        '
-        'DGV_KELOMPOK
-        '
-        Me.DGV_KELOMPOK.DataPropertyName = "KELOMPOK"
-        Me.DGV_KELOMPOK.HeaderText = "Column1"
-        Me.DGV_KELOMPOK.Name = "DGV_KELOMPOK"
-        Me.DGV_KELOMPOK.ReadOnly = True
-        Me.DGV_KELOMPOK.Visible = False
         '
         'Label1
         '
@@ -293,6 +182,156 @@ Partial Class STOCK
         Me.Label5.TabIndex = 31
         Me.Label5.Text = "*Click 2x untuk Edit/hapus"
         '
+        'DGV_ID
+        '
+        Me.DGV_ID.DataPropertyName = "ID"
+        Me.DGV_ID.HeaderText = "ID"
+        Me.DGV_ID.Name = "DGV_ID"
+        Me.DGV_ID.ReadOnly = True
+        Me.DGV_ID.Width = 40
+        '
+        'DGV_NAMA
+        '
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Nama Barang"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 200
+        '
+        'DGV_KELOMPOKNAMA
+        '
+        Me.DGV_KELOMPOKNAMA.DataPropertyName = "KELOMPOKNAMA"
+        Me.DGV_KELOMPOKNAMA.HeaderText = "Kelompok Barang"
+        Me.DGV_KELOMPOKNAMA.Name = "DGV_KELOMPOKNAMA"
+        Me.DGV_KELOMPOKNAMA.ReadOnly = True
+        '
+        'DGV_QTY
+        '
+        Me.DGV_QTY.DataPropertyName = "QTY"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N0"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DGV_QTY.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV_QTY.HeaderText = "QTY"
+        Me.DGV_QTY.Name = "DGV_QTY"
+        Me.DGV_QTY.ReadOnly = True
+        '
+        'DGV_HPP
+        '
+        Me.DGV_HPP.DataPropertyName = "HPP"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DGV_HPP.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DGV_HPP.HeaderText = "Hpp (Rp.)"
+        Me.DGV_HPP.Name = "DGV_HPP"
+        Me.DGV_HPP.ReadOnly = True
+        '
+        'DGV_TOTHPP
+        '
+        Me.DGV_TOTHPP.DataPropertyName = "TOTHPP"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DGV_TOTHPP.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGV_TOTHPP.HeaderText = "Total Hpp (Rp.)"
+        Me.DGV_TOTHPP.Name = "DGV_TOTHPP"
+        Me.DGV_TOTHPP.ReadOnly = True
+        '
+        'DGV_MINIMAL
+        '
+        Me.DGV_MINIMAL.DataPropertyName = "MINIMAL"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N0"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.DGV_MINIMAL.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DGV_MINIMAL.HeaderText = "Stock Minimal"
+        Me.DGV_MINIMAL.Name = "DGV_MINIMAL"
+        Me.DGV_MINIMAL.ReadOnly = True
+        '
+        'DGV_SATUAN
+        '
+        Me.DGV_SATUAN.DataPropertyName = "SATUAN"
+        Me.DGV_SATUAN.HeaderText = "Satuan"
+        Me.DGV_SATUAN.Name = "DGV_SATUAN"
+        Me.DGV_SATUAN.ReadOnly = True
+        '
+        'DGV_HARGAJUAL
+        '
+        Me.DGV_HARGAJUAL.DataPropertyName = "HARGAJUAL"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.Format = "N2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.DGV_HARGAJUAL.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DGV_HARGAJUAL.HeaderText = "Keuntungan Minimal User(Rp.)"
+        Me.DGV_HARGAJUAL.Name = "DGV_HARGAJUAL"
+        Me.DGV_HARGAJUAL.ReadOnly = True
+        '
+        'DGV_JUALUSER
+        '
+        Me.DGV_JUALUSER.DataPropertyName = "JUALUSER"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Format = "N2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.DGV_JUALUSER.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DGV_JUALUSER.HeaderText = "Harga Jual User(Rp.)"
+        Me.DGV_JUALUSER.Name = "DGV_JUALUSER"
+        Me.DGV_JUALUSER.ReadOnly = True
+        '
+        'DGV_HARGAJUAL2
+        '
+        Me.DGV_HARGAJUAL2.DataPropertyName = "HARGAJUAL2"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle9.Format = "N2"
+        DataGridViewCellStyle9.NullValue = Nothing
+        Me.DGV_HARGAJUAL2.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DGV_HARGAJUAL2.HeaderText = "Keuntungan Minimal ReSeller(Rp.)"
+        Me.DGV_HARGAJUAL2.Name = "DGV_HARGAJUAL2"
+        Me.DGV_HARGAJUAL2.ReadOnly = True
+        '
+        'DGV_JUALSELLER
+        '
+        Me.DGV_JUALSELLER.DataPropertyName = "JUALSELLER"
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "N2"
+        DataGridViewCellStyle10.NullValue = Nothing
+        Me.DGV_JUALSELLER.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DGV_JUALSELLER.HeaderText = "Harga Jual Reseller(Rp.)"
+        Me.DGV_JUALSELLER.Name = "DGV_JUALSELLER"
+        Me.DGV_JUALSELLER.ReadOnly = True
+        '
+        'DGV_KET
+        '
+        Me.DGV_KET.DataPropertyName = "KET"
+        Me.DGV_KET.HeaderText = "Keterangan"
+        Me.DGV_KET.Name = "DGV_KET"
+        Me.DGV_KET.ReadOnly = True
+        Me.DGV_KET.Width = 250
+        '
+        'DGV_CREATE_USERID
+        '
+        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
+        Me.DGV_CREATE_USERID.ReadOnly = True
+        Me.DGV_CREATE_USERID.Width = 150
+        '
+        'DGV_STAMP
+        '
+        Me.DGV_STAMP.DataPropertyName = "STAMP"
+        Me.DGV_STAMP.HeaderText = "STAMP"
+        Me.DGV_STAMP.Name = "DGV_STAMP"
+        Me.DGV_STAMP.ReadOnly = True
+        Me.DGV_STAMP.Width = 150
+        '
+        'DGV_KELOMPOK
+        '
+        Me.DGV_KELOMPOK.DataPropertyName = "KELOMPOK"
+        Me.DGV_KELOMPOK.HeaderText = "Column1"
+        Me.DGV_KELOMPOK.Name = "DGV_KELOMPOK"
+        Me.DGV_KELOMPOK.ReadOnly = True
+        Me.DGV_KELOMPOK.Visible = False
+        '
         'STOCK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,6 +362,7 @@ Partial Class STOCK
     Friend WithEvents carikel As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents carimin As System.Windows.Forms.CheckBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DGV_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_NAMA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_KELOMPOKNAMA As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -332,9 +372,11 @@ Partial Class STOCK
     Friend WithEvents DGV_MINIMAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_SATUAN As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_HARGAJUAL As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_JUALUSER As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_HARGAJUAL2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_JUALSELLER As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_KET As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_CREATE_USERID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_STAMP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_KELOMPOK As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

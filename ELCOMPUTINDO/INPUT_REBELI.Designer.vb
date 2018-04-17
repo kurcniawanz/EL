@@ -33,6 +33,8 @@ Partial Class INPUT_REBELI
         Me.txtsat = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtongkir = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.txtgrandtotal = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtpotbawah = New System.Windows.Forms.TextBox()
@@ -83,6 +85,8 @@ Partial Class INPUT_REBELI
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtnofak = New System.Windows.Forms.TextBox()
         Me.idsup = New System.Windows.Forms.Label()
+        Me.txttotqty = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +116,8 @@ Partial Class INPUT_REBELI
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.txtongkir)
+        Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.txtgrandtotal)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.txtpotbawah)
@@ -120,15 +126,33 @@ Partial Class INPUT_REBELI
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Location = New System.Drawing.Point(830, 450)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(285, 91)
+        Me.GroupBox2.Size = New System.Drawing.Size(285, 120)
         Me.GroupBox2.TabIndex = 51
         Me.GroupBox2.TabStop = False
+        '
+        'txtongkir
+        '
+        Me.txtongkir.Location = New System.Drawing.Point(118, 64)
+        Me.txtongkir.Name = "txtongkir"
+        Me.txtongkir.Size = New System.Drawing.Size(161, 20)
+        Me.txtongkir.TabIndex = 19
+        Me.txtongkir.Text = "0"
+        Me.txtongkir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(53, 67)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(61, 13)
+        Me.Label17.TabIndex = 20
+        Me.Label17.Text = "Ongkir  Rp."
         '
         'txtgrandtotal
         '
         Me.txtgrandtotal.Enabled = False
         Me.txtgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtgrandtotal.Location = New System.Drawing.Point(118, 65)
+        Me.txtgrandtotal.Location = New System.Drawing.Point(118, 90)
         Me.txtgrandtotal.Name = "txtgrandtotal"
         Me.txtgrandtotal.Size = New System.Drawing.Size(161, 20)
         Me.txtgrandtotal.TabIndex = 15
@@ -139,7 +163,7 @@ Partial Class INPUT_REBELI
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 68)
+        Me.Label8.Location = New System.Drawing.Point(16, 93)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 16
@@ -644,12 +668,34 @@ Partial Class INPUT_REBELI
         Me.idsup.Text = "Nama Barang"
         Me.idsup.Visible = False
         '
+        'txttotqty
+        '
+        Me.txttotqty.AutoSize = True
+        Me.txttotqty.Location = New System.Drawing.Point(1048, 580)
+        Me.txttotqty.Name = "txttotqty"
+        Me.txttotqty.Size = New System.Drawing.Size(33, 13)
+        Me.txttotqty.TabIndex = 21
+        Me.txttotqty.Text = "totqty"
+        Me.txttotqty.Visible = False
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(749, 543)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 27)
+        Me.Button6.TabIndex = 70
+        Me.Button6.Text = "Cancel"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'INPUT_REBELI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1126, 605)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.txttotqty)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
@@ -732,4 +778,8 @@ Partial Class INPUT_REBELI
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtnofak As System.Windows.Forms.TextBox
     Friend WithEvents idsup As System.Windows.Forms.Label
+    Friend WithEvents txtongkir As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents txttotqty As System.Windows.Forms.Label
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class

@@ -73,6 +73,7 @@ Partial Class HOME
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.usernya = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -88,7 +89,7 @@ Partial Class HOME
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PartnerToolStripMenuItem, Me.ToolStripMenuItem1, Me.UserToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.PartnerToolStripMenuItem, Me.ToolStripMenuItem1, Me.UserToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
@@ -96,20 +97,20 @@ Partial Class HOME
         'PartnerToolStripMenuItem
         '
         Me.PartnerToolStripMenuItem.Name = "PartnerToolStripMenuItem"
-        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.PartnerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PartnerToolStripMenuItem.Text = "&Partner"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem1.Text = "&Account"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GantiPasswordToolStripMenuItem, Me.DataUserToolStripMenuItem})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'GantiPasswordToolStripMenuItem
@@ -127,12 +128,12 @@ Partial Class HOME
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(116, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'HomeToolStripMenuItem
@@ -384,6 +385,12 @@ Partial Class HOME
         Me.usernya.Size = New System.Drawing.Size(120, 17)
         Me.usernya.Text = "ToolStripStatusLabel2"
         '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem4.Text = "Discount"
+        '
         'HOME
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -455,4 +462,5 @@ Partial Class HOME
     Friend WithEvents BiayaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PendapatanLainlainToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
 End Class
