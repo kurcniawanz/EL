@@ -63,6 +63,7 @@ Partial Class PASSWORD
         'txtpass2
         '
         Me.txtpass2.Location = New System.Drawing.Point(121, 71)
+        Me.txtpass2.MaxLength = 10
         Me.txtpass2.Name = "txtpass2"
         Me.txtpass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass2.Size = New System.Drawing.Size(259, 20)
@@ -80,6 +81,7 @@ Partial Class PASSWORD
         'txtpass1
         '
         Me.txtpass1.Location = New System.Drawing.Point(121, 45)
+        Me.txtpass1.MaxLength = 10
         Me.txtpass1.Name = "txtpass1"
         Me.txtpass1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass1.Size = New System.Drawing.Size(259, 20)

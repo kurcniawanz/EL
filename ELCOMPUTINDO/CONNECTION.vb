@@ -116,4 +116,35 @@ Module CONNECTION
         Return "OK"
     End Function
 
+
+    Function call_bulan(ByVal idbulan As Integer) As String
+        Dim bulan As String = ""
+        If idbulan = 1 Then
+            bulan = "Januari"
+        ElseIf idbulan = 2 Then
+            bulan = "Februari"
+        ElseIf idbulan = 3 Then
+            bulan = "Maret"
+        ElseIf idbulan = 4 Then
+            bulan = "April"
+        ElseIf idbulan = 5 Then
+            bulan = "Mei"
+        ElseIf idbulan = 6 Then
+            bulan = "Juni"
+        ElseIf idbulan = 7 Then
+            bulan = "Juli"
+        ElseIf idbulan = 8 Then
+            bulan = "Agustus"
+        ElseIf idbulan = 9 Then
+            bulan = "September"
+        ElseIf idbulan = 10 Then
+            bulan = "Oktober"
+        ElseIf idbulan = 11 Then
+            bulan = "November"
+        ElseIf idbulan = 12 Then
+            bulan = "Desember"
+        End If
+        Return bulan
+    End Function
+
 End Module

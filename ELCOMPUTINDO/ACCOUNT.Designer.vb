@@ -132,6 +132,7 @@ Partial Class ACCOUNT
         'txtket
         '
         Me.txtket.Location = New System.Drawing.Point(136, 68)
+        Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
         Me.txtket.Size = New System.Drawing.Size(266, 50)
@@ -140,6 +141,7 @@ Partial Class ACCOUNT
         'txtnorek
         '
         Me.txtnorek.Location = New System.Drawing.Point(136, 42)
+        Me.txtnorek.MaxLength = 15
         Me.txtnorek.Name = "txtnorek"
         Me.txtnorek.Size = New System.Drawing.Size(266, 20)
         Me.txtnorek.TabIndex = 1
@@ -147,6 +149,7 @@ Partial Class ACCOUNT
         'txtnama
         '
         Me.txtnama.Location = New System.Drawing.Point(136, 16)
+        Me.txtnama.MaxLength = 20
         Me.txtnama.Name = "txtnama"
         Me.txtnama.Size = New System.Drawing.Size(266, 20)
         Me.txtnama.TabIndex = 0

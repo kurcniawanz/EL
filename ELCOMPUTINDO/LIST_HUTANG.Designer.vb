@@ -233,6 +233,7 @@ Partial Class LIST_HUTANG
         Me.DGV_SALDO.HeaderText = "Saldo Hutang"
         Me.DGV_SALDO.Name = "DGV_SALDO"
         Me.DGV_SALDO.ReadOnly = True
+        Me.DGV_SALDO.Visible = False
         '
         'DGV_BELI
         '

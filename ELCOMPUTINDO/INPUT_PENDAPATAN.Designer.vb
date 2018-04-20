@@ -183,6 +183,7 @@ Partial Class INPUT_PENDAPATAN
         'txtketbiaya
         '
         Me.txtketbiaya.Location = New System.Drawing.Point(98, 19)
+        Me.txtketbiaya.MaxLength = 20
         Me.txtketbiaya.Name = "txtketbiaya"
         Me.txtketbiaya.Size = New System.Drawing.Size(207, 20)
         Me.txtketbiaya.TabIndex = 8
@@ -190,6 +191,7 @@ Partial Class INPUT_PENDAPATAN
         'txtjum
         '
         Me.txtjum.Location = New System.Drawing.Point(98, 47)
+        Me.txtjum.MaxLength = 15
         Me.txtjum.Name = "txtjum"
         Me.txtjum.Size = New System.Drawing.Size(129, 20)
         Me.txtjum.TabIndex = 37
@@ -323,6 +325,7 @@ Partial Class INPUT_PENDAPATAN
         '
         Me.txtket.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtket.Location = New System.Drawing.Point(16, 594)
+        Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
         Me.txtket.Size = New System.Drawing.Size(462, 79)

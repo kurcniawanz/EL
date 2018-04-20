@@ -276,6 +276,7 @@ Partial Class BAYAR_PIUTANG
         '
         Me.txtjum.Enabled = False
         Me.txtjum.Location = New System.Drawing.Point(88, 42)
+        Me.txtjum.MaxLength = 15
         Me.txtjum.Name = "txtjum"
         Me.txtjum.Size = New System.Drawing.Size(129, 20)
         Me.txtjum.TabIndex = 37
@@ -314,6 +315,7 @@ Partial Class BAYAR_PIUTANG
         'txtbay
         '
         Me.txtbay.Location = New System.Drawing.Point(88, 69)
+        Me.txtbay.MaxLength = 15
         Me.txtbay.Name = "txtbay"
         Me.txtbay.Size = New System.Drawing.Size(129, 20)
         Me.txtbay.TabIndex = 9
@@ -406,6 +408,7 @@ Partial Class BAYAR_PIUTANG
         '
         Me.txtket.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtket.Location = New System.Drawing.Point(16, 461)
+        Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
         Me.txtket.Size = New System.Drawing.Size(462, 79)

@@ -46,19 +46,61 @@ Public Class INPUT_JUAL
     End Sub
 
     Sub hitung()
+        Dim data As New DataTable
+        data.Columns.Add("KELBRG", GetType(Integer))
+        data.Columns.Add("NAMA", GetType(String))
+        data.Columns.Add("QTY", GetType(Integer))
+        data.Columns.Add("DIS", GetType(Integer))
+        data.Columns.Add("TOTAL", GetType(Double))
+
         Dim pot1 As Double
         txtjumlah.Text = FormatNumber(CDbl(txtqty.Text) * CDbl(txtharga.Text), 0)
         pot1 = CDbl(txtjumlah.Text) - ((CDbl(txtjumlah.Text) * CDbl(txtpot1.Text)) / 100)
         txttotal.Text = FormatNumber(pot1 - (CDbl(txtpot2.Text) * (txtqty.Text)), 0)
 
-        Dim total, jumlah As Double
+        Dim total, jumlah, diss As Double
         For i As Integer = 0 To DataGridView1.RowCount - 1
             total += CDbl(DataGridView1.Rows(i).Cells("DGV_TOTAL").Value)
             jumlah += CDbl(DataGridView1.Rows(i).Cells("DGV_JUMLAH").Value)
+       
+            data.Rows.Add(CDbl(DataGridView1.Rows(i).Cells("DGV_KELBBRG").Value), DataGridView1.Rows(i).Cells("DGV_KELBRGNAMA").Value, CDbl(DataGridView1.Rows(i).Cells("DGV_QTY").Value), 0, 0)
+    
         Next
+        DataGridView2.DataSource = data
+
+        For a As Integer = 0 To DataGridView2.Rows.Count - 1
+            For b As Integer = a + 1 To DataGridView2.Rows.Count - 1
+                If CDbl(DataGridView2.Rows(a).Cells("DGV2_KELBRG").Value) = CDbl(DataGridView2.Rows(b).Cells("DGV2_KELBRG").Value) Then
+                    DataGridView2.Rows(b).Cells("DGV2_QTY").Value = DataGridView2.Rows(b).Cells("DGV2_QTY").Value + DataGridView2.Rows(a).Cells("DGV2_QTY").Value
+
+                    koneksi_db()
+                    Dim rddd As FbDataReader
+                    Dim cmd = New FbCommand("SELECT  a.DISCOUNT FROM TB_DISCOUNT a WHERE a.KELBARANG = '" & CDbl(DataGridView2.Rows(b).Cells("DGV2_KELBRG").Value) & "' " _
+                                            + " AND a.QTY1 <= " & CDbl(DataGridView2.Rows(b).Cells("DGV2_QTY").Value) & " AND a.QTY2 >= " & CDbl(DataGridView2.Rows(b).Cells("DGV2_QTY").Value) & "", konek)
+                    rddd = cmd.ExecuteReader
+                    If rddd.Read Then
+                        DataGridView2.Rows(b).Cells("DGV2_DIS").Value = CDbl(rddd.Item("DISCOUNT"))
+                        DataGridView2.Rows(b).Cells("DGV2_TOTAL").Value = CDbl(DataGridView2.Rows(b).Cells("DGV2_QTY").Value) * CDbl(rddd.Item("DISCOUNT"))
+                    Else
+                        DataGridView2.Rows(b).Cells("DGV2_DIS").Value = 0
+                        DataGridView2.Rows(b).Cells("DGV2_TOTAL").Value = 0
+                    End If
+                    konek.Close()
+                    DataGridView2.Rows.Remove(DataGridView2.Rows(a))
+                    Exit For
+                End If
+            Next
+        Next
+
+        For a As Integer = 0 To DataGridView2.Rows.Count - 1
+            diss = diss + DataGridView2.Rows(a).Cells("DGV2_TOTAL").Value
+        Next
+
+        txttotdis.Text = FormatNumber(diss, 0)
+
         txttotalbawah.Text = FormatNumber(jumlah, 0)
         txtpotbawah.Text = FormatNumber(jumlah - total, 0)
-        txtgrandtotal.Text = FormatNumber(total + CDbl(txtongkir.Text), 0)
+        txtgrandtotal.Text = FormatNumber((total + CDbl(txtongkir.Text)) - diss, 0)
         txtongkir.Text = FormatNumber(txtongkir.Text, 0)
 
     End Sub
@@ -86,7 +128,9 @@ Public Class INPUT_JUAL
     Sub edit_det()
         DataGridView1.AutoGenerateColumns = False
         koneksi_db()
-        Dim dA As New FbDataAdapter("SELECT a.QTY*a.HARGA as JUMLAH, a.*,b.NAMA as NAMABARANG FROM TB_JUAL_DET a INNER JOIN TB_BARANG b on b.ID = a.IDBARANG WHERE a.NOFAK = '" & txtnofak.Text & "'", konek)
+        Dim dA As New FbDataAdapter("SELECT c.NAMA AS KELBRGNAMA,b.KELOMPOK AS KELBRG, a.QTY*a.HARGA as JUMLAH, a.*,b.NAMA as NAMABARANG FROM TB_JUAL_DET a " _
+                                    + " INNER JOIN TB_BARANG b on b.ID = a.IDBARANG " _
+                                    + " INNER JOIN TB_CATEGORY c ON c.ID = b.KELOMPOK WHERE a.NOFAK = '" & txtnofak.Text & "'", konek)
         Dim dS As DataTable = New DataTable
         dS.Clear()
         dA.Fill(dS)
@@ -219,7 +263,7 @@ Public Class INPUT_JUAL
 
             End If
         Else
-            DataGridView1.Rows.Add(txtbarang.Text, txtqty.Text, txtharga.Text, txtjumlah.Text, txtpot1.Text, txtpot2.Text, txttotal.Text, txtbarang.SelectedValue)
+            DataGridView1.Rows.Add(txtkelnama.Text, txtbarang.Text, txtqty.Text, txtharga.Text, txtjumlah.Text, txtpot1.Text, txtpot2.Text, txttotal.Text, txtbarang.SelectedValue, txtkel.Text)
         End If
 
         txtbarang.SelectedValue = 0
@@ -229,6 +273,8 @@ Public Class INPUT_JUAL
         txtpot1.Text = "0"
         txtpot2.Text = "0"
         txttotal.Text = "0"
+        txtkel.Text = ""
+        txtkelnama.Text = ""
         hitung()
         txtbarang.Focus()
 
@@ -241,15 +287,18 @@ Public Class INPUT_JUAL
         koneksi_db()
 
         Dim rddd As FbDataReader
-        Dim cmd = New FbCommand("SELECT b.SATUAN, (CASE WHEN sum(a.QTY) = 0 THEN 0 ELSE sum(a.TOTHPP+(a.ONGKIR*a.QTY))/sum(a.QTY) END) + b.HARGAJUAL AS hargauser,  " _
+        Dim cmd = New FbCommand("SELECT c.NAMA, b.KELOMPOK, b.SATUAN, (CASE WHEN sum(a.QTY) = 0 THEN 0 ELSE sum(a.TOTHPP+(a.ONGKIR*a.QTY))/sum(a.QTY) END) + b.HARGAJUAL AS hargauser,  " _
                                 + " (CASE WHEN sum(a.QTY) = 0 THEN 0 ELSE sum(a.TOTHPP+(a.ONGKIR*a.QTY))/sum(a.QTY) END) + b.HARGAJUAL2 AS hargaseller " _
                                 + " FROM TB_MUTASI a INNER JOIN TB_BARANG b ON b.ID = a.IDBARANG " _
-                                + " WHERE a.IDBARANG = '" & txtbarang.SelectedValue & "' GROUP BY a.IDBARANG,b.SATUAN,b.HARGAJUAL,b.HARGAJUAL2", konek)
+                                + " INNER JOIN TB_CATEGORY c ON c.ID = b.KELOMPOK " _
+                                + " WHERE a.IDBARANG = '" & txtbarang.SelectedValue & "' GROUP BY a.IDBARANG,b.SATUAN,b.HARGAJUAL,b.HARGAJUAL2,c.NAMA, b.KELOMPOK", konek)
         rddd = cmd.ExecuteReader
         If rddd.Read() Then
             txtsat.Text = rddd("SATUAN")
             harga1 = rddd("HARGAUSER")
             harga2 = rddd("HARGASELLER")
+            txtkel.Text = rddd("KELOMPOK")
+            txtkelnama.Text = rddd("NAMA")
         End If
         konek.Close()
 
@@ -476,6 +525,7 @@ Public Class INPUT_JUAL
             txtgrandtotal.Text = "0"
             txtongkir.Text = "0"
             DataGridView1.Rows.Clear()
+            DataGridView2.Rows.Clear()
             txtnofak.Clear()
             txttgl.Focus()
         End If
@@ -526,7 +576,7 @@ Public Class INPUT_JUAL
            + "STAMP = cast('NOW' as timestamp)," _
            + "KET = '" & txtket.Text & "' WHERE ID = '" & txtid.Text & "'; "
         callprogress(simpan)
-
+        HOME.MenuStrip1.Enabled = True
         If Me.MdiChildren.Length > 0 Then
             Dim childForm As Form = CType(ActiveMdiChild, Form)
             childForm.Close()
@@ -574,6 +624,7 @@ Public Class INPUT_JUAL
         Hapus = "DELETE FROM TB_JUAL WHERE ID ='" & txtid.Text & "'"
         callprogress2(Hapus2)
         callprogress(Hapus)
+        HOME.MenuStrip1.Enabled = True
         If Me.MdiChildren.Length > 0 Then
             Dim childForm As Form = CType(ActiveMdiChild, Form)
             childForm.Close()

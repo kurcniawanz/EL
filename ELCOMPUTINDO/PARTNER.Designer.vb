@@ -22,10 +22,18 @@ Partial Class PARTNER
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TELP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_ALAMAT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_STATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_SELLER = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -38,6 +46,8 @@ Partial Class PARTNER
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtnama = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtstatus = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -47,16 +57,6 @@ Partial Class PARTNER
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtstatus = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TELP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_ALAMAT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_STATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_SELLER = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -66,19 +66,19 @@ Partial Class PARTNER
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_NAMA, Me.DGV_TELP, Me.DGV_ALAMAT, Me.DGV_STATUS, Me.DGV_SELLER, Me.DGV_CREATE_USERID, Me.DGV_STAMP})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 226)
@@ -87,6 +87,71 @@ Partial Class PARTNER
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(1040, 420)
         Me.DataGridView1.TabIndex = 23
+        '
+        'DGV_ID
+        '
+        Me.DGV_ID.DataPropertyName = "ID"
+        Me.DGV_ID.HeaderText = "ID"
+        Me.DGV_ID.Name = "DGV_ID"
+        Me.DGV_ID.ReadOnly = True
+        Me.DGV_ID.Width = 40
+        '
+        'DGV_NAMA
+        '
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Nama"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 150
+        '
+        'DGV_TELP
+        '
+        Me.DGV_TELP.DataPropertyName = "TELP"
+        Me.DGV_TELP.HeaderText = "No Telp"
+        Me.DGV_TELP.Name = "DGV_TELP"
+        Me.DGV_TELP.ReadOnly = True
+        Me.DGV_TELP.Width = 150
+        '
+        'DGV_ALAMAT
+        '
+        Me.DGV_ALAMAT.DataPropertyName = "ALAMAT"
+        Me.DGV_ALAMAT.HeaderText = "Alamat"
+        Me.DGV_ALAMAT.Name = "DGV_ALAMAT"
+        Me.DGV_ALAMAT.ReadOnly = True
+        Me.DGV_ALAMAT.Width = 250
+        '
+        'DGV_STATUS
+        '
+        Me.DGV_STATUS.DataPropertyName = "STATUS"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DGV_STATUS.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV_STATUS.HeaderText = "Partner"
+        Me.DGV_STATUS.Name = "DGV_STATUS"
+        Me.DGV_STATUS.ReadOnly = True
+        Me.DGV_STATUS.Width = 70
+        '
+        'DGV_SELLER
+        '
+        Me.DGV_SELLER.DataPropertyName = "SELLER"
+        Me.DGV_SELLER.HeaderText = "Status"
+        Me.DGV_SELLER.Name = "DGV_SELLER"
+        Me.DGV_SELLER.ReadOnly = True
+        '
+        'DGV_CREATE_USERID
+        '
+        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
+        Me.DGV_CREATE_USERID.ReadOnly = True
+        Me.DGV_CREATE_USERID.Width = 150
+        '
+        'DGV_STAMP
+        '
+        Me.DGV_STAMP.DataPropertyName = "STAMP"
+        Me.DGV_STAMP.HeaderText = "STAMP"
+        Me.DGV_STAMP.Name = "DGV_STAMP"
+        Me.DGV_STAMP.ReadOnly = True
+        Me.DGV_STAMP.Width = 150
         '
         'Label5
         '
@@ -130,6 +195,7 @@ Partial Class PARTNER
         'txtalamat
         '
         Me.txtalamat.Location = New System.Drawing.Point(136, 68)
+        Me.txtalamat.MaxLength = 250
         Me.txtalamat.Multiline = True
         Me.txtalamat.Name = "txtalamat"
         Me.txtalamat.Size = New System.Drawing.Size(266, 53)
@@ -146,6 +212,7 @@ Partial Class PARTNER
         'txttelp
         '
         Me.txttelp.Location = New System.Drawing.Point(136, 42)
+        Me.txttelp.MaxLength = 15
         Me.txttelp.Name = "txttelp"
         Me.txttelp.Size = New System.Drawing.Size(266, 20)
         Me.txttelp.TabIndex = 1
@@ -183,6 +250,7 @@ Partial Class PARTNER
         'txtnama
         '
         Me.txtnama.Location = New System.Drawing.Point(136, 16)
+        Me.txtnama.MaxLength = 50
         Me.txtnama.Name = "txtnama"
         Me.txtnama.Size = New System.Drawing.Size(266, 20)
         Me.txtnama.TabIndex = 0
@@ -204,6 +272,26 @@ Partial Class PARTNER
         Me.GroupBox1.Size = New System.Drawing.Size(446, 179)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
+        '
+        'txtstatus
+        '
+        Me.txtstatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.txtstatus.FormattingEnabled = True
+        Me.txtstatus.Items.AddRange(New Object() {"USER", "RESELLER"})
+        Me.txtstatus.Location = New System.Drawing.Point(136, 126)
+        Me.txtstatus.Name = "txtstatus"
+        Me.txtstatus.Size = New System.Drawing.Size(162, 21)
+        Me.txtstatus.TabIndex = 28
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(23, 128)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.TabIndex = 27
+        Me.Label6.Text = "Status"
         '
         'CheckBox2
         '
@@ -296,91 +384,6 @@ Partial Class PARTNER
         Me.Label8.Size = New System.Drawing.Size(35, 13)
         Me.Label8.TabIndex = 2
         Me.Label8.Text = "Nama"
-        '
-        'txtstatus
-        '
-        Me.txtstatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.txtstatus.FormattingEnabled = True
-        Me.txtstatus.Items.AddRange(New Object() {"USER", "RESELLER"})
-        Me.txtstatus.Location = New System.Drawing.Point(136, 126)
-        Me.txtstatus.Name = "txtstatus"
-        Me.txtstatus.Size = New System.Drawing.Size(162, 21)
-        Me.txtstatus.TabIndex = 28
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 128)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
-        Me.Label6.TabIndex = 27
-        Me.Label6.Text = "Status"
-        '
-        'DGV_ID
-        '
-        Me.DGV_ID.DataPropertyName = "ID"
-        Me.DGV_ID.HeaderText = "ID"
-        Me.DGV_ID.Name = "DGV_ID"
-        Me.DGV_ID.ReadOnly = True
-        Me.DGV_ID.Width = 40
-        '
-        'DGV_NAMA
-        '
-        Me.DGV_NAMA.DataPropertyName = "NAMA"
-        Me.DGV_NAMA.HeaderText = "Nama"
-        Me.DGV_NAMA.Name = "DGV_NAMA"
-        Me.DGV_NAMA.ReadOnly = True
-        Me.DGV_NAMA.Width = 150
-        '
-        'DGV_TELP
-        '
-        Me.DGV_TELP.DataPropertyName = "TELP"
-        Me.DGV_TELP.HeaderText = "No Telp"
-        Me.DGV_TELP.Name = "DGV_TELP"
-        Me.DGV_TELP.ReadOnly = True
-        Me.DGV_TELP.Width = 150
-        '
-        'DGV_ALAMAT
-        '
-        Me.DGV_ALAMAT.DataPropertyName = "ALAMAT"
-        Me.DGV_ALAMAT.HeaderText = "Alamat"
-        Me.DGV_ALAMAT.Name = "DGV_ALAMAT"
-        Me.DGV_ALAMAT.ReadOnly = True
-        Me.DGV_ALAMAT.Width = 250
-        '
-        'DGV_STATUS
-        '
-        Me.DGV_STATUS.DataPropertyName = "STATUS"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DGV_STATUS.DefaultCellStyle = DataGridViewCellStyle12
-        Me.DGV_STATUS.HeaderText = "Partner"
-        Me.DGV_STATUS.Name = "DGV_STATUS"
-        Me.DGV_STATUS.ReadOnly = True
-        Me.DGV_STATUS.Width = 70
-        '
-        'DGV_SELLER
-        '
-        Me.DGV_SELLER.DataPropertyName = "SELLER"
-        Me.DGV_SELLER.HeaderText = "Status"
-        Me.DGV_SELLER.Name = "DGV_SELLER"
-        Me.DGV_SELLER.ReadOnly = True
-        '
-        'DGV_CREATE_USERID
-        '
-        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
-        Me.DGV_CREATE_USERID.ReadOnly = True
-        Me.DGV_CREATE_USERID.Width = 150
-        '
-        'DGV_STAMP
-        '
-        Me.DGV_STAMP.DataPropertyName = "STAMP"
-        Me.DGV_STAMP.HeaderText = "STAMP"
-        Me.DGV_STAMP.Name = "DGV_STAMP"
-        Me.DGV_STAMP.ReadOnly = True
-        Me.DGV_STAMP.Width = 150
         '
         'PARTNER
         '

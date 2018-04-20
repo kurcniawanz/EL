@@ -31,22 +31,23 @@ Partial Class DISCOUNT
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtdis = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtqty2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtqty1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtkelompok = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_KELBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_QTY1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_QTY2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_DISCOUNT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_KELBARANG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,7 +55,7 @@ Partial Class DISCOUNT
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(453, 153)
+        Me.Button3.Location = New System.Drawing.Point(453, 95)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 36
@@ -74,7 +75,7 @@ Partial Class DISCOUNT
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.DarkRed
-        Me.Button1.Location = New System.Drawing.Point(453, 95)
+        Me.Button1.Location = New System.Drawing.Point(453, 153)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 34
@@ -83,11 +84,11 @@ Partial Class DISCOUNT
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.txtdis)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtqty2)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtqty1)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtkelompok)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -96,6 +97,63 @@ Partial Class DISCOUNT
         Me.GroupBox1.Size = New System.Drawing.Size(419, 131)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
+        '
+        'txtdis
+        '
+        Me.txtdis.Location = New System.Drawing.Point(136, 96)
+        Me.txtdis.MaxLength = 12
+        Me.txtdis.Name = "txtdis"
+        Me.txtdis.Size = New System.Drawing.Size(108, 20)
+        Me.txtdis.TabIndex = 11
+        Me.txtdis.Text = "0"
+        Me.txtdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(64, 99)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(69, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Discount Rp."
+        '
+        'txtqty2
+        '
+        Me.txtqty2.Location = New System.Drawing.Point(136, 70)
+        Me.txtqty2.MaxLength = 4
+        Me.txtqty2.Name = "txtqty2"
+        Me.txtqty2.Size = New System.Drawing.Size(58, 20)
+        Me.txtqty2.TabIndex = 9
+        Me.txtqty2.Text = "0"
+        Me.txtqty2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(101, 73)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Qty2"
+        '
+        'txtqty1
+        '
+        Me.txtqty1.Location = New System.Drawing.Point(136, 44)
+        Me.txtqty1.MaxLength = 4
+        Me.txtqty1.Name = "txtqty1"
+        Me.txtqty1.Size = New System.Drawing.Size(58, 20)
+        Me.txtqty1.TabIndex = 6
+        Me.txtqty1.Text = "0"
+        Me.txtqty1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(101, 47)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(29, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Qty1"
         '
         'txtkelompok
         '
@@ -134,63 +192,6 @@ Partial Class DISCOUNT
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "Input Discount"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(136, 44)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(58, 20)
-        Me.TextBox1.TabIndex = 6
-        Me.TextBox1.Text = "0"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(101, 47)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(29, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Qty1"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(101, 73)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Qty2"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(136, 70)
-        Me.TextBox2.MaxLength = 50
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(58, 20)
-        Me.TextBox2.TabIndex = 9
-        Me.TextBox2.Text = "0"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(136, 96)
-        Me.TextBox3.MaxLength = 50
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(108, 20)
-        Me.TextBox3.TabIndex = 11
-        Me.TextBox3.Text = "0"
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(64, 99)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Discount Rp."
-        '
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
@@ -209,7 +210,7 @@ Partial Class DISCOUNT
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_KELBARANG, Me.DGV_QTY1, Me.DGV_QTY2, Me.DGV_DISCOUNT})
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_ID, Me.DGV_NAMA, Me.DGV_QTY1, Me.DGV_QTY2, Me.DGV_DISCOUNT, Me.DGV_KELBARANG})
         Me.DataGridView2.Location = New System.Drawing.Point(28, 192)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
@@ -225,13 +226,13 @@ Partial Class DISCOUNT
         Me.DGV_ID.ReadOnly = True
         Me.DGV_ID.Width = 50
         '
-        'DGV_KELBARANG
+        'DGV_NAMA
         '
-        Me.DGV_KELBARANG.DataPropertyName = "KELBARANG"
-        Me.DGV_KELBARANG.HeaderText = "Kel. Barang"
-        Me.DGV_KELBARANG.Name = "DGV_KELBARANG"
-        Me.DGV_KELBARANG.ReadOnly = True
-        Me.DGV_KELBARANG.Width = 150
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Kel. Barang"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 150
         '
         'DGV_QTY1
         '
@@ -249,7 +250,7 @@ Partial Class DISCOUNT
         '
         Me.DGV_QTY2.DataPropertyName = "QTY2"
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.Format = "N0"
         DataGridViewCellStyle4.NullValue = Nothing
         Me.DGV_QTY2.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGV_QTY2.HeaderText = "Qty2"
@@ -267,6 +268,14 @@ Partial Class DISCOUNT
         Me.DGV_DISCOUNT.HeaderText = "Discount(Rp.)"
         Me.DGV_DISCOUNT.Name = "DGV_DISCOUNT"
         Me.DGV_DISCOUNT.ReadOnly = True
+        '
+        'DGV_KELBARANG
+        '
+        Me.DGV_KELBARANG.DataPropertyName = "KELBARANG"
+        Me.DGV_KELBARANG.HeaderText = "Column1"
+        Me.DGV_KELBARANG.Name = "DGV_KELBARANG"
+        Me.DGV_KELBARANG.ReadOnly = True
+        Me.DGV_KELBARANG.Visible = False
         '
         'DISCOUNT
         '
@@ -296,11 +305,11 @@ Partial Class DISCOUNT
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents txtdis As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtqty2 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtqty1 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtkelompok As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -308,8 +317,9 @@ Partial Class DISCOUNT
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents DGV_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DGV_KELBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_NAMA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_QTY1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_QTY2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DGV_DISCOUNT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DGV_KELBARANG As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -35,22 +35,22 @@ Partial Class KOREKSI
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txtket = New System.Windows.Forms.TextBox()
-        Me.txtqty = New System.Windows.Forms.TextBox()
-        Me.txtharga = New System.Windows.Forms.TextBox()
-        Me.txtbarang = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txttotal = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txttgl = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtnofak = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txttgl = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txttotal = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtbarang = New System.Windows.Forms.ComboBox()
+        Me.txtharga = New System.Windows.Forms.TextBox()
+        Me.txtqty = New System.Windows.Forms.TextBox()
+        Me.txtket = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_TGL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -159,6 +159,135 @@ Partial Class KOREKSI
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
+        'txttgl
+        '
+        Me.txttgl.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txttgl.Location = New System.Drawing.Point(136, 42)
+        Me.txttgl.Name = "txttgl"
+        Me.txttgl.Size = New System.Drawing.Size(149, 20)
+        Me.txttgl.TabIndex = 0
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(21, 42)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Tanggal"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(21, 15)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(71, 13)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Nomor Faktur"
+        '
+        'txtnofak
+        '
+        Me.txtnofak.Enabled = False
+        Me.txtnofak.Location = New System.Drawing.Point(136, 15)
+        Me.txtnofak.MaxLength = 20
+        Me.txtnofak.Name = "txtnofak"
+        Me.txtnofak.Size = New System.Drawing.Size(149, 20)
+        Me.txtnofak.TabIndex = 15
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(133, 120)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(24, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Rp."
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(133, 146)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(24, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Rp."
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(21, 146)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Total"
+        '
+        'txttotal
+        '
+        Me.txttotal.Location = New System.Drawing.Point(160, 146)
+        Me.txttotal.MaxLength = 12
+        Me.txttotal.Name = "txttotal"
+        Me.txttotal.Size = New System.Drawing.Size(125, 20)
+        Me.txttotal.TabIndex = 4
+        Me.txttotal.Text = "0"
+        Me.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(21, 94)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(23, 13)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Qty"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(21, 120)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Harga"
+        '
+        'txtbarang
+        '
+        Me.txtbarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtbarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.txtbarang.FormattingEnabled = True
+        Me.txtbarang.Location = New System.Drawing.Point(136, 68)
+        Me.txtbarang.Name = "txtbarang"
+        Me.txtbarang.Size = New System.Drawing.Size(266, 21)
+        Me.txtbarang.TabIndex = 1
+        '
+        'txtharga
+        '
+        Me.txtharga.Location = New System.Drawing.Point(160, 120)
+        Me.txtharga.MaxLength = 12
+        Me.txtharga.Name = "txtharga"
+        Me.txtharga.Size = New System.Drawing.Size(125, 20)
+        Me.txtharga.TabIndex = 3
+        Me.txtharga.Text = "0"
+        Me.txtharga.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtqty
+        '
+        Me.txtqty.Location = New System.Drawing.Point(136, 94)
+        Me.txtqty.MaxLength = 4
+        Me.txtqty.Name = "txtqty"
+        Me.txtqty.Size = New System.Drawing.Size(149, 20)
+        Me.txtqty.TabIndex = 2
+        Me.txtqty.Text = "0"
+        Me.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtket
+        '
+        Me.txtket.Location = New System.Drawing.Point(136, 175)
+        Me.txtket.MaxLength = 250
+        Me.txtket.Multiline = True
+        Me.txtket.Name = "txtket"
+        Me.txtket.Size = New System.Drawing.Size(266, 67)
+        Me.txtket.TabIndex = 5
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -193,131 +322,6 @@ Partial Class KOREKSI
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(901, 257)
         Me.DataGridView1.TabIndex = 31
-        '
-        'txtket
-        '
-        Me.txtket.Location = New System.Drawing.Point(136, 175)
-        Me.txtket.MaxLength = 250
-        Me.txtket.Multiline = True
-        Me.txtket.Name = "txtket"
-        Me.txtket.Size = New System.Drawing.Size(266, 67)
-        Me.txtket.TabIndex = 5
-        '
-        'txtqty
-        '
-        Me.txtqty.Location = New System.Drawing.Point(136, 94)
-        Me.txtqty.Name = "txtqty"
-        Me.txtqty.Size = New System.Drawing.Size(149, 20)
-        Me.txtqty.TabIndex = 2
-        Me.txtqty.Text = "0"
-        Me.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtharga
-        '
-        Me.txtharga.Location = New System.Drawing.Point(160, 120)
-        Me.txtharga.Name = "txtharga"
-        Me.txtharga.Size = New System.Drawing.Size(125, 20)
-        Me.txtharga.TabIndex = 3
-        Me.txtharga.Text = "0"
-        Me.txtharga.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtbarang
-        '
-        Me.txtbarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtbarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.txtbarang.FormattingEnabled = True
-        Me.txtbarang.Location = New System.Drawing.Point(136, 68)
-        Me.txtbarang.Name = "txtbarang"
-        Me.txtbarang.Size = New System.Drawing.Size(266, 21)
-        Me.txtbarang.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 120)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Harga"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(21, 94)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(23, 13)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Qty"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(21, 146)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Total"
-        '
-        'txttotal
-        '
-        Me.txttotal.Location = New System.Drawing.Point(160, 146)
-        Me.txttotal.Name = "txttotal"
-        Me.txttotal.Size = New System.Drawing.Size(125, 20)
-        Me.txttotal.TabIndex = 4
-        Me.txttotal.Text = "0"
-        Me.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(133, 146)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(24, 13)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Rp."
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(133, 120)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(24, 13)
-        Me.Label10.TabIndex = 14
-        Me.Label10.Text = "Rp."
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(21, 15)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 13)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Nomor Faktur"
-        '
-        'txtnofak
-        '
-        Me.txtnofak.Enabled = False
-        Me.txtnofak.Location = New System.Drawing.Point(136, 15)
-        Me.txtnofak.Name = "txtnofak"
-        Me.txtnofak.Size = New System.Drawing.Size(149, 20)
-        Me.txtnofak.TabIndex = 15
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(21, 42)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(46, 13)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Tanggal"
-        '
-        'txttgl
-        '
-        Me.txttgl.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txttgl.Location = New System.Drawing.Point(136, 42)
-        Me.txttgl.Name = "txttgl"
-        Me.txttgl.Size = New System.Drawing.Size(149, 20)
-        Me.txttgl.TabIndex = 0
         '
         'DGV_ID
         '

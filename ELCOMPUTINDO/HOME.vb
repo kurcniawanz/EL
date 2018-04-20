@@ -603,4 +603,13 @@ Public Class HOME
         frm.Show()
         frm.Dock = DockStyle.Fill
     End Sub
+
+    Private Sub StatusStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles StatusStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim url As String = "https://www.google.com/gmail/"
+        Process.Start(url)
+    End Sub
 End Class

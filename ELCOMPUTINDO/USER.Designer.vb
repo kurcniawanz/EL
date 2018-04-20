@@ -36,15 +36,15 @@ Partial Class USER
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtid = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_PASS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtid = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,6 +94,7 @@ Partial Class USER
         'txtpass
         '
         Me.txtpass.Location = New System.Drawing.Point(136, 68)
+        Me.txtpass.MaxLength = 10
         Me.txtpass.Name = "txtpass"
         Me.txtpass.Size = New System.Drawing.Size(266, 20)
         Me.txtpass.TabIndex = 2
@@ -101,6 +102,7 @@ Partial Class USER
         'txtuser
         '
         Me.txtuser.Location = New System.Drawing.Point(136, 42)
+        Me.txtuser.MaxLength = 10
         Me.txtuser.Name = "txtuser"
         Me.txtuser.Size = New System.Drawing.Size(266, 20)
         Me.txtuser.TabIndex = 1
@@ -108,6 +110,7 @@ Partial Class USER
         'txtnama
         '
         Me.txtnama.Location = New System.Drawing.Point(136, 16)
+        Me.txtnama.MaxLength = 50
         Me.txtnama.Name = "txtnama"
         Me.txtnama.Size = New System.Drawing.Size(266, 20)
         Me.txtnama.TabIndex = 0
@@ -177,35 +180,6 @@ Partial Class USER
         Me.DataGridView1.Size = New System.Drawing.Size(942, 438)
         Me.DataGridView1.TabIndex = 5
         '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 601)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "*Click 2x untuk Edit/hapus"
-        '
-        'txtid
-        '
-        Me.txtid.Location = New System.Drawing.Point(153, 15)
-        Me.txtid.Name = "txtid"
-        Me.txtid.Size = New System.Drawing.Size(25, 20)
-        Me.txtid.TabIndex = 8
-        Me.txtid.Visible = False
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(469, 131)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(109, 23)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Set otoritas"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'DGV_NAMA
         '
         Me.DGV_NAMA.DataPropertyName = "NAMA"
@@ -253,6 +227,35 @@ Partial Class USER
         Me.DGV_ID.Name = "DGV_ID"
         Me.DGV_ID.ReadOnly = True
         Me.DGV_ID.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(14, 601)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(159, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "*Click 2x untuk Edit/hapus"
+        '
+        'txtid
+        '
+        Me.txtid.Location = New System.Drawing.Point(153, 15)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(25, 20)
+        Me.txtid.TabIndex = 8
+        Me.txtid.Visible = False
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(469, 131)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(109, 23)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "Set otoritas"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'USER
         '

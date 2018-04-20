@@ -475,7 +475,7 @@ Public Class INPUT_BELI
         simpan2 = "UPDATE TB_MUTASI SET " _
            + "ONGKIR =  " & ongkir & " WHERE NOFAK = '" & txtnofak.Text & "'; "
         callprogress2(simpan2)
-
+        HOME.MenuStrip1.Enabled = True
         If Me.MdiChildren.Length > 0 Then
             Dim childForm As Form = CType(ActiveMdiChild, Form)
             childForm.Close()
@@ -568,6 +568,7 @@ Public Class INPUT_BELI
             Hapus = "DELETE FROM TB_BELI WHERE ID ='" & txtid.Text & "'"
             callprogress2(Hapus2)
             callprogress(Hapus)
+            HOME.MenuStrip1.Enabled = True
             If Me.MdiChildren.Length > 0 Then
                 Dim childForm As Form = CType(ActiveMdiChild, Form)
                 childForm.Close()

@@ -478,7 +478,7 @@ Public Class INPUT_REJUAL
            + "STAMP = cast('NOW' as timestamp)," _
            + "KET = '" & txtket.Text & "' WHERE ID = '" & txtid.Text & "'; "
         callprogress(simpan)
-
+        HOME.MenuStrip1.Enabled = True
         If Me.MdiChildren.Length > 0 Then
             Dim childForm As Form = CType(ActiveMdiChild, Form)
             childForm.Close()
@@ -551,6 +551,7 @@ Public Class INPUT_REJUAL
             Hapus = "DELETE FROM TB_REJUAL WHERE ID ='" & txtid.Text & "'"
             callprogress2(Hapus2)
             callprogress(Hapus)
+            HOME.MenuStrip1.Enabled = True
             If Me.MdiChildren.Length > 0 Then
                 Dim childForm As Form = CType(ActiveMdiChild, Form)
                 childForm.Close()

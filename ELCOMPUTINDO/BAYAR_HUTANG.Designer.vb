@@ -22,11 +22,11 @@ Partial Class BAYAR_HUTANG
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtgrandtotal = New System.Windows.Forms.TextBox()
@@ -41,6 +41,11 @@ Partial Class BAYAR_HUTANG
         Me.txtnofak = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV_IDFAKTUR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_SISA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -55,11 +60,6 @@ Partial Class BAYAR_HUTANG
         Me.txttgl = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtnokas = New System.Windows.Forms.TextBox()
-        Me.DGV_IDFAKTUR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NOFAK = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_BAYAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_SISA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,6 +128,7 @@ Partial Class BAYAR_HUTANG
         '
         Me.txtjum.Enabled = False
         Me.txtjum.Location = New System.Drawing.Point(88, 42)
+        Me.txtjum.MaxLength = 15
         Me.txtjum.Name = "txtjum"
         Me.txtjum.Size = New System.Drawing.Size(129, 20)
         Me.txtjum.TabIndex = 37
@@ -166,6 +167,7 @@ Partial Class BAYAR_HUTANG
         'txtbay
         '
         Me.txtbay.Location = New System.Drawing.Point(88, 69)
+        Me.txtbay.MaxLength = 15
         Me.txtbay.Name = "txtbay"
         Me.txtbay.Size = New System.Drawing.Size(129, 20)
         Me.txtbay.TabIndex = 9
@@ -204,19 +206,19 @@ Partial Class BAYAR_HUTANG
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DGV_IDFAKTUR, Me.DGV_NOFAK, Me.DGV_TOTAL, Me.DGV_BAYAR, Me.DGV_SISA})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 190)
@@ -225,6 +227,55 @@ Partial Class BAYAR_HUTANG
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(879, 301)
         Me.DataGridView1.TabIndex = 42
+        '
+        'DGV_IDFAKTUR
+        '
+        Me.DGV_IDFAKTUR.DataPropertyName = "IDFAKTUR"
+        Me.DGV_IDFAKTUR.HeaderText = "Column1"
+        Me.DGV_IDFAKTUR.Name = "DGV_IDFAKTUR"
+        Me.DGV_IDFAKTUR.ReadOnly = True
+        Me.DGV_IDFAKTUR.Visible = False
+        '
+        'DGV_NOFAK
+        '
+        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
+        Me.DGV_NOFAK.HeaderText = "No Faktur"
+        Me.DGV_NOFAK.Name = "DGV_NOFAK"
+        Me.DGV_NOFAK.ReadOnly = True
+        Me.DGV_NOFAK.Width = 150
+        '
+        'DGV_TOTAL
+        '
+        Me.DGV_TOTAL.DataPropertyName = "TOTAL"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV_TOTAL.HeaderText = "Jumlah"
+        Me.DGV_TOTAL.Name = "DGV_TOTAL"
+        Me.DGV_TOTAL.ReadOnly = True
+        '
+        'DGV_BAYAR
+        '
+        Me.DGV_BAYAR.DataPropertyName = "BAYAR"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DGV_BAYAR.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DGV_BAYAR.HeaderText = "Bayar"
+        Me.DGV_BAYAR.Name = "DGV_BAYAR"
+        Me.DGV_BAYAR.ReadOnly = True
+        '
+        'DGV_SISA
+        '
+        Me.DGV_SISA.DataPropertyName = "SISA"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DGV_SISA.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGV_SISA.HeaderText = "Sisa"
+        Me.DGV_SISA.Name = "DGV_SISA"
+        Me.DGV_SISA.ReadOnly = True
         '
         'Button3
         '
@@ -259,6 +310,7 @@ Partial Class BAYAR_HUTANG
         '
         Me.txtket.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtket.Location = New System.Drawing.Point(17, 511)
+        Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
         Me.txtket.Size = New System.Drawing.Size(462, 79)
@@ -361,55 +413,6 @@ Partial Class BAYAR_HUTANG
         Me.txtnokas.Name = "txtnokas"
         Me.txtnokas.Size = New System.Drawing.Size(119, 20)
         Me.txtnokas.TabIndex = 0
-        '
-        'DGV_IDFAKTUR
-        '
-        Me.DGV_IDFAKTUR.DataPropertyName = "IDFAKTUR"
-        Me.DGV_IDFAKTUR.HeaderText = "Column1"
-        Me.DGV_IDFAKTUR.Name = "DGV_IDFAKTUR"
-        Me.DGV_IDFAKTUR.ReadOnly = True
-        Me.DGV_IDFAKTUR.Visible = False
-        '
-        'DGV_NOFAK
-        '
-        Me.DGV_NOFAK.DataPropertyName = "NOFAK"
-        Me.DGV_NOFAK.HeaderText = "No Faktur"
-        Me.DGV_NOFAK.Name = "DGV_NOFAK"
-        Me.DGV_NOFAK.ReadOnly = True
-        Me.DGV_NOFAK.Width = 150
-        '
-        'DGV_TOTAL
-        '
-        Me.DGV_TOTAL.DataPropertyName = "TOTAL"
-        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle48.Format = "N2"
-        DataGridViewCellStyle48.NullValue = Nothing
-        Me.DGV_TOTAL.DefaultCellStyle = DataGridViewCellStyle48
-        Me.DGV_TOTAL.HeaderText = "Jumlah"
-        Me.DGV_TOTAL.Name = "DGV_TOTAL"
-        Me.DGV_TOTAL.ReadOnly = True
-        '
-        'DGV_BAYAR
-        '
-        Me.DGV_BAYAR.DataPropertyName = "BAYAR"
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle49.Format = "N2"
-        DataGridViewCellStyle49.NullValue = Nothing
-        Me.DGV_BAYAR.DefaultCellStyle = DataGridViewCellStyle49
-        Me.DGV_BAYAR.HeaderText = "Bayar"
-        Me.DGV_BAYAR.Name = "DGV_BAYAR"
-        Me.DGV_BAYAR.ReadOnly = True
-        '
-        'DGV_SISA
-        '
-        Me.DGV_SISA.DataPropertyName = "SISA"
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle50.Format = "N2"
-        DataGridViewCellStyle50.NullValue = Nothing
-        Me.DGV_SISA.DefaultCellStyle = DataGridViewCellStyle50
-        Me.DGV_SISA.HeaderText = "Sisa"
-        Me.DGV_SISA.Name = "DGV_SISA"
-        Me.DGV_SISA.ReadOnly = True
         '
         'BAYAR_HUTANG
         '

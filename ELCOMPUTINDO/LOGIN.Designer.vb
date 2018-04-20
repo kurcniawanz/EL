@@ -71,19 +71,19 @@ Partial Class LOGIN
         'UsernameTextBox
         '
         Me.UsernameTextBox.Location = New System.Drawing.Point(175, 29)
+        Me.UsernameTextBox.MaxLength = 10
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
         Me.UsernameTextBox.TabIndex = 0
-        Me.UsernameTextBox.Text = "SYSDBA"
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.Location = New System.Drawing.Point(175, 72)
+        Me.PasswordTextBox.MaxLength = 10
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
         Me.PasswordTextBox.TabIndex = 1
-        Me.PasswordTextBox.Text = "masterkey"
         '
         'Cancel
         '

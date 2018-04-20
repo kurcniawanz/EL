@@ -27,6 +27,11 @@ Partial Class CATEEGORY
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtket = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_KET = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
@@ -36,11 +41,6 @@ Partial Class CATEEGORY
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtnama = New System.Windows.Forms.TextBox()
-        Me.DGV_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_NAMA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_KET = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_CREATE_USERID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV_STAMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,6 +59,7 @@ Partial Class CATEEGORY
         'txtket
         '
         Me.txtket.Location = New System.Drawing.Point(136, 42)
+        Me.txtket.MaxLength = 250
         Me.txtket.Multiline = True
         Me.txtket.Name = "txtket"
         Me.txtket.Size = New System.Drawing.Size(266, 81)
@@ -89,6 +90,46 @@ Partial Class CATEEGORY
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(884, 417)
         Me.DataGridView1.TabIndex = 23
+        '
+        'DGV_ID
+        '
+        Me.DGV_ID.DataPropertyName = "ID"
+        Me.DGV_ID.HeaderText = "ID"
+        Me.DGV_ID.Name = "DGV_ID"
+        Me.DGV_ID.ReadOnly = True
+        Me.DGV_ID.Width = 40
+        '
+        'DGV_NAMA
+        '
+        Me.DGV_NAMA.DataPropertyName = "NAMA"
+        Me.DGV_NAMA.HeaderText = "Nama Kelompok"
+        Me.DGV_NAMA.Name = "DGV_NAMA"
+        Me.DGV_NAMA.ReadOnly = True
+        Me.DGV_NAMA.Width = 150
+        '
+        'DGV_KET
+        '
+        Me.DGV_KET.DataPropertyName = "KET"
+        Me.DGV_KET.HeaderText = "Keterangan"
+        Me.DGV_KET.Name = "DGV_KET"
+        Me.DGV_KET.ReadOnly = True
+        Me.DGV_KET.Width = 250
+        '
+        'DGV_CREATE_USERID
+        '
+        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
+        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
+        Me.DGV_CREATE_USERID.ReadOnly = True
+        Me.DGV_CREATE_USERID.Width = 150
+        '
+        'DGV_STAMP
+        '
+        Me.DGV_STAMP.DataPropertyName = "STAMP"
+        Me.DGV_STAMP.HeaderText = "STAMP"
+        Me.DGV_STAMP.Name = "DGV_STAMP"
+        Me.DGV_STAMP.ReadOnly = True
+        Me.DGV_STAMP.Width = 150
         '
         'Label4
         '
@@ -171,49 +212,10 @@ Partial Class CATEEGORY
         'txtnama
         '
         Me.txtnama.Location = New System.Drawing.Point(136, 16)
+        Me.txtnama.MaxLength = 20
         Me.txtnama.Name = "txtnama"
         Me.txtnama.Size = New System.Drawing.Size(266, 20)
         Me.txtnama.TabIndex = 0
-        '
-        'DGV_ID
-        '
-        Me.DGV_ID.DataPropertyName = "ID"
-        Me.DGV_ID.HeaderText = "ID"
-        Me.DGV_ID.Name = "DGV_ID"
-        Me.DGV_ID.ReadOnly = True
-        Me.DGV_ID.Width = 40
-        '
-        'DGV_NAMA
-        '
-        Me.DGV_NAMA.DataPropertyName = "NAMA"
-        Me.DGV_NAMA.HeaderText = "Nama Kelompok"
-        Me.DGV_NAMA.Name = "DGV_NAMA"
-        Me.DGV_NAMA.ReadOnly = True
-        Me.DGV_NAMA.Width = 150
-        '
-        'DGV_KET
-        '
-        Me.DGV_KET.DataPropertyName = "KET"
-        Me.DGV_KET.HeaderText = "Keterangan"
-        Me.DGV_KET.Name = "DGV_KET"
-        Me.DGV_KET.ReadOnly = True
-        Me.DGV_KET.Width = 250
-        '
-        'DGV_CREATE_USERID
-        '
-        Me.DGV_CREATE_USERID.DataPropertyName = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.HeaderText = "CREATE_USERID"
-        Me.DGV_CREATE_USERID.Name = "DGV_CREATE_USERID"
-        Me.DGV_CREATE_USERID.ReadOnly = True
-        Me.DGV_CREATE_USERID.Width = 150
-        '
-        'DGV_STAMP
-        '
-        Me.DGV_STAMP.DataPropertyName = "STAMP"
-        Me.DGV_STAMP.HeaderText = "STAMP"
-        Me.DGV_STAMP.Name = "DGV_STAMP"
-        Me.DGV_STAMP.ReadOnly = True
-        Me.DGV_STAMP.Width = 150
         '
         'CATEEGORY
         '
